@@ -7,27 +7,34 @@ const GlobalStyle = createGlobalStyle`
 }
 
 :root {
+  --titleFont: "'Poppins", sans-serif;
+  --textFont: "Roboto", sans-serif;
+  --background: #ededed;
+  --text-color: #b5525c;
+  --primary-color: #0f4e8f;
+  --secondary-color: #ec9b49;
+  --favorite-color:#dd755d;
 
 }
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #ededed;
+  background-color: var(--background);
   
  }
  a {
-  color: #b5525c;
+  color: var(--text-color);
   text-decoration: none;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--titleFont);
 }
 h1 {  font-size: 2.5rem;
-    color: #0f4e8f;
+    color: var(--primary-color);
 }
 h2 {
   font-size: 2rem;
-  color: #0f4e8f;
+  color: var(--primary-color);
 }
   `;
 
