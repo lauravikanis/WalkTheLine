@@ -20,7 +20,6 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--background);
-  
  }
  a {
   color: var(--text-color);
