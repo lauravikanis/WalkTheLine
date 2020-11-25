@@ -1,7 +1,8 @@
 import React from "react";
-import Page from "./pages/Page";
+// import Page from "./pages/Page";
 import GlobalStyle from "./GlobalStyles";
 import styled from "styled-components";
+import Splashscreen from "./pages/Splashscreen";
 
 const Main = styled.main`
   padding: 1rem;
@@ -15,11 +16,7 @@ function App() {
   return (
     <Main>
       <GlobalStyle />
-      <Page
-        onLogin={() => console.log("login")}
-        onLogout={() => console.log("logout")}
-        onCreateAccount={() => console.log("create account")}
-      />
+      <Splashscreen />
       <a href="/storybook">To Storybook</a>
     </Main>
   );
