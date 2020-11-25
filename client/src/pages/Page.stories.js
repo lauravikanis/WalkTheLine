@@ -6,4 +6,4 @@ export default {
   component: Page,
 };
 
-export const Standard = (args) => <Page {...args} />;
+export const page = (args) => <Page {...args} />;

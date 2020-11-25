@@ -6,4 +6,4 @@ export default {
   component: Splashscreen,
 };
 
-export const Standard = (args) => <Splashscreen {...args} />;
+export const splashscreen = (args) => <Splashscreen {...args} />;
