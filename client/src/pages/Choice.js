@@ -4,8 +4,9 @@ import Card from "../components/Card/Card";
 import tourPath from "../assets/tour.svg";
 import searchPath from "../assets/search.svg";
 import favoritePath from "../assets/favourites.svg";
+import PageHeadline from "../components/Header/PageHeadline";
 
-const HomeDiv = styled.div`
+const ChoiceDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -18,21 +19,21 @@ const HomeDiv = styled.div`
 
 const Home = () => {
   return (
-    <HomeDiv>
-      <h2>HOME</h2>
-      <Card primary>
-        <h2>TOUR</h2>
+    <ChoiceDiv>
+      <PageHeadline>CHOICE</PageHeadline>
+      <Card>
+        <h2>ELECTRONICA</h2>
         <img src={tourPath} alt="touricon" />
       </Card>
-      <Card primary>
-        <h2>SUCHE</h2>
+      <Card>
+        <h2>JAZZ</h2>
         <img src={searchPath} alt="searchicon" />
       </Card>
-      <Card primary>
-        <h2>FAVORITEN</h2>
+      <Card>
+        <h2>(INDIE-) ROCK</h2>
         <img src={favoritePath} alt="favoriteicon" />
       </Card>
-    </HomeDiv>
+    </ChoiceDiv>
   );
 };
 export default Home;

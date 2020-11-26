@@ -6,4 +6,4 @@ export default {
   component: Header,
 };
 
-export const eader = () => <Header />;
+export const header = () => <Header />;
