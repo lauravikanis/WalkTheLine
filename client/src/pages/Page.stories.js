@@ -2,7 +2,7 @@ import React from "react";
 import Page from "./Page";
 
 export default {
-  title: "Example/Page",
+  title: "Pages/Page",
   component: Page,
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import Splashscreen from "./Splashscreen";
 
 export default {
-  title: "Example/Splashscreen",
+  title: "Pages/Splashscreen",
   component: Splashscreen,
 };
 
