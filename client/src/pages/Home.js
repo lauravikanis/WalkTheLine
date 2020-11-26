@@ -4,6 +4,7 @@ import Card from "../components/Card/Card";
 import tourPath from "../assets/tour.svg";
 import searchPath from "../assets/search.svg";
 import favoritePath from "../assets/favourites.svg";
+import PageHeadline from "../components/Header/PageHeadline";
 
 const HomeDiv = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const HomeDiv = styled.div`
 const Home = () => {
   return (
     <HomeDiv>
-      <h2>HOME</h2>
+      <PageHeadline>HOME</PageHeadline>
       <Card primary>
         <h2>TOUR</h2>
         <img src={tourPath} alt="touricon" />
