@@ -11,11 +11,16 @@ const HomeDiv = styled.div`
   /* justify-content: center; */
   align-content: center;
   height: 90vh;
+
+  h2 {
+    text-align: center;
+  }
 `;
 
 const Home = () => {
   return (
     <HomeDiv>
+      <h2>HOME</h2>
       <Card primary>
         <h2>TOUR</h2>
         <img src={tourPath} alt="touricon" />
