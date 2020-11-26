@@ -1,5 +1,4 @@
 import React from "react";
-// import Page from "./pages/Page";
 import GlobalStyle from "./GlobalStyles";
 import styled from "styled-components";
 import Splashscreen from "./pages/Splashscreen";
