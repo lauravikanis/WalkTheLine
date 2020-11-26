@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Card from "../components/Card/Card";
 import tourPath from "../assets/tour.svg";
 import searchPath from "../assets/search.svg";
@@ -8,7 +8,6 @@ import favoritePath from "../assets/favourites.svg";
 const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-content: center;
   height: 90vh;
 
