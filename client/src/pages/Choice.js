@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Card from "../components/Card/Card";
-import tourPath from "../assets/tour.svg";
-import searchPath from "../assets/search.svg";
-import favoritePath from "../assets/favourites.svg";
+import jazzPath from "../assets/jazz.svg";
+import indierockPath from "../assets/indierock.svg";
+import electronicaPath from "../assets/electronica.svg";
 import PageHeadline from "../components/Header/PageHeadline";
 
 const ChoiceDiv = styled.div`
@@ -11,10 +11,6 @@ const ChoiceDiv = styled.div`
   flex-direction: column;
   align-content: center;
   height: 90vh;
-
-  h2 {
-    text-align: center;
-  }
 `;
 
 const Home = () => {
@@ -23,15 +19,15 @@ const Home = () => {
       <PageHeadline>CHOICE</PageHeadline>
       <Card>
         <h2>ELECTRONICA</h2>
-        <img src={tourPath} alt="touricon" />
+        <img src={electronicaPath} alt="touricon" />
       </Card>
       <Card>
         <h2>JAZZ</h2>
-        <img src={searchPath} alt="searchicon" />
+        <img src={jazzPath} alt="searchicon" />
       </Card>
       <Card>
         <h2>(INDIE-) ROCK</h2>
-        <img src={favoritePath} alt="favoriteicon" />
+        <img src={indierockPath} alt="favoriteicon" />
       </Card>
     </ChoiceDiv>
   );

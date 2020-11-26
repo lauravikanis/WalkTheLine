@@ -15,6 +15,7 @@ const Card = styled.div`
 
   h2 {
     color: var(--secondary-color);
+    text-align: left;
   }
   img {
     height: 55px;
