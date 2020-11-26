@@ -27,12 +27,13 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--titleFont);
+    font-weight: bold;
 }
-h1 {  font-size: 2.5rem;
+h1 {  font-size: 2rem;
     color: var(--primary-color);
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
 }
   `;
