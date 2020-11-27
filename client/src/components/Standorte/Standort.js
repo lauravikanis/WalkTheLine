@@ -1,18 +1,15 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const Standort = styled.li`
+const Standort = styled.ul`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: white;
-  border-radius: 15px;
   width: 100%;
   max-width: 500px;
-  height: 45px;
-  margin: 15px auto;
-  padding: 0 2.5rem;
-  color: var(--secondary-color);
+  list-style-type: none;
+  padding: 0;
 `;
 Standort.propTypes = {
   primary: PropTypes.bool,

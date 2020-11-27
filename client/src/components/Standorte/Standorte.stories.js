@@ -8,7 +8,7 @@ export default {
 
 const Template = (args) => <Standort {...args} />;
 
-export const standort = Template.bind({});
-standort.args = {
-  children: "Standort",
+export const StandortExample = Template.bind({});
+StandortExample.args = {
+  children: <li>1. Standort</li>,
 };
