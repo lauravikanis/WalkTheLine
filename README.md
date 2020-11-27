@@ -1,3 +1,5 @@
-![Node.js CI](https://github.com/lauravikanis/start_template/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/lauravikanis/WalkTheLine/workflows/Node.js%20CI/badge.svg)
 
-# start_template
+# Walk The Line
+
+### My Gesellenstück for the neuefische WebDev Bootcamp
