@@ -41,14 +41,16 @@ h2 {
   color: var(--primary-color);
 }
 li {
+  display:flex;
+  justify-content:center;
   font-size: 1.5rem;
   color: var(--secondary-color);
   background: white;
   font-family: var(--titleFont);
   font-weight: bold;
-  align-items: center;
+  text-align: center;
   padding: 0.5rem  2.5rem;
-  margin: 10px auto;
+  margin-top: 10px;
   border-radius: 15px;
   
 

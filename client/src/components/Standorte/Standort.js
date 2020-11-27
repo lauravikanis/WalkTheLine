@@ -5,11 +5,9 @@ const Standort = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 15px;
 `;
 Standort.propTypes = {
   primary: PropTypes.bool,
