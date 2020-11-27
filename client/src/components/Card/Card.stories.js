@@ -34,7 +34,7 @@ Electronica.args = {
 
 export const Location = Template.bind({});
 Location.args = {
-  primary: false,
+  count: false,
   children: (
     <p>
       Name <br /> Adress, <br />

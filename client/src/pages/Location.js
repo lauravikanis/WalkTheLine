@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-
-import mappath from "../assets/map.svg";
 import platzhalter from "../assets/platzhalter.jpeg";
 import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
+import Placeholder from "../components/Placeholder/Placeholder";
 
 const TourDiv = styled.div`
   display: flex;
@@ -23,7 +22,7 @@ const Tour = () => {
         accusamus dolore numquam provident libero voluptas animi quas vitae
         incidunt.
       </p>
-      <Card>
+      <Card adress>
         <p>
           Name <br /> Adress, <br />
           City + postcode <br />
@@ -38,7 +37,7 @@ const Tour = () => {
         <img src={platzhalter} alt="Platzhalter" />
         <img src={platzhalter} alt="Platzhalter" />
       </ImageCard>
-      <img src={mappath} alt="Platzhalter" />
+      <Placeholder />
     </TourDiv>
   );
 };
