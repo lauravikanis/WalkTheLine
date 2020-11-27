@@ -31,3 +31,15 @@ Electronica.args = {
     </>
   ),
 };
+
+export const Location = Template.bind({});
+Location.args = {
+  primary: false,
+  children: (
+    <p>
+      Name <br /> Adress, <br />
+      City + postcode <br />
+      OpeningHours
+    </p>
+  ),
+};

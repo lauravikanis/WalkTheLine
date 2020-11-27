@@ -20,6 +20,11 @@ const Card = styled.div`
   img {
     height: 55px;
   }
+
+  p {
+    color: var(--secondary-color);
+    text-align: center;
+  }
 `;
 Card.propTypes = {
   primary: PropTypes.bool,
