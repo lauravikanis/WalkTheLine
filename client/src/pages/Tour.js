@@ -28,7 +28,7 @@ const Tour = () => {
         <li>Standort</li>
         <li>Standort</li>
       </Standort>
-      <img src={mappath} alt="Platzhalter" />
+      <img src={mappath} alt="placeholder" />
     </TourDiv>
   );
 };

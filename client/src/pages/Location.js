@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-import platzhalter from "../assets/platzhalter.jpeg";
+import placeholder from "../assets/placeholder.jpeg";
 import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
@@ -15,7 +15,7 @@ const TourDiv = styled.div`
 const Tour = () => {
   return (
     <TourDiv>
-      <PageHeadline>Platzhalter</PageHeadline>
+      <PageHeadline>placeholder</PageHeadline>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
         beatae ducimus fuga assumenda recusandae nam, quam facere maxime
@@ -30,12 +30,12 @@ const Tour = () => {
         </p>
       </Card>
       <ImageCard>
-        <img src={platzhalter} alt="Platzhalter" />
-        <img src={platzhalter} alt="Platzhalter" />
-        <img src={platzhalter} alt="Platzhalter" />
-        <img src={platzhalter} alt="Platzhalter" />
-        <img src={platzhalter} alt="Platzhalter" />
-        <img src={platzhalter} alt="Platzhalter" />
+        <img src={placeholder} alt="placeholder" />
+        <img src={placeholder} alt="placeholder" />
+        <img src={placeholder} alt="placeholder" />
+        <img src={placeholder} alt="placeholder" />
+        <img src={placeholder} alt="placeholder" />
+        <img src={placeholder} alt="placeholder" />
       </ImageCard>
       <Placeholder />
     </TourDiv>
