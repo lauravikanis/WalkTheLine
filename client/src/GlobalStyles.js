@@ -36,6 +36,13 @@ h2 {
   font-size: 1.5rem;
   color: var(--primary-color);
 }
+li {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-family: var(--titleFont);
+  font-weight: bold;
+}
+
   `;
 
 export default GlobalStyle;
