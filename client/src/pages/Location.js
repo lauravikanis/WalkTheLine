@@ -15,14 +15,14 @@ const TourDiv = styled.div`
 const Tour = () => {
   return (
     <TourDiv>
-      <PageHeadline>Tourname</PageHeadline>
+      <PageHeadline>Platzhalter</PageHeadline>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
         beatae ducimus fuga assumenda recusandae nam, quam facere maxime
         accusamus dolore numquam provident libero voluptas animi quas vitae
         incidunt.
       </p>
-      <Card adress>
+      <Card details>
         <p>
           Name <br /> Adress, <br />
           City + postcode <br />
