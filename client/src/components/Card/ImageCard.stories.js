@@ -1,6 +1,6 @@
 import React from "react";
 import ImageCard from "./ImageCard";
-import platzhalter from "../../assets/picture_dom.svg";
+import platzhalter from "../../assets/platzhalter.jpeg";
 
 export default {
   title: "Components/Card",
@@ -14,6 +14,7 @@ locationpics.args = {
   primary: false,
   children: (
     <>
+      <img src={platzhalter} alt="Platzhalter" />
       <img src={platzhalter} alt="Platzhalter" />
       <img src={platzhalter} alt="Platzhalter" />
       <img src={platzhalter} alt="Platzhalter" />

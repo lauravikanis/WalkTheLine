@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 
 import mappath from "../assets/map.svg";
-import picture_dompath from "../assets/picture_dom.svg";
+import platzhalter from "../assets/platzhalter.jpeg";
 import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 
@@ -31,9 +31,12 @@ const Tour = () => {
         </p>
       </Card>
       <ImageCard>
-        <img src={picture_dompath} alt="Platzhalter" />
-        <img src={picture_dompath} alt="Platzhalter" />
-        <img src={picture_dompath} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
+        <img src={platzhalter} alt="Platzhalter" />
       </ImageCard>
       <img src={mappath} alt="Platzhalter" />
     </TourDiv>
