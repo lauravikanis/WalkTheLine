@@ -7,15 +7,14 @@ const Button = styled.div`
   justify-content: center;
   background: ${(props) => (props.active ? "var(--primary-color)" : "white")};
   border-radius: 15px;
-  width: 90px;
+  width: 25%;
   height: 50px;
   margin: 15px auto;
-
-  h2 {
-    color: var(--secondary-color);
-    font-size: 20px;
-    text-align: center;
-  }
+  color: var(--secondary-color);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 Button.propTypes = {
