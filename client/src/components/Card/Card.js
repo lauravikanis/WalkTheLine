@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Card = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) => (props.details ? "center" : "space-between")};
   align-items: center;
   background: ${(props) => (props.primary ? "var(--primary-color)" : "white")};
   border-radius: 15px;
@@ -20,9 +20,16 @@ const Card = styled.div`
   img {
     height: 55px;
   }
+
+  p {
+    color: var(--secondary-color);
+    text-align: center;
+    display: inline-block;
+  }
 `;
 Card.propTypes = {
   primary: PropTypes.bool,
+  details: PropTypes.bool,
 };
 
 export default Card;
