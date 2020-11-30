@@ -32,6 +32,7 @@ p{
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--titleFont);
   font-weight: bold;
+  text-transform: uppercase;
 }
 h1 {  font-size: 2rem;
   color: var(--primary-color);
