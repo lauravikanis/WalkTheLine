@@ -7,6 +7,7 @@ const PictureContainer = styled.div`
   border-radius: 15px;
   max-width: 100%;
   padding: 2px;
+  margin-top: 15px;
 
   img {
     max-width: 100%;
