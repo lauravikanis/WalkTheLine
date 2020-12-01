@@ -25,6 +25,15 @@ const Tour = () => {
         <Link to="/Location">
           <li>Standort</li>
         </Link>
+        <Link to="/Location">
+          <li>Standort</li>
+        </Link>
+        <Link to="/Location">
+          <li>Standort</li>
+        </Link>
+        <Link to="/Location">
+          <li>Standort</li>
+        </Link>
       </Standort>
       <img src={mappath} alt="placeholder" />
     </TourDiv>
