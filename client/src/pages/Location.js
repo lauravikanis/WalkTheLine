@@ -5,6 +5,7 @@ import placeholder from "../assets/placeholder.jpeg";
 import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
+import { Link } from "react-router-dom";
 
 const TourDiv = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const TourDiv = styled.div`
 const Tour = () => {
   return (
     <TourDiv>
-      <PageHeadline>placeholder</PageHeadline>
+      <PageHeadline>Location</PageHeadline>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
         beatae ducimus fuga assumenda recusandae nam, quam facere maxime
@@ -30,7 +31,9 @@ const Tour = () => {
         </p>
       </Card>
       <ImageCard>
-        <img src={placeholder} alt="placeholder" />
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
         <img src={placeholder} alt="placeholder" />
         <img src={placeholder} alt="placeholder" />
         <img src={placeholder} alt="placeholder" />

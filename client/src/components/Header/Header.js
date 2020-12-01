@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import Splashlogo from "../../assets/logo.svg";
 import Backarrow from "../../assets/back.svg";
 
@@ -16,7 +18,9 @@ const AppHeader = styled.header`
 const Header = () => (
   <AppHeader>
     <img src={Backarrow} alt="Go back" />
-    <img src={Splashlogo} alt="Walk the Line Logo" />
+    <Link to="/">
+      <img src={Splashlogo} alt="Walk the Line Logo" />
+    </Link>
   </AppHeader>
 );
 
