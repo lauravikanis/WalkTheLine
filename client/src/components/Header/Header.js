@@ -15,10 +15,8 @@ const AppHeader = styled.header`
 
 const Header = () => (
   <AppHeader>
-    <div className="wrapper">
-      <img src={Backarrow} alt="Go back" />
-      <img src={Splashlogo} alt="Walk the Line Logo" />
-    </div>
+    <img src={Backarrow} alt="Go back" />
+    <img src={Splashlogo} alt="Walk the Line Logo" />
   </AppHeader>
 );
 

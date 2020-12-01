@@ -43,7 +43,7 @@ h2 {
 }
 li {
   display:flex;
-  justify-content:center;
+  justify-content: ${(props) => (props.details ? "space-between" : "center")};
   font-size: 1.5rem;
   color: var(--secondary-color);
   background: white;
