@@ -11,6 +11,11 @@ const TourDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  max-width: 600px;
+
+  p {
+    width: 500px;
+  }
 `;
 
 const Tour = () => {
@@ -34,11 +39,21 @@ const Tour = () => {
         <Link to="/Pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <img src={placeholder} alt="placeholder" />
-        <img src={placeholder} alt="placeholder" />
-        <img src={placeholder} alt="placeholder" />
-        <img src={placeholder} alt="placeholder" />
-        <img src={placeholder} alt="placeholder" />
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
+        <Link to="/Pictures">
+          <img src={placeholder} alt="placeholder" />
+        </Link>
       </ImageCard>
       <Placeholder />
     </TourDiv>

@@ -11,7 +11,6 @@ const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  height: 90vh;
 `;
 
 const Home = () => {

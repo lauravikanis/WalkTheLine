@@ -8,7 +8,7 @@ const Card = styled.div`
   background: ${(props) => (props.primary ? "var(--primary-color)" : "white")};
   border-radius: 15px;
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   height: 100px;
   margin: 15px auto;
   padding: 0 2.5rem;
@@ -18,7 +18,9 @@ const Card = styled.div`
     text-align: left;
   }
   img {
-    height: 55px;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
   }
 
   p {

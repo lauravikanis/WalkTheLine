@@ -5,7 +5,6 @@ const Placeholder = styled.div`
   align-items: center;
   background: var(--primary-color);
   width: 100%;
-  max-width: 500px;
   height: 100px;
   margin: 15px auto;
   padding: 0 2.5rem;

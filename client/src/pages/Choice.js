@@ -11,7 +11,7 @@ const ChoiceDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  height: 90vh;
+  max-width: 600px;
 `;
 
 const Home = () => {

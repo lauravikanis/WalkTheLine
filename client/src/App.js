@@ -10,47 +10,48 @@ import Favourites from "./pages/Favourites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
 import Header from "./components/Header/Header";
+import styled from "styled-components";
 
-// const Main = styled.main`
-//   padding: 1rem;
-//   max-width: 375px;
-//   display: flex;
-//   flex-direction: column;
-//   margin: auto;
-// `;
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function App() {
   return (
     <Router>
       <GlobalStyle />
       <Header />
-      <Switch>
-        <Route path="/splashscreen">
-          <Splashscreen />
-        </Route>
-        <Route path="/choice">
-          <Choice />
-        </Route>
-        <Route path="/tour">
-          <Tour />
-        </Route>
-        <Route path="/location">
-          <Location />
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
-        <Route path="/pictures">
-          <Pictures />
-        </Route>
-        <Route path="/favourites">
-          <Favourites />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-      <a href="/storybook">To Storybook</a>
+      <Main>
+        <Switch>
+          <Route path="/splashscreen">
+            <Splashscreen />
+          </Route>
+          <Route path="/choice">
+            <Choice />
+          </Route>
+          <Route path="/tour">
+            <Tour />
+          </Route>
+          <Route path="/location">
+            <Location />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/pictures">
+            <Pictures />
+          </Route>
+          <Route path="/favourites">
+            <Favourites />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <a href="/storybook">To Storybook</a>
+      </Main>
     </Router>
   );
 }
