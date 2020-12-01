@@ -4,7 +4,6 @@ import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 
 const TourDiv = styled.div`
   display: flex;

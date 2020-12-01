@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Splashlogo from "../../assets/logo.svg";
-import Backarrow from "../../assets/back.svg";
+import BackButton from "../Button/BackButton";
 
 const AppHeader = styled.header`
   display: flex;
@@ -17,7 +17,7 @@ const AppHeader = styled.header`
 
 const Header = () => (
   <AppHeader>
-    <img src={Backarrow} alt="Go back" />
+    <BackButton />
     <Link to="/">
       <img src={Splashlogo} alt="Walk the Line Logo" />
     </Link>
