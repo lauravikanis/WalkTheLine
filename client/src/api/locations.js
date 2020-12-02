@@ -1,9 +1,11 @@
-export const getLocation = async (locationName) => {
-  const response = await fetch(`/walktheline/name:"${locationName}"`);
-  if (!response.ok) {
-    const message = await response.text();
-    throw new Error(message);
-  }
-  const password = await response.text();
-  return password;
-};
+export async function getLocation() {
+  const response = await fetch("http://localhost:2601/locations");
+  const lists = await response.json();
+  return lists;
+}
+
+export async function getListsByTour(name) {
+  const response = await fetch(`http://localhost:2601/api/locations/${name}`);
+  const list = await response.json();
+  return list;
+}

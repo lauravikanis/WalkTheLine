@@ -4,6 +4,7 @@ import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
 import { Link } from "react-router-dom";
+// import { getLocation } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -13,6 +14,14 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
+  // const { listTour } = useParams();
+  // const [list, setList] = useState(null);
+
+  // useEffect(async () => {
+  //   const List = await getListsByTour(listTour);
+  //   setList(List);
+  // }, []);
+
   return (
     <TourDiv>
       <PageHeadline>Tourname</PageHeadline>
@@ -24,16 +33,9 @@ const Tour = () => {
       </p>
       <Standort>
         <Link to="/location">
-          <li>Standort</li>
-        </Link>
-        <Link to="/location">
-          <li>Standort</li>
-        </Link>
-        <Link to="/location">
-          <li>Standort</li>
-        </Link>
-        <Link to="/location">
-          <li>Standort</li>
+          {/* {list.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))} */}
         </Link>
       </Standort>
       <img src={mappath} alt="placeholder" />
