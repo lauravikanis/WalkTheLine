@@ -8,6 +8,7 @@
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "init": "^0.1.2",
+    "mongodb": "^3.6.3",
     "nodemon": "^2.0.6",
     "postinstall": "^0.7.0",
     "prettier": "^2.2.0"
