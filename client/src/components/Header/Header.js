@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import Splashlogo from "../../assets/logo.svg";
-import Backarrow from "../../assets/back.svg";
+import BackButton from "../Button/BackButton";
 
 const AppHeader = styled.header`
-  display: flex;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
   justify-content: space-between;
 
   img {
@@ -15,8 +19,10 @@ const AppHeader = styled.header`
 
 const Header = () => (
   <AppHeader>
-    <img src={Backarrow} alt="Go back" />
-    <img src={Splashlogo} alt="Walk the Line Logo" />
+    <BackButton />
+    <Link to="/">
+      <img src={Splashlogo} alt="Walk the Line Logo" />
+    </Link>
   </AppHeader>
 );
 

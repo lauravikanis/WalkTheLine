@@ -3,11 +3,10 @@ import styled from "styled-components/macro";
 const ImageCard = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   margin: 15px auto;
-  padding: 0 1.5rem;
 
   img {
     width: 5rem;

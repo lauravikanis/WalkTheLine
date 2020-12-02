@@ -11,6 +11,7 @@ const FavouriteDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  max-width: 600px;
 `;
 
 const Favourites = () => {

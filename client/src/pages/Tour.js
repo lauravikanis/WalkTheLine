@@ -3,11 +3,13 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
+import { Link } from "react-router-dom";
 
 const TourDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  max-width: 600px;
 `;
 
 const Tour = () => {
@@ -21,12 +23,18 @@ const Tour = () => {
         incidunt.
       </p>
       <Standort>
-        <li>Standort</li>
-        <li>Standort</li>
-        <li>Standort</li>
-        <li>Standort</li>
-        <li>Standort</li>
-        <li>Standort</li>
+        <Link to="/location">
+          <li>Standort</li>
+        </Link>
+        <Link to="/location">
+          <li>Standort</li>
+        </Link>
+        <Link to="/location">
+          <li>Standort</li>
+        </Link>
+        <Link to="/location">
+          <li>Standort</li>
+        </Link>
       </Standort>
       <img src={mappath} alt="placeholder" />
     </TourDiv>
