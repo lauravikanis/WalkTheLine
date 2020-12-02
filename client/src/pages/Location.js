@@ -6,7 +6,6 @@ import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
-import { getLocation } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -20,23 +19,10 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  const { data, loading, error, doFetch } = getLocation();
-
   return (
-    <TourDiv
-      onLoad={() => {
-        doFetch();
-      }}
-    >
-      {loading && <div> Loading...</div>}
-      {error && <div>{error.message}</div>}
-      <PageHeadline>{data}</PageHeadline>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
-        beatae ducimus fuga assumenda recusandae nam, quam facere maxime
-        accusamus dolore numquam provident libero voluptas animi quas vitae
-        incidunt.
-      </p>
+    <TourDiv>
+      <PageHeadline>Location</PageHeadline>
+      <p>data.about</p>
       <Card details>
         <p>
           Name <br /> Adress, <br />

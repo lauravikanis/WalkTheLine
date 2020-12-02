@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 
 const path = require("path");
@@ -6,7 +8,7 @@ const { getLocation } = require("./lib/locations");
 const { connect } = require("./lib/database");
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 2601;
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
@@ -15,13 +17,13 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.get("/walktheline/:name", async (req, res) => {
+app.get("/api/locations/:name", async (req, res) => {
   const { name } = req.params;
   try {
     const locationValue = await getLocation(name);
 
     if (!locationValue) {
-      res.status(404).send("could not find the passwords you are looking for");
+      res.status(404).send("could not find the content you are looking for");
       return;
     }
     res.send(locationValue);
@@ -31,11 +33,6 @@ app.get("/walktheline/:name", async (req, res) => {
   }
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
-
-// Handle React routing, return all requests to React app
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client/build", "index.html"));
-// });
 
 async function run() {
   console.log("Connecting to database...");
