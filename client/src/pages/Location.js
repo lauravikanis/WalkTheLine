@@ -36,22 +36,22 @@ const Tour = () => {
         </p>
       </Card>
       <ImageCard>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/Pictures">
+        <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
       </ImageCard>

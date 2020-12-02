@@ -23,16 +23,16 @@ const Tour = () => {
         incidunt.
       </p>
       <Standort>
-        <Link to="/Location">
+        <Link to="/location">
           <li>Standort</li>
         </Link>
-        <Link to="/Location">
+        <Link to="/location">
           <li>Standort</li>
         </Link>
-        <Link to="/Location">
+        <Link to="/location">
           <li>Standort</li>
         </Link>
-        <Link to="/Location">
+        <Link to="/location">
           <li>Standort</li>
         </Link>
       </Standort>

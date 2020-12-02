@@ -25,7 +25,7 @@ const Home = () => {
           <img src={tourPath} alt="touricon" />
         </Card>
       </Link>
-      <Link to="search">
+      <Link to="/search">
         <Card primary>
           <h2>SUCHE</h2>
           <img src={searchPath} alt="searchicon" />
