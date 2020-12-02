@@ -6,6 +6,8 @@ import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
+import useAsync from "./hooks/useAsync";
+import { getLocation } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -19,9 +21,17 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
+  const { data, loading, error, doFetch } = useAsync(() => getLocation());
+
   return (
-    <TourDiv>
-      <PageHeadline>Location</PageHeadline>
+    <TourDiv
+      onLoad={() => {
+        doFetch();
+      }}
+    >
+      {loading && <div> Loading...</div>}
+      {error && <div>{error.message}</div>}
+      <PageHeadline>{data}</PageHeadline>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
         beatae ducimus fuga assumenda recusandae nam, quam facere maxime
