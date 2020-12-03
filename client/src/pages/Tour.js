@@ -20,7 +20,7 @@ const Tour = () => {
     "locationName",
     getLocationNamebyTour
   );
-
+  console.log(LocationNamebyTour);
   if (isLoading) {
     return "Loading...";
   }
@@ -40,7 +40,7 @@ const Tour = () => {
       </p>
       <Standort>
         {LocationNamebyTour.map((location) => (
-          <li key={location.id}>{location.name}</li>
+          <li key={location}>{location}</li>
         ))}
       </Standort>
       <img src={mappath} alt="placeholder" />
