@@ -39,8 +39,8 @@ const Tour = () => {
         incidunt.
       </p>
       <Standort>
-        {LocationNamebyTour.map((locationName) => (
-          <li key={locationName}>{locationName}</li>
+        {LocationNamebyTour.map((location) => (
+          <li key={location.id}>{location.name}</li>
         ))}
       </Standort>
       <img src={mappath} alt="placeholder" />

@@ -1,5 +1,5 @@
-export async function getLocationNamebyTour(tour) {
-  const response = await fetch(`/api/locations/${tour}`);
+export async function getLocationNamebyTour() {
+  const response = await fetch(`/api/locations/electronic`);
 
   if (!response.ok) {
     const message = await response.text();
