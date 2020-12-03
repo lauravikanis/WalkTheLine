@@ -31,12 +31,10 @@ const Tour = () => {
 
   return (
     <TourDiv>
-      <PageHeadline>Tourname</PageHeadline>
+      <PageHeadline>Electronica</PageHeadline>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
-        beatae ducimus fuga assumenda recusandae nam, quam facere maxime
-        accusamus dolore numquam provident libero voluptas animi quas vitae
-        incidunt.
+        Hier steht ein toller Text zum Thema elektronische Musik in Köln. Von
+        Stockhausn bis zu Sound of Cologne ist alles dabei.
       </p>
       <Standort>
         {LocationNamebyTour.map((location) => (
