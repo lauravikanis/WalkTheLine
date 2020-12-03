@@ -17,10 +17,10 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.get("/api/locations/:name", async (req, res) => {
-  const { name } = req.params;
+app.get("/api/locations/:tour", async (req, res) => {
+  const { tour } = req.params;
   try {
-    const locationValue = await getLocation(name);
+    const locationValue = await getLocation(tour);
 
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
