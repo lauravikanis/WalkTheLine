@@ -3,8 +3,10 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
-import { Link } from "react-router-dom";
-// import { getLocationNamebyTour } from "../api/locations";
+// import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+
+import { getLocationNamebyTour } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -14,13 +16,18 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  // const { listTour } = useParams();
-  // const [list, setList] = useState(null);
+  const { isLoading, error, data: LocationNamebyTour } = useQuery(
+    "locationName",
+    getLocationNamebyTour
+  );
 
-  // useEffect(async () => {
-  //   const List = await getListsByTour(listTour);
-  //   setList(List);
-  // }, []);
+  if (isLoading) {
+    return "Loading...";
+  }
+
+  if (error) {
+    return `An error has occurred: ${error.message}`;
+  }
 
   return (
     <TourDiv>
@@ -32,11 +39,9 @@ const Tour = () => {
         incidunt.
       </p>
       <Standort>
-        <Link to="/location">
-          {/* {list.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))} */}
-        </Link>
+        {LocationNamebyTour.map((locationName) => (
+          <li key={locationName}>{locationName}</li>
+        ))}
       </Standort>
       <img src={mappath} alt="placeholder" />
     </TourDiv>
