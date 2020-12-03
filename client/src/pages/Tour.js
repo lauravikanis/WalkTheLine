@@ -37,6 +37,7 @@ const Tour = () => {
         Stockhausn bis zu Sound of Cologne ist alles dabei.
       </p>
       <Standort>
+        {/* need to Link to location in next pull */}
         {LocationNamebyTour.map((location) => (
           <li key={location}>{location}</li>
         ))}
