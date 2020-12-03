@@ -13,7 +13,7 @@ const Splash = styled.div`
 const Splashscreen = () => {
   return (
     <Splash>
-      <Link to="/">
+      <Link to="/home">
         <img src={Splashlogo} alt="Walk the Line Logo" />
       </Link>
     </Splash>
