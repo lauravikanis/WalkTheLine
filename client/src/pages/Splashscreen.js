@@ -1,6 +1,7 @@
 import React from "react";
 import Splashlogo from "../assets/logo.svg";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Splash = styled.div`
   display: flex;
@@ -12,7 +13,9 @@ const Splash = styled.div`
 const Splashscreen = () => {
   return (
     <Splash>
-      <img src={Splashlogo} alt="Walk the Line Logo" />
+      <Link to="/">
+        <img src={Splashlogo} alt="Walk the Line Logo" />
+      </Link>
     </Splash>
   );
 };

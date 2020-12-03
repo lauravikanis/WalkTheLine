@@ -22,12 +22,7 @@ const Tour = () => {
   return (
     <TourDiv>
       <PageHeadline>Location</PageHeadline>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
-        beatae ducimus fuga assumenda recusandae nam, quam facere maxime
-        accusamus dolore numquam provident libero voluptas animi quas vitae
-        incidunt.
-      </p>
+      <p>data.about</p>
       <Card details>
         <p>
           Name <br /> Adress, <br />
