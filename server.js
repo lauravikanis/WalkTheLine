@@ -4,7 +4,7 @@ const express = require("express");
 
 const path = require("path");
 
-const { getLocation } = require("./lib/locations");
+const { getLocatioNamebyTour } = require("./lib/locations");
 const { connect } = require("./lib/database");
 
 const app = express();
@@ -20,7 +20,7 @@ app.use(
 app.get("/api/locations/:tour", async (req, res) => {
   const { tour } = req.params;
   try {
-    const locationValue = await getLocation(tour);
+    const locationValue = await getLocatioNamebyTour(tour);
 
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
