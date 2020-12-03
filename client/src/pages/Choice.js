@@ -25,13 +25,13 @@ const Home = () => {
         </Card>
       </Link>
       <Link to="tour">
-        <Card>
+        <Card hidden>
           <h2>JAZZ</h2>
           <img src={jazzPath} alt="searchicon" />
         </Card>
       </Link>
       <Link to="tour">
-        <Card>
+        <Card hidden>
           <h2>(INDIE-) ROCK</h2>
           <img src={indierockPath} alt="favoriteicon" />
         </Card>
