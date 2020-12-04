@@ -6,7 +6,7 @@ import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
-
+import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 
 const LocationDiv = styled.div`
@@ -21,17 +21,30 @@ const LocationDiv = styled.div`
 `;
 
 const Location = () => {
+  const { isLoading, error, data: LocationByName } = useQuery(
+    "locationName",
+    getLocationByName
+  );
+  console.log(LocationByName);
+  if (isLoading) {
+    return "Loading...";
+  }
+
+  if (error) {
+    return `An error has occurred: ${error.message}`;
+  }
+
   return (
     <LocationDiv>
-      <PageHeadline>Location</PageHeadline>
-      <p>data.about</p>
+      <PageHeadline>{LocationByName.name}</PageHeadline>
+      <p>{LocationByName.about}</p>
       <Card details>
         <p>
-          Name <br /> Adress, <br />
-          City + postcode <br />
-          OpeningHours
+          {LocationByName.openingHours}
+          <br /> {LocationByName.adress}
         </p>
       </Card>
+
       <ImageCard>
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
