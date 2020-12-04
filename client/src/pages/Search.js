@@ -28,9 +28,9 @@ const Search = () => {
         <Button active>Poi</Button>
       </ButtonDiv>
       <Standort>
-        <li>Suchergebniss</li>
-        <li>Suchergebniss</li> <li>Suchergebniss</li> <li>Suchergebniss</li>{" "}
-        <li>Suchergebniss</li>
+        <li>Suchergebnis</li>
+        <li>Suchergebnis</li> <li>Suchergebnis</li> <li>Suchergebnis</li>{" "}
+        <li>Suchergebnis</li>
       </Standort>
     </SearchDiv>
   );

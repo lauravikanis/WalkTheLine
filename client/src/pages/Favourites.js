@@ -20,31 +20,31 @@ const Favourite = () => {
       <PageHeadline>Suche</PageHeadline>
       <Standort>
         <li details>
-          Suchergebniss
+          Suchergebnis
           <FavouriteButton>
             <img src={FavoriteOffpath} alt="favorite_off" />,
           </FavouriteButton>
         </li>
         <li>
-          Suchergebniss
+          Suchergebnis
           <FavouriteButton>
             <img src={FavoriteOnpath} alt="favorite_on" />
           </FavouriteButton>
         </li>{" "}
         <li>
-          Suchergebniss
+          Suchergebnis
           <FavouriteButton>
             <img src={FavoriteOnpath} alt="favorite_on" />
           </FavouriteButton>{" "}
         </li>{" "}
         <li>
-          Suchergebniss
+          Suchergebnis
           <FavouriteButton>
             <img src={FavoriteOnpath} alt="favorite_on" />
           </FavouriteButton>{" "}
         </li>
         <li>
-          Suchergebniss
+          Suchergebnis
           <FavouriteButton>
             <img src={FavoriteOnpath} alt="favorite_on" />
           </FavouriteButton>{" "}
