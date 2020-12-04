@@ -23,7 +23,6 @@ app.get("/api/locations/:tour", async (req, res) => {
   const { tour } = req.params;
   try {
     const locationValue = await getLocationNamebyTour(tour);
-
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
@@ -40,7 +39,6 @@ app.get("/api/locations/name/:name", async (req, res) => {
   const { name } = req.params;
   try {
     const locationValue = await getLocationByName(name);
-
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
