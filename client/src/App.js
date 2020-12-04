@@ -11,6 +11,7 @@ import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
 import Header from "./components/Header/Header";
 import styled from "styled-components";
+import Map from "./pages/Map";
 
 const Main = styled.main`
   display: flex;
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path="/favourites">
             <Favourites />
+          </Route>
+          <Route path="/map">
+            <Map />
           </Route>
           <Route path="/">
             <Home />

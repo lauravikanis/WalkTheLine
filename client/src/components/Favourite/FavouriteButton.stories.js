@@ -5,7 +5,7 @@ import FavoriteOnpath from "../../assets/favorite_on.svg";
 import FavoriteOffpath from "../../assets/favorite_off.svg";
 
 export default {
-  title: "Components/Favorite",
+  title: "Components/FavoriteButton",
   component: FavouriteButton,
 };
 

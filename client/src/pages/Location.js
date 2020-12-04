@@ -50,7 +50,9 @@ const Tour = () => {
           <img src={placeholder} alt="placeholder" />
         </Link>
       </ImageCard>
-      <Placeholder />
+      <Link to="/map">
+        <Placeholder />
+      </Link>
     </TourDiv>
   );
 };
