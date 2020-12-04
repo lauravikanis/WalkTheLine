@@ -7,6 +7,8 @@ import mappath from "../assets/map.svg";
 import { useQuery } from "react-query";
 
 import { getLocationNamebyTour } from "../api/locations";
+import { Link } from "react-router-dom";
+import PictureContainer from "../components/Image/Picture";
 
 const TourDiv = styled.div`
   display: flex;
@@ -42,7 +44,11 @@ const Tour = () => {
           <li key={location}>{location}</li>
         ))}
       </Standort>
-      <img src={mappath} alt="placeholder" />
+      <Link to="/map">
+        <PictureContainer>
+          <img src={mappath} alt="placeholder" />
+        </PictureContainer>
+      </Link>
     </TourDiv>
   );
 };

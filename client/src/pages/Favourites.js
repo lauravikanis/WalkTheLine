@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Favourite from "../components/Favourite/Favourite";
+import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
@@ -14,38 +14,44 @@ const FavouriteDiv = styled.div`
   max-width: 600px;
 `;
 
-const Favourites = () => {
+const Favourite = () => {
   return (
     <FavouriteDiv>
       <PageHeadline>Suche</PageHeadline>
       <Standort>
         <li details>
-          Suchergebniss
-          <Favourite>
+          Suchergebnis
+          <FavouriteButton>
             <img src={FavoriteOffpath} alt="favorite_off" />,
-          </Favourite>
+          </FavouriteButton>
         </li>
         <li>
-          Suchergebniss
-          <Favourite>
+          Suchergebnis
+          <FavouriteButton>
             <img src={FavoriteOnpath} alt="favorite_on" />
-          </Favourite>
+          </FavouriteButton>
         </li>{" "}
         <li>
-          Suchergebniss
-          <Favourite />
+          Suchergebnis
+          <FavouriteButton>
+            <img src={FavoriteOnpath} alt="favorite_on" />
+          </FavouriteButton>{" "}
         </li>{" "}
         <li>
-          Suchergebniss
-          <Favourite />
+          Suchergebnis
+          <FavouriteButton>
+            <img src={FavoriteOnpath} alt="favorite_on" />
+          </FavouriteButton>{" "}
         </li>
         <li>
-          Suchergebniss
-          <Favourite />
+          Suchergebnis
+          <FavouriteButton>
+            <img src={FavoriteOnpath} alt="favorite_on" />
+          </FavouriteButton>{" "}
         </li>
       </Standort>
     </FavouriteDiv>
   );
 };
 
-export default Favourites;
+export default Favourite;

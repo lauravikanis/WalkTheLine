@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 const Back = styled.button`
   padding: 0 2rem;
   border: none;
+  background: none;
   img {
     height: 55px;
     padding-bottom: 0;
