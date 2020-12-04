@@ -45,7 +45,9 @@ const Tour = () => {
       </p>
       <Standort>
         {LocationNamebyTour.map((name) => (
-          <li key={name}>{name}</li>
+          <li key={name}>
+            <Link to={`/Location/${name}`}>{name}</Link>
+          </li>
         ))}
       </Standort>
       <Link to="/map">
