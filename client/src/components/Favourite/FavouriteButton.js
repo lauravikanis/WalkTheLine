@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const Favourite = styled.button`
+const FavouriteButton = styled.button`
   padding: 0;
   background: none;
   border: none;
@@ -11,7 +11,7 @@ const Favourite = styled.button`
   padding-top: 1px;
 `;
 
-Favourite.propTypes = {
+FavouriteButton.propTypes = {
   active: PropTypes.bool,
 };
-export default Favourite;
+export default FavouriteButton;
