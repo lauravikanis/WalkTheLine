@@ -7,7 +7,9 @@ import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
 
-const TourDiv = styled.div`
+import { getLocationByName } from "../api/locations";
+
+const LocationDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -18,9 +20,9 @@ const TourDiv = styled.div`
   }
 `;
 
-const Tour = () => {
+const Location = () => {
   return (
-    <TourDiv>
+    <LocationDiv>
       <PageHeadline>Location</PageHeadline>
       <p>data.about</p>
       <Card details>
@@ -40,20 +42,11 @@ const Tour = () => {
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-        <Link to="/pictures">
-          <img src={placeholder} alt="placeholder" />
-        </Link>
-        <Link to="/pictures">
-          <img src={placeholder} alt="placeholder" />
-        </Link>
-        <Link to="/pictures">
-          <img src={placeholder} alt="placeholder" />
-        </Link>
       </ImageCard>
       <Link to="/map">
         <Placeholder />
       </Link>
-    </TourDiv>
+    </LocationDiv>
   );
 };
-export default Tour;
+export default Location;
