@@ -36,7 +36,7 @@ const Location = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(LocationByName.adress);
+  console.log(LocationByName.address);
 
   return (
     <LocationDiv>
@@ -46,11 +46,11 @@ const Location = () => {
         <p>
           {LocationByName.name}
           <br />
-          {LocationByName.adress[0]}
-          {LocationByName.adress[1]}
+          {LocationByName.address[0]}
+          {LocationByName.address[1]}
           <br />
-          {LocationByName.adress[2]}
-          {LocationByName.adress[3]}
+          {LocationByName.address[2]}
+          {LocationByName.address[3]}
           <br /> {LocationByName.openingHours}
         </p>
       </DetailCard>
