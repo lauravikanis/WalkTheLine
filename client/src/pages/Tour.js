@@ -15,6 +15,11 @@ const TourDiv = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
+
+  p {
+    align-self: center;
+  }
 `;
 
 const Tour = () => {
@@ -39,9 +44,8 @@ const Tour = () => {
         Stockhausn bis zu Sound of Cologne ist alles dabei.
       </p>
       <Standort>
-        {/* need to Link to location in next pull */}
-        {LocationNamebyTour.map((location) => (
-          <li key={location}>{location}</li>
+        {LocationNamebyTour.map((name) => (
+          <li key={name}>{name}</li>
         ))}
       </Standort>
       <Link to="/map">

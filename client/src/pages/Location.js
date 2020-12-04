@@ -8,15 +8,18 @@ import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
+import DetailCard from "../components/LocationDetails";
 
 const LocationDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
 
   p {
-    width: 500px;
+    align-self: center;
+    font-size: 16p;
   }
 `;
 
@@ -25,7 +28,7 @@ const Location = () => {
     "locationName",
     getLocationByName
   );
-  console.log(LocationByName);
+  // console.log(LocationByName);
   if (isLoading) {
     return "Loading...";
   }
@@ -33,18 +36,25 @@ const Location = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
+  console.log(LocationByName.adress);
 
   return (
     <LocationDiv>
       <PageHeadline>{LocationByName.name}</PageHeadline>
       <p>{LocationByName.about}</p>
-      <Card details>
+      <DetailCard>
         <p>
-          {LocationByName.openingHours}
-          <br /> {LocationByName.adress}
+          {LocationByName.name}
+          <br />
+          {LocationByName.adress[0]}
+          {LocationByName.adress[1]}
+          <br />
+          {LocationByName.adress[2]}
+          {LocationByName.adress[3]}
+          <br />
+          <br /> {LocationByName.openingHours}
         </p>
-      </Card>
-
+      </DetailCard>
       <ImageCard>
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
