@@ -11,8 +11,8 @@ export async function getLocationNamebyTour() {
   return LocationNameList;
 }
 
-export async function getLocationByName() {
-  const response = await fetch(`/api/locations/name/Kompakt`);
+export async function getLocationByName(name) {
+  const response = await fetch(`/api/locations/name/${name}`);
 
   if (!response.ok) {
     const message = await response.text();

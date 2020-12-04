@@ -26,7 +26,7 @@ const LocationDiv = styled.div`
 
 const Location = () => {
   const { isLoading, error, data: LocationByName } = useQuery(
-    "locationName",
+    "Kompakt",
     getLocationByName
   );
   // console.log(LocationByName);
