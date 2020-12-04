@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import placeholder from "../assets/placeholder.jpeg";
-import Card from "../components/Card/Card";
 import ImageCard from "../components/Card/ImageCard";
 import Placeholder from "../components/Placeholder/Placeholder";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
-import DetailCard from "../components/LocationDetails";
+import DetailCard from "../components/Card/LocationDetails";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -43,16 +42,16 @@ const Location = () => {
       <PageHeadline>{LocationByName.name}</PageHeadline>
       <p>{LocationByName.about}</p>
       <DetailCard>
+        <p>{LocationByName.name}</p>
         <p>
-          {LocationByName.name}
-          <br />
-          {LocationByName.address[0]}
+          {LocationByName.address[0]}&nbsp;
           {LocationByName.address[1]}
-          <br />
-          {LocationByName.address[2]}
-          {LocationByName.address[3]}
-          <br /> {LocationByName.openingHours}
         </p>
+        <p>
+          {LocationByName.address[2]}&nbsp;
+          {LocationByName.address[3]}
+        </p>
+        <p> {LocationByName.openingHours}</p>
       </DetailCard>
       <ImageCard>
         <Link to="/pictures">
