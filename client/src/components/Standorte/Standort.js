@@ -7,6 +7,10 @@ const Standort = styled.ol`
   justify-content: center;
   padding: 0;
   margin: 15px;
+
+  a {
+    color: var(--secondary-color);
+  }
 `;
 Standort.propTypes = {
   primary: PropTypes.bool,
