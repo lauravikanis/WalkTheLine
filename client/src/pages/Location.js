@@ -5,7 +5,7 @@ import placeholder from "../assets/placeholder.jpeg";
 import ImageCard from "../components/Card/ImageCard";
 import mappath from "../assets/map.svg";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
@@ -25,11 +25,11 @@ const LocationDiv = styled.div`
 `;
 
 const Location = () => {
+  const { name } = useParams();
   const { isLoading, error, data: LocationByName } = useQuery(
-    "Kompakt",
+    name,
     getLocationByName
   );
-  // console.log(LocationByName);
   if (isLoading) {
     return "Loading...";
   }
@@ -37,7 +37,6 @@ const Location = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(LocationByName.address);
 
   return (
     <LocationDiv>
