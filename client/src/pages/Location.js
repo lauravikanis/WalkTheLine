@@ -51,7 +51,6 @@ const Location = () => {
           <br />
           {LocationByName.adress[2]}
           {LocationByName.adress[3]}
-          <br />
           <br /> {LocationByName.openingHours}
         </p>
       </DetailCard>

@@ -37,7 +37,7 @@ Location.args = {
   count: false,
   children: (
     <p>
-      Name <br /> Adress, <br />
+      Name <br /> Address, <br />
       City + postcode <br />
       OpeningHours
     </p>
