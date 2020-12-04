@@ -3,8 +3,10 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
-import { Link } from "react-router-dom";
-// import { getLocationNamebyTour } from "../api/locations";
+// import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+
+import { getLocationNamebyTour } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -14,29 +16,31 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  // const { listTour } = useParams();
-  // const [list, setList] = useState(null);
+  const { isLoading, error, data: LocationNamebyTour } = useQuery(
+    "locationName",
+    getLocationNamebyTour
+  );
+  console.log(LocationNamebyTour);
+  if (isLoading) {
+    return "Loading...";
+  }
 
-  // useEffect(async () => {
-  //   const List = await getListsByTour(listTour);
-  //   setList(List);
-  // }, []);
+  if (error) {
+    return `An error has occurred: ${error.message}`;
+  }
 
   return (
     <TourDiv>
-      <PageHeadline>Tourname</PageHeadline>
+      <PageHeadline>Electronica</PageHeadline>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio a
-        beatae ducimus fuga assumenda recusandae nam, quam facere maxime
-        accusamus dolore numquam provident libero voluptas animi quas vitae
-        incidunt.
+        Hier steht ein toller Text zum Thema elektronische Musik in Köln. Von
+        Stockhausn bis zu Sound of Cologne ist alles dabei.
       </p>
       <Standort>
-        <Link to="/location">
-          {/* {list.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))} */}
-        </Link>
+        {/* need to Link to location in next pull */}
+        {LocationNamebyTour.map((location) => (
+          <li key={location}>{location}</li>
+        ))}
       </Standort>
       <img src={mappath} alt="placeholder" />
     </TourDiv>

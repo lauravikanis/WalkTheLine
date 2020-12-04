@@ -43,8 +43,8 @@ h2 {
   font-size: 1.5rem;
   color: var(--primary-color);
 }
-li {
-  display:flex;
+li { 
+  list-style-position:inside;
   justify-content: ${(props) => (props.details ? "space-between" : "center")};
   font-size: 1.5rem;
   color: var(--secondary-color);

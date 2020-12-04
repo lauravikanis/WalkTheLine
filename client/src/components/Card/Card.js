@@ -11,6 +11,7 @@ const Card = styled.div`
   height: 100px;
   margin: 15px auto;
   padding: 0 2.5rem;
+  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
 
   h2 {
     color: var(--secondary-color);
