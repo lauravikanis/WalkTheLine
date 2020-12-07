@@ -35,17 +35,17 @@ const Tour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(TourDetails);
+  console.log(TourDetails.locationNames);
   return (
     <TourDiv>
       <PageHeadline>Electronic</PageHeadline>
       <p>{TourDetails.description}</p>
       <Standort>
-        {/* {TourDetails.map((locationNames) => (
+        {TourDetails.locationNames.map((locationNames) => (
           <li key={locationNames}>
             <Link to={`/Location/${locationNames}`}>{locationNames}</Link>
           </li>
-        ))} */}
+        ))}
       </Standort>
       <Link to="/map">
         <PictureContainer>
