@@ -11,7 +11,7 @@ const DetailCard = styled.div`
   width: 100%;
   min-height: 50px;
   margin: 15px auto;
-  padding: 0 2.5rem;
+  padding: 0.5rem 2.5rem;
   visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
 
   p {
@@ -19,7 +19,7 @@ const DetailCard = styled.div`
     text-align: center;
     align-self: center;
     font-size: 16p;
-    margin: 5px auto;
+    margin: 3px auto;
   }
 `;
 DetailCard.propTypes = {

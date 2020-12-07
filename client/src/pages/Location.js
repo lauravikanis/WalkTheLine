@@ -7,7 +7,7 @@ import mappath from "../assets/map.svg";
 
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import { getLocationByName } from "../api/locations";
+import { getLocationByName, getLocationNamebyTour } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import PictureContainer from "../components/Image/Picture";
 
@@ -43,15 +43,9 @@ const Location = () => {
       <PageHeadline>{LocationByName.name}</PageHeadline>
       <p>{LocationByName.about}</p>
       <DetailCard>
-        <p>{LocationByName.name}</p>
-        <p>
-          {LocationByName.address[0]}&nbsp;
-          {LocationByName.address[1]}
-        </p>
-        <p>
-          {LocationByName.address[2]}&nbsp;
-          {LocationByName.address[3]}
-        </p>
+        {LocationByName.address.map((name) => (
+          <p key={name}> {name} </p>
+        ))}
         <p> {LocationByName.openingHours}</p>
       </DetailCard>
       <ImageCard>

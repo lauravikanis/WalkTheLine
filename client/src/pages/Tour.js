@@ -40,8 +40,10 @@ const Tour = () => {
     <TourDiv>
       <PageHeadline>Electronica</PageHeadline>
       <p>
-        Hier steht ein toller Text zum Thema elektronische Musik in Köln. Von
-        Stockhausn bis zu Sound of Cologne ist alles dabei.
+        Köln und elektronische Musik passt einfach zusammen – schließlich sind
+        wir weltweit für den &quot; Sound of Cologne&quot; bekannt. Aber wohin
+        gehen, wenn man guten Electro hören oder shoppen möchte? Wo gibt6&apos;s
+        geile Partys? Wohin kommen die besten DJs?
       </p>
       <Standort>
         {LocationNamebyTour.map((name) => (
