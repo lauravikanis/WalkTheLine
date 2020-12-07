@@ -7,7 +7,7 @@ import mappath from "../assets/map.svg";
 
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import { getLocationByName, getLocationNamebyTour } from "../api/locations";
+import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import PictureContainer from "../components/Image/Picture";
 
