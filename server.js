@@ -1,11 +1,9 @@
 require("dotenv").config();
 
 const express = require("express");
-
 const path = require("path");
 
-const { getLocationNamebyTour } = require("./lib/locations");
-const { getLocationByName } = require("./lib/locations");
+const { getLocationByName, getTourDetails } = require("./lib/locations");
 
 const { connect } = require("./lib/database");
 
@@ -19,10 +17,10 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.get("/api/locations/:tour", async (req, res) => {
-  const { tour } = req.params;
+app.get("/api/locations/name/:name", async (req, res) => {
+  const { name } = req.params;
   try {
-    const locationValue = await getLocationNamebyTour(tour);
+    const locationValue = await getLocationByName(name);
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
@@ -35,15 +33,15 @@ app.get("/api/locations/:tour", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.get("/api/locations/name/:name", async (req, res) => {
-  const { name } = req.params;
+app.get("/api/tour/:tour", async (req, res) => {
+  const { tour } = req.params;
   try {
-    const locationValue = await getLocationByName(name);
-    if (!locationValue) {
+    const tourValue = await getTourDetails(tour);
+    if (!tourValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
     }
-    res.send(locationValue);
+    res.send(tourValue);
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server error");

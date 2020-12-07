@@ -37,7 +37,7 @@ const Location = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-
+  console.log(LocationByName);
   return (
     <LocationDiv>
       <PageHeadline>{LocationByName.name}</PageHeadline>
