@@ -35,7 +35,7 @@ function App() {
           <Route path="/tour">
             <Tour />
           </Route>
-          <Route path="/location">
+          <Route path="/location/:name">
             <Location />
           </Route>
           <Route path="/search">

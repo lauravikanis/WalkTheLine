@@ -15,6 +15,11 @@ const TourDiv = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
+
+  p {
+    align-self: center;
+  }
 `;
 
 const Tour = () => {
@@ -35,13 +40,16 @@ const Tour = () => {
     <TourDiv>
       <PageHeadline>Electronica</PageHeadline>
       <p>
-        Hier steht ein toller Text zum Thema elektronische Musik in Köln. Von
-        Stockhausn bis zu Sound of Cologne ist alles dabei.
+        Köln und elektronische Musik passt einfach zusammen – schließlich sind
+        wir weltweit für den &quot; Sound of Cologne&quot; bekannt. Aber wohin
+        gehen, wenn man guten Electro hören oder shoppen möchte? Wo gibt6&apos;s
+        geile Partys? Wohin kommen die besten DJs?
       </p>
       <Standort>
-        {/* need to Link to location in next pull */}
-        {LocationNamebyTour.map((location) => (
-          <li key={location}>{location}</li>
+        {LocationNamebyTour.map((name) => (
+          <li key={name}>
+            <Link to={`/Location/${name}`}>{name}</Link>
+          </li>
         ))}
       </Standort>
       <Link to="/map">

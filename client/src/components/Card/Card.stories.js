@@ -36,10 +36,11 @@ export const Location = Template.bind({});
 Location.args = {
   count: false,
   children: (
-    <p>
-      Name <br /> Adress, <br />
-      City + postcode <br />
-      OpeningHours
-    </p>
+    <>
+      <p>LocationName</p>
+      <p>Street Number</p>
+      <p>Postcode City</p>
+      <p> OpeningHours</p>
+    </>
   ),
 };
