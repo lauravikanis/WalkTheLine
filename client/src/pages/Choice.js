@@ -18,19 +18,19 @@ const Home = () => {
   return (
     <ChoiceDiv>
       <PageHeadline>CHOICE</PageHeadline>
-      <Link to="/tour">
+      <Link to="/tour/electronic">
         <Card>
           <h2>ELECTRONICA</h2>
           <img src={electronicaPath} alt="touricon" />
         </Card>
       </Link>
-      <Link to="tour">
+      <Link to="tour/jazz">
         <Card hidden>
           <h2>JAZZ</h2>
           <img src={jazzPath} alt="searchicon" />
         </Card>
       </Link>
-      <Link to="tour">
+      <Link to="tour/indie">
         <Card hidden>
           <h2>(INDIE-) ROCK</h2>
           <img src={indierockPath} alt="favoriteicon" />

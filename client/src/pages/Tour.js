@@ -38,7 +38,7 @@ const Tour = () => {
   console.log(TourDetails.locationNames);
   return (
     <TourDiv>
-      <PageHeadline>Electronic</PageHeadline>
+      <PageHeadline>{TourDetails.name}</PageHeadline>
       <p>{TourDetails.description}</p>
       <Standort>
         {TourDetails.locationNames.map((locationNames) => (
