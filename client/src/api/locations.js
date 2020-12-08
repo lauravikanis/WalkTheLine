@@ -1,5 +1,5 @@
 export async function getLocationByName(name) {
-  const response = await fetch(`/api/locations/name/${name}`);
+  const response = await fetch(`/api/locations?name=${name}`);
   if (!response.ok) {
     const message = await response.text();
     throw new Error(message);

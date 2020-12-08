@@ -17,8 +17,8 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.get("/api/locations/name/:name", async (req, res) => {
-  const { name } = req.params;
+app.get("/api/locations", async (req, res) => {
+  const { name } = req.query;
   try {
     const locationValue = await getLocationByName(name);
     if (!locationValue) {
