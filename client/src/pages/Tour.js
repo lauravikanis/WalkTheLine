@@ -3,12 +3,11 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
-// import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
-import { getLocationNamebyTour } from "../api/locations";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PictureContainer from "../components/Image/Picture";
+import { getTourDetails } from "../api/locations";
 
 const TourDiv = styled.div`
   display: flex;
@@ -23,32 +22,30 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  const { isLoading, error, data: LocationNamebyTour } = useQuery(
-    "locationName",
-    getLocationNamebyTour
+  // const { name } = useParams();
+  let location = useLocation();
+  console.log(location.pathname);
+
+  const { isLoading, error, data: TourDetails } = useQuery(
+    location.pathname,
+    getTourDetails
   );
-  console.log(LocationNamebyTour);
+
   if (isLoading) {
     return "Loading...";
   }
-
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-
+  console.log(TourDetails.locationNames);
   return (
     <TourDiv>
-      <PageHeadline>Electronica</PageHeadline>
-      <p>
-        Köln und elektronische Musik passt einfach zusammen – schließlich sind
-        wir weltweit für den &quot; Sound of Cologne&quot; bekannt. Aber wohin
-        gehen, wenn man guten Electro hören oder shoppen möchte? Wo gibt6&apos;s
-        geile Partys? Wohin kommen die besten DJs?
-      </p>
+      <PageHeadline>{TourDetails.name}</PageHeadline>
+      <p>{TourDetails.description}</p>
       <Standort>
-        {LocationNamebyTour.map((name) => (
-          <li key={name}>
-            <Link to={`/Location/${name}`}>{name}</Link>
+        {TourDetails.locationNames.map((locationNames) => (
+          <li key={locationNames}>
+            <Link to={`/Location/${locationNames}`}>{locationNames}</Link>
           </li>
         ))}
       </Standort>
