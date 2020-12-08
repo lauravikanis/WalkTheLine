@@ -5,7 +5,7 @@ import Standort from "../components/Standorte/Standort";
 import mappath from "../assets/map.svg";
 import { useQuery } from "react-query";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PictureContainer from "../components/Image/Picture";
 import { getTourDetails } from "../api/locations";
 
@@ -22,10 +22,12 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  const { tourName } = useParams();
+  // const { name } = useParams();
+  let location = useLocation();
+  console.log(location.pathname);
 
   const { isLoading, error, data: TourDetails } = useQuery(
-    tourName,
+    location.pathname,
     getTourDetails
   );
 

@@ -24,14 +24,14 @@ const Home = () => {
           <img src={electronicaPath} alt="touricon" />
         </Card>
       </Link>
-      <Link to="tour/jazz">
-        <Card hidden>
+      <Link to="/tour/jazz">
+        <Card>
           <h2>JAZZ</h2>
           <img src={jazzPath} alt="searchicon" />
         </Card>
       </Link>
-      <Link to="tour/indie">
-        <Card hidden>
+      <Link to="/tour/indie">
+        <Card>
           <h2>(INDIE-) ROCK</h2>
           <img src={indierockPath} alt="favoriteicon" />
         </Card>

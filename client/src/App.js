@@ -32,7 +32,7 @@ function App() {
           <Route path="/choice">
             <Choice />
           </Route>
-          <Route path="/tour/:tourname">
+          <Route exact path="/tour/:tourname">
             <Tour />
           </Route>
           <Route path="/location/:name">
