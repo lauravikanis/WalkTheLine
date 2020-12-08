@@ -1,4 +1,5 @@
 import React from "react";
+
 import styled from "styled-components/macro";
 import { getLocationByName } from "../api/locations";
 
@@ -19,21 +20,39 @@ const SearchDiv = styled.div`
 //   display: flex;
 //   flex-direction: row;
 // `;
-console.log();
 
-const Search = (searchData) => {
+const Search = () => {
+  // const { searchValue } = useParams();
+
+  // const { isLoading, error, data: TourDetails } = useQuery(
+  //   { searchValue },
+  //   getLocationByName
+  // );
+
+  // if (isLoading) {
+  //   return "Loading...";
+  // }
+  // if (error) {
+  //   return `An error has occurred: ${error.message}`;
+  // }
+  console.log(getLocationByName());
+
   return (
     <SearchDiv>
       <PageHeadline>Suche</PageHeadline>
-      <Searchbar onSubmit={getLocationByName(searchData)}>
+      <Searchbar>
         <Input
-          value={searchData}
-          type="text"
-          placeholder="🔍  Was willst du suchen?"
+        // value={searchValue}
+        // type="text"
+        // placeholder="🔍  Was willst du suchen?"
         />
       </Searchbar>
       <Standort>
-        <li>Blabla</li>
+        {/* {TourDetails.searchValue.map((searchValue) => (
+          <li key={searchValue}>
+            <Link to={`/Location/${searchValue}`}>{searchValue}</Link>
+          </li>
+        ))} */}
       </Standort>
     </SearchDiv>
   );
