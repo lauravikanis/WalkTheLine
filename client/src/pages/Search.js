@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import Button from "../components/Button/Button";
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
+import Searchbar from "../components/SearchBar/Searchbar";
 import Standort from "../components/Standorte/Standort";
 
 const SearchDiv = styled.div`
@@ -21,7 +22,7 @@ const Search = () => {
   return (
     <SearchDiv>
       <PageHeadline>Suche</PageHeadline>
-      <Input placeholder="🕵️‍♀️ Was willst du suchen?" />
+      <Searchbar />
       <ButtonDiv>
         <Button active>Shop</Button>
         <Button active>Venue</Button>
