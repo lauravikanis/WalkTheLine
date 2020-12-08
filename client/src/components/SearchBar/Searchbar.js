@@ -1,28 +1,16 @@
 import styled from "styled-components";
-import Input from "../Input/Input";
 import PropTypes from "prop-types";
 
-const Form = styled.form`
+const Searchbar = styled.form`
   display: flex;
   justify-content: center;
 `;
 
-const Searchbar = ({ value, onSubmit, onChange }) => {
-  return (
-    <Form onSubmit={onSubmit}>
-      <Input
-        value={value}
-        onChange={onChange}
-        type="text"
-        placeholder="🕵️‍♀️ Was willst du suchen?"
-      />
-    </Form>
-  );
-};
 export default Searchbar;
 
 Searchbar.propTypes = {
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.string,
+  onChange: PropTypes.func,
 };

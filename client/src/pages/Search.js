@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Button from "../components/Button/Button";
+import { getLocationByName } from "../api/locations";
+
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
+
 import Searchbar from "../components/SearchBar/Searchbar";
 import Standort from "../components/Standorte/Standort";
 
@@ -13,25 +15,25 @@ const SearchDiv = styled.div`
   max-width: 600px;
 `;
 
-const ButtonDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+// const ButtonDiv = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
+console.log();
 
-const Search = () => {
+const Search = (searchData) => {
   return (
     <SearchDiv>
       <PageHeadline>Suche</PageHeadline>
-      <Searchbar />
-      <ButtonDiv>
-        <Button active>Shop</Button>
-        <Button active>Venue</Button>
-        <Button active>Poi</Button>
-      </ButtonDiv>
+      <Searchbar onSubmit={getLocationByName(searchData)}>
+        <Input
+          value={searchData}
+          type="text"
+          placeholder="🔍  Was willst du suchen?"
+        />
+      </Searchbar>
       <Standort>
-        <li>Suchergebnis</li>
-        <li>Suchergebnis</li> <li>Suchergebnis</li> <li>Suchergebnis</li>{" "}
-        <li>Suchergebnis</li>
+        <li>Blabla</li>
       </Standort>
     </SearchDiv>
   );
