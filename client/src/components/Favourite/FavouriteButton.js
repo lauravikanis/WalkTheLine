@@ -19,7 +19,6 @@ const FavouriteIcon = ({ onClick, isFavorite }) => {
   return (
     <FavouriteButton onClick={onClick} favorite={isFavorite}>
       {isFavorite ? <FavOn /> : <FavOff />}
-      {/* <img src={favouritepath} alt="favourite" /> */}
     </FavouriteButton>
   );
 };
