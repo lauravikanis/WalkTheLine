@@ -1,10 +1,10 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { ReactComponent as FavIconActive } from "../../assets/favorite_on.svg";
-import { ReactComponent as FavIconInactive } from "../../assets/favorite_on.svg";
 
-const Favorite = styled.button`
+import { ReactComponent as FavOn } from "../../assets/favorite_on.svg";
+import { ReactComponent as FavOff } from "../../assets/favorite_off.svg";
+
+const FavouriteButton = styled.button`
   padding: 0;
   background: none;
   border: none;
@@ -14,21 +14,19 @@ const Favorite = styled.button`
   padding-top: 1px;
 `;
 
-const FavoriteButton = () => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const handleClick = () => {
-    setIsFavorite(!isFavorite);
-  };
+const FavouriteIcon = ({ onClick, isFavorite }) => {
+  console.log(isFavorite);
   return (
-    <Favorite onClick={handleClick}>
-      {isFavorite ? <FavIconActive /> : <FavIconInactive />}
-    </Favorite>
+    <FavouriteButton onClick={onClick} favorite={isFavorite}>
+      {isFavorite ? <FavOn /> : <FavOff />}
+      {/* <img src={favouritepath} alt="favourite" /> */}
+    </FavouriteButton>
   );
 };
 
-export default FavoriteButton;
+export default FavouriteIcon;
 
-FavoriteButton.propTypes = {
-  onClick: PropTypes.func,
+FavouriteIcon.propTypes = {
   isFavorite: PropTypes.bool,
+  onClick: PropTypes.func,
 };

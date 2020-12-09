@@ -4,8 +4,6 @@ import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
-import FavoriteOnpath from "../assets/favorite_on.svg";
-import FavoriteOffpath from "../assets/favorite_off.svg";
 
 const FavouriteDiv = styled.div`
   display: flex;
@@ -20,34 +18,24 @@ const Favourite = () => {
       <PageHeadline>Suche</PageHeadline>
       <Standort>
         <li details>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOffpath} alt="favorite_off" />,
-          </FavouriteButton>
+          Favorite
+          <FavouriteButton />
         </li>
         <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>
-        </li>{" "}
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
-        </li>{" "}
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
+          Favorite
+          <FavouriteButton />
         </li>
         <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
+          Favorite
+          <FavouriteButton />
+        </li>
+        <li>
+          Favorite
+          <FavouriteButton />
+        </li>
+        <li>
+          Favorite
+          <FavouriteButton />
         </li>
       </Standort>
     </FavouriteDiv>
