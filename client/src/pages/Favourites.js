@@ -1,9 +1,11 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-import FavouriteButton from "../components/Favourite/FavouriteButton";
+import FavouriteIcon from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
+import useFavorites from "../hooks/useFavorites";
 
 const FavouriteDiv = styled.div`
   display: flex;
@@ -13,30 +15,24 @@ const FavouriteDiv = styled.div`
 `;
 
 const Favourite = () => {
+  const { toggleFavorite, favorites } = useFavorites("favorites", []);
+
+  const storagefavorites = JSON.parse(localStorage.getItem("favorites"));
+  console.log(favorites);
+
   return (
     <FavouriteDiv>
-      <PageHeadline>Suche</PageHeadline>
+      <PageHeadline>Favoriten</PageHeadline>
       <Standort>
-        <li details>
-          Favorite
-          <FavouriteButton />
-        </li>
-        <li>
-          Favorite
-          <FavouriteButton />
-        </li>
-        <li>
-          Favorite
-          <FavouriteButton />
-        </li>
-        <li>
-          Favorite
-          <FavouriteButton />
-        </li>
-        <li>
-          Favorite
-          <FavouriteButton />
-        </li>
+        {storagefavorites.map((name) => (
+          <li key={name}>
+            {name}
+            <FavouriteIcon
+              onClick={() => toggleFavorite(name)}
+              isFavorite={favorites.includes(name)}
+            />
+          </li>
+        ))}
       </Standort>
     </FavouriteDiv>
   );

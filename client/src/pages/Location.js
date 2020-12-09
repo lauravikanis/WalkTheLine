@@ -41,10 +41,6 @@ const Location = () => {
     return `An error has occurred: ${error.message}`;
   }
 
-  // const handleClick = () => {
-  //   (toggleFavorite(name);
-  // };
-
   console.log(LocationByName.name);
   return (
     <LocationDiv>
