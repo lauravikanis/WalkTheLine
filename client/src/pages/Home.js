@@ -11,7 +11,6 @@ const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 100%;
   max-width: 600px;
 `;
 

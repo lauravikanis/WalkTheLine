@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import styled from "styled-components/macro";
 import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
-import FavoriteOnpath from "../assets/favorite_on.svg";
-import FavoriteOffpath from "../assets/favorite_off.svg";
+import useFavorites from "../hooks/useFavorites";
 
 const FavouriteDiv = styled.div`
   display: flex;
@@ -15,40 +16,24 @@ const FavouriteDiv = styled.div`
 `;
 
 const Favourite = () => {
+  const { toggleFavorite, favorites } = useFavorites("favorites", []);
+
+  const storagefavorites = JSON.parse(localStorage.getItem("favorites"));
+  console.log(favorites);
+
   return (
     <FavouriteDiv>
-      <PageHeadline>Suche</PageHeadline>
+      <PageHeadline>Favoriten</PageHeadline>
       <Standort>
-        <li details>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOffpath} alt="favorite_off" />,
-          </FavouriteButton>
-        </li>
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>
-        </li>{" "}
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
-        </li>{" "}
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
-        </li>
-        <li>
-          Suchergebnis
-          <FavouriteButton>
-            <img src={FavoriteOnpath} alt="favorite_on" />
-          </FavouriteButton>{" "}
-        </li>
+        {storagefavorites.map((name) => (
+          <li key={name}>
+            <Link to={`/location/${name}`}>{name}</Link>
+            <FavouriteButton
+              onClick={() => toggleFavorite(name)}
+              isFavorite={favorites.includes(name)}
+            />
+          </li>
+        ))}
       </Standort>
     </FavouriteDiv>
   );

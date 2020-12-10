@@ -22,9 +22,7 @@ const TourDiv = styled.div`
 `;
 
 const Tour = () => {
-  // const { name } = useParams();
   let location = useLocation();
-  console.log(location.pathname);
 
   const { isLoading, error, data: TourDetails } = useQuery(
     location.pathname,
@@ -37,7 +35,6 @@ const Tour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(TourDetails.locationNames);
   return (
     <TourDiv>
       <PageHeadline>{TourDetails.name}</PageHeadline>
@@ -45,7 +42,7 @@ const Tour = () => {
       <Standort>
         {TourDetails.locationNames.map((locationNames) => (
           <li key={locationNames}>
-            <Link to={`/Location/${locationNames}`}>{locationNames}</Link>
+            <Link to={`/location/${locationNames}`}>{locationNames}</Link>
           </li>
         ))}
       </Standort>

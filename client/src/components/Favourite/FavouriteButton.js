@@ -1,7 +1,10 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const FavouriteButton = styled.button`
+import { ReactComponent as FavOn } from "../../assets/favorite_on.svg";
+import { ReactComponent as FavOff } from "../../assets/favorite_off.svg";
+
+const FavouriteIcon = styled.button`
   padding: 0;
   background: none;
   border: none;
@@ -11,7 +14,18 @@ const FavouriteButton = styled.button`
   padding-top: 1px;
 `;
 
-FavouriteButton.propTypes = {
-  active: PropTypes.bool,
+const FavouriteButton = ({ onClick, isFavorite }) => {
+  console.log(isFavorite);
+  return (
+    <FavouriteIcon onClick={onClick} favorite={isFavorite}>
+      {isFavorite ? <FavOn /> : <FavOff />}
+    </FavouriteIcon>
+  );
 };
+
 export default FavouriteButton;
+
+FavouriteButton.propTypes = {
+  isFavorite: PropTypes.bool,
+  onClick: PropTypes.func,
+};
