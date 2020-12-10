@@ -42,7 +42,7 @@ const Tour = () => {
       <Standort>
         {TourDetails.locationNames.map((locationNames) => (
           <li key={locationNames}>
-            <Link to={`/Location/${locationNames}`}>{locationNames}</Link>
+            <Link to={`/location/${locationNames}`}>{locationNames}</Link>
           </li>
         ))}
       </Standort>

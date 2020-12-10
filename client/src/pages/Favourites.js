@@ -27,7 +27,7 @@ const Favourite = () => {
       <Standort>
         {storagefavorites.map((name) => (
           <li key={name}>
-            <Link to={`/Location/${name}`}>{name}</Link>
+            <Link to={`/location/${name}`}>{name}</Link>
             <FavouriteButton
               onClick={() => toggleFavorite(name)}
               isFavorite={favorites.includes(name)}
