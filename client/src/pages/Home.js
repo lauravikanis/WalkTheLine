@@ -39,7 +39,6 @@ const Home = () => {
           <img src={favoritePath} alt="favoriteicon" />
         </Card>
       </Link>
-      <LeafletMap />
     </HomeDiv>
   );
 };

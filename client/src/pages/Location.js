@@ -3,15 +3,14 @@ import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import placeholder from "../assets/placeholder.jpeg";
 import ImageCard from "../components/Card/ImageCard";
-import mappath from "../assets/map.svg";
 
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
-import PictureContainer from "../components/Image/Picture";
 import useFavorites from "../hooks/useFavorites";
 import FavouriteButton from "../components/Favourite/FavouriteButton";
+import LeafletMap from "../components/Map/LeafletMap";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -69,11 +68,7 @@ const Location = () => {
           <img src={placeholder} alt="placeholder" />
         </Link>
       </ImageCard>
-      <Link to="/map">
-        <PictureContainer>
-          <img src={mappath} alt="placeholder" />
-        </PictureContainer>
-      </Link>
+      <LeafletMap />
     </LocationDiv>
   );
 };
