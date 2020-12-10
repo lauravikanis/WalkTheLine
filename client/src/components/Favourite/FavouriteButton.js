@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { ReactComponent as FavOn } from "../../assets/favorite_on.svg";
 import { ReactComponent as FavOff } from "../../assets/favorite_off.svg";
 
-const FavouriteButton = styled.button`
+const FavouriteIcon = styled.button`
   padding: 0;
   background: none;
   border: none;
@@ -14,18 +14,18 @@ const FavouriteButton = styled.button`
   padding-top: 1px;
 `;
 
-const FavouriteIcon = ({ onClick, isFavorite }) => {
+const FavouriteButton = ({ onClick, isFavorite }) => {
   console.log(isFavorite);
   return (
-    <FavouriteButton onClick={onClick} favorite={isFavorite}>
+    <FavouriteIcon onClick={onClick} favorite={isFavorite}>
       {isFavorite ? <FavOn /> : <FavOff />}
-    </FavouriteButton>
+    </FavouriteIcon>
   );
 };
 
-export default FavouriteIcon;
+export default FavouriteButton;
 
-FavouriteIcon.propTypes = {
+FavouriteButton.propTypes = {
   isFavorite: PropTypes.bool,
   onClick: PropTypes.func,
 };

@@ -11,7 +11,7 @@ import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import PictureContainer from "../components/Image/Picture";
 import useFavorites from "../hooks/useFavorites";
-import FavouriteIcon from "../components/Favourite/FavouriteButton";
+import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const LocationDiv = styled.div`
 const Location = () => {
   const { name } = useParams();
   const { toggleFavorite, favorites } = useFavorites("favorites", []);
-  const { isLoading, error, data: LocationByName } = useQuery(
+  const { isLoading, error, data: locationByName } = useQuery(
     name,
     getLocationByName
   );
@@ -41,22 +41,22 @@ const Location = () => {
     return `An error has occurred: ${error.message}`;
   }
 
-  console.log(LocationByName.name);
+  console.log(locationByName.name);
   return (
     <LocationDiv>
       <PageHeadline>
-        {LocationByName.name}
-        <FavouriteIcon
-          onClick={() => toggleFavorite(LocationByName.name)}
-          isFavorite={favorites.includes(LocationByName.name)}
+        {locationByName.name}
+        <FavouriteButton
+          onClick={() => toggleFavorite(locationByName.name)}
+          isFavorite={favorites.includes(locationByName.name)}
         />
       </PageHeadline>
-      <p>{LocationByName.about}</p>
+      <p>{locationByName.about}</p>
       <DetailCard>
-        {LocationByName.address.map((name) => (
+        {locationByName.address.map((name) => (
           <p key={name}> {name} </p>
         ))}
-        <p> {LocationByName.openingHours}</p>
+        <p> {locationByName.openingHours}</p>
       </DetailCard>
       <ImageCard>
         <Link to="/pictures">

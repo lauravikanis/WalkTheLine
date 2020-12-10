@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
-import FavouriteIcon from "../components/Favourite/FavouriteButton";
+import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
@@ -28,7 +28,7 @@ const Favourite = () => {
         {storagefavorites.map((name) => (
           <li key={name}>
             <Link to={`/Location/${name}`}>{name}</Link>
-            <FavouriteIcon
+            <FavouriteButton
               onClick={() => toggleFavorite(name)}
               isFavorite={favorites.includes(name)}
             />
