@@ -4,14 +4,15 @@ import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
 import Marker from "react-leaflet-enhanced-marker";
 import markerpath from "../../assets/marker.svg";
+import PropTypes from "prop-types";
 
 const Map = styled(MapContainer)`
   height: 300px;
 `;
 
-const LeafletMap = () => {
+const LeafletMap = ({ zoomdistance, mapCenter }) => {
   return (
-    <Map center={[50.9375, 6.9603]} zoom={13} scrollWheelZoom={false}>
+    <Map center={mapCenter} zoom={zoomdistance} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -23,3 +24,7 @@ const LeafletMap = () => {
   );
 };
 export default LeafletMap;
+LeafletMap.propTypes = {
+  zoomdistance: PropTypes.string,
+  mapCenter: PropTypes.array,
+};

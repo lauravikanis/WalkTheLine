@@ -8,7 +8,6 @@ import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
 
 import "leaflet/dist/leaflet.css";
-import LeafletMap from "../components/Map/LeafletMap";
 
 const HomeDiv = styled.div`
   display: flex;

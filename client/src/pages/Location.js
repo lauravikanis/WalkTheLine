@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-import placeholder from "../assets/placeholder.jpeg";
-import ImageCard from "../components/Card/ImageCard";
+// import placeholder from "../assets/placeholder.jpeg";
+// import ImageCard from "../components/Card/ImageCard";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
@@ -41,6 +41,8 @@ const Location = () => {
   }
 
   console.log(locationByName.name);
+  console.log(locationByName.position);
+
   return (
     <LocationDiv>
       <PageHeadline>
@@ -57,7 +59,7 @@ const Location = () => {
         ))}
         <p> {locationByName.openingHours}</p>
       </DetailCard>
-      <ImageCard>
+      {/* <ImageCard>
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
@@ -67,8 +69,8 @@ const Location = () => {
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-      </ImageCard>
-      <LeafletMap />
+      </ImageCard> */}
+      <LeafletMap zoomdistance="15" mapCenter={locationByName.position} />
     </LocationDiv>
   );
 };
