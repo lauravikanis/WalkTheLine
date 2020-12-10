@@ -70,7 +70,11 @@ const Location = () => {
           <img src={placeholder} alt="placeholder" />
         </Link>
       </ImageCard> */}
-      <LeafletMap zoomdistance="15" mapCenter={locationByName.position} />
+      <LeafletMap
+        zoomdistance="15"
+        mapCenter={locationByName.position}
+        markerPosition={locationByName.position}
+      />
     </LocationDiv>
   );
 };
