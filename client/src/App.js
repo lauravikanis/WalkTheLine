@@ -6,6 +6,8 @@ import Choice from "./pages/Choice";
 import Tour from "./pages/Tour";
 import Location from "./pages/Location";
 import Search from "./pages/Search";
+import MapPage from "./pages/Map";
+
 import Favourites from "./pages/Favourites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
@@ -46,7 +48,9 @@ function App() {
           <Route path="/favourites">
             <Favourites />
           </Route>
-          <Route path="/map">{/* <Map /> */}</Route>
+          <Route path="/map">
+            <MapPage />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

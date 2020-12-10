@@ -12,7 +12,7 @@ const MapDiv = styled.div`
   max-width: 600px;
 `;
 
-const Map = () => {
+const MapPage = () => {
   return (
     <MapDiv>
       <PageHeadline>Map</PageHeadline>
@@ -23,4 +23,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapPage;
