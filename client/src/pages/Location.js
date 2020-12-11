@@ -40,9 +40,6 @@ const Location = () => {
     return `An error has occurred: ${error.message}`;
   }
 
-  console.log(locationByName.name);
-  console.log(locationByName.position);
-
   return (
     <LocationDiv>
       <PageHeadline>
