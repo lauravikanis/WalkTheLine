@@ -39,7 +39,7 @@ const Location = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-
+  console.log({ locationByName });
   return (
     <LocationDiv>
       <PageHeadline>
@@ -70,7 +70,7 @@ const Location = () => {
       <LeafletMap
         zoomdistance="15"
         mapCenter={locationByName.position}
-        // markerPosition={locationByName.position}
+        markerPosition={locationByName.position}
       />
     </LocationDiv>
   );

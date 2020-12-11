@@ -17,13 +17,8 @@ const VenueMarkers = (name) => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(locationByName.to);
   const markers = locationByName.map((venue, index) => (
-    <Marker
-      key={index}
-      position={locationByName.position}
-      icon={<MarkerIcon />}
-    >
+    <Marker key={index} position={["50.9375", "6.9603"]} icon={<MarkerIcon />}>
       <MarkerPopup data={locationByName.adress} />
     </Marker>
   ));

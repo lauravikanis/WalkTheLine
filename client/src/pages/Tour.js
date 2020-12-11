@@ -34,22 +34,35 @@ const Tour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
+  // const MarkerStandorte =
+  //     {TourDetails.locationNames.map((locationName) => (
+  //       <li key={locationName.position}>
+  //           {locationName.position}
+  //       </li>
+  //     ))}
+
   return (
     <TourDiv>
-      <PageHeadline>{TourDetails.name}</PageHeadline>
-      <p>{TourDetails.description}</p>
-      <Standort>
-        {TourDetails.locationNames.map((locationNames) => (
-          <li key={locationNames}>
-            <Link to={`/location/${locationNames}`}>{locationNames}</Link>
-          </li>
-        ))}
-      </Standort>
-      <LeafletMap
-        zoomdistance="13"
-        mapCenter={["50.9375", "6.9603"]}
-        // markerPosition={["50.9375", "6.9603"] }
-      />
+      {TourDetails && (
+        <>
+          <PageHeadline>{TourDetails.name}</PageHeadline>
+          <p>{TourDetails.description}</p>
+          <Standort>
+            {TourDetails.locationNames.map((locationName) => (
+              <li key={locationName.name}>
+                <Link to={`/location/${locationName.name}`}>
+                  {locationName.name}
+                </Link>
+              </li>
+            ))}
+          </Standort>{" "}
+          <LeafletMap
+            zoomdistance="13"
+            mapCenter={["50.9375", "6.9603"]}
+            markerPosition={["50.9375", "6.9603"]}
+          />
+        </>
+      )}
     </TourDiv>
   );
 };
