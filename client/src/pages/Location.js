@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-import placeholder from "../assets/placeholder.jpeg";
-import ImageCard from "../components/Card/ImageCard";
-import mappath from "../assets/map.svg";
+// import placeholder from "../assets/placeholder.jpeg";
+// import ImageCard from "../components/Card/ImageCard";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
-import PictureContainer from "../components/Image/Picture";
 import useFavorites from "../hooks/useFavorites";
 import FavouriteButton from "../components/Favourite/FavouriteButton";
+import LeafletMap from "../components/Map/LeafletMap";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -41,7 +40,6 @@ const Location = () => {
     return `An error has occurred: ${error.message}`;
   }
 
-  console.log(locationByName.name);
   return (
     <LocationDiv>
       <PageHeadline>
@@ -58,7 +56,7 @@ const Location = () => {
         ))}
         <p> {locationByName.openingHours}</p>
       </DetailCard>
-      <ImageCard>
+      {/* <ImageCard>
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
@@ -68,12 +66,12 @@ const Location = () => {
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
-      </ImageCard>
-      <Link to="/map">
-        <PictureContainer>
-          <img src={mappath} alt="placeholder" />
-        </PictureContainer>
-      </Link>
+      </ImageCard> */}
+      <LeafletMap
+        zoomdistance="15"
+        mapCenter={locationByName.position}
+        markerPosition={locationByName.position}
+      />
     </LocationDiv>
   );
 };

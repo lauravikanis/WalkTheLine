@@ -6,12 +6,13 @@ import Choice from "./pages/Choice";
 import Tour from "./pages/Tour";
 import Location from "./pages/Location";
 import Search from "./pages/Search";
+import MapPage from "./pages/Map";
+
 import Favourites from "./pages/Favourites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
 import Header from "./components/Header/Header";
 import styled from "styled-components";
-import Map from "./pages/Map";
 
 const Main = styled.main`
   display: flex;
@@ -48,7 +49,7 @@ function App() {
             <Favourites />
           </Route>
           <Route path="/map">
-            <Map />
+            <MapPage />
           </Route>
           <Route path="/">
             <Home />

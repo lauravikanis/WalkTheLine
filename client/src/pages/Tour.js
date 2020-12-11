@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 import Standort from "../components/Standorte/Standort";
-import mappath from "../assets/map.svg";
 import { useQuery } from "react-query";
 
 import { Link, useLocation } from "react-router-dom";
-import PictureContainer from "../components/Image/Picture";
 import { getTourDetails } from "../api/locations";
+import LeafletMap from "../components/Map/LeafletMap";
 
 const TourDiv = styled.div`
   display: flex;
@@ -46,11 +45,11 @@ const Tour = () => {
           </li>
         ))}
       </Standort>
-      <Link to="/map">
-        <PictureContainer>
-          <img src={mappath} alt="placeholder" />
-        </PictureContainer>
-      </Link>
+      <LeafletMap
+        zoomdistance="13"
+        mapCenter={["50.9375", "6.9603"]}
+        markerPosition={["50.9375", "6.9603"]}
+      />
     </TourDiv>
   );
 };

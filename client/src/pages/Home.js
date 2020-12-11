@@ -7,6 +7,8 @@ import favoritePath from "../assets/favourites.svg";
 import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
 
+import "leaflet/dist/leaflet.css";
+
 const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
