@@ -70,7 +70,7 @@ const Location = () => {
       <LeafletMap
         zoomdistance="15"
         mapCenter={locationByName.position}
-        markerPosition={locationByName.position}
+        // markerPosition={locationByName.position}
       />
     </LocationDiv>
   );

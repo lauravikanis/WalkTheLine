@@ -48,7 +48,7 @@ const Tour = () => {
       <LeafletMap
         zoomdistance="13"
         mapCenter={["50.9375", "6.9603"]}
-        markerPosition={["50.9375", "6.9603"]}
+        // markerPosition={["50.9375", "6.9603"] }
       />
     </TourDiv>
   );
