@@ -9,7 +9,7 @@ export async function getLocationByName(name) {
 }
 
 export async function getTourDetails(name) {
-  const response = await fetch(`/api/${name}`);
+  const response = await fetch(`/api${name}`);
   if (!response.ok) {
     const message = await response.text();
     throw new Error(message);
