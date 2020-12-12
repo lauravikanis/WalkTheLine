@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 
 import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
-import LeafletMap from "../components/Map/LeafletMap";
+import LeafletMap from "../components/Map/LeafletMap_Tour";
 
 const TourDiv = styled.div`
   display: flex;
@@ -34,12 +34,6 @@ const Tour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  // const MarkerStandorte =
-  //     {TourDetails.locationNames.map((locationName) => (
-  //       <li key={locationName.position}>
-  //           {locationName.position}
-  //       </li>
-  //     ))}
 
   return (
     <TourDiv>
@@ -56,11 +50,7 @@ const Tour = () => {
               </li>
             ))}
           </Standort>{" "}
-          <LeafletMap
-            zoomdistance="13"
-            mapCenter={["50.9375", "6.9603"]}
-            markerPosition={["50.9375", "6.9603"]}
-          />
+          <LeafletMap />
         </>
       )}
     </TourDiv>

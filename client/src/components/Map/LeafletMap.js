@@ -19,12 +19,7 @@ const LeafletMap = ({ zoomdistance, mapCenter, markerPosition }) => {
       <Marker icon={<MarkerIcon />} position={markerPosition}>
         <Popup>Das ist deine Location</Popup>
       </Marker>
-      <Marker icon={<MarkerIcon />} position={["50.9440", "6.9392"]}>
-        <Popup>Das ist deine Location</Popup>
-      </Marker>
-      <Marker icon={<MarkerIcon />} position={["50.9549", "6.9395"]}>
-        <Popup>Das ist deine Location</Popup>
-      </Marker>
+
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
