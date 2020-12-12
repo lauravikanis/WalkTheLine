@@ -1,14 +1,16 @@
 import React from "react";
-import { MapContainer, Popup, TileLayer /* Popup */ } from "react-leaflet";
+import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
-import Marker from "react-leaflet-enhanced-marker";
-import { ReactComponent as MarkerIcon } from "../../assets/marker.svg";
 
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getTourDetails } from "../../api/locations";
+
+import L from "leaflet";
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 const Map = styled(MapContainer)`
   height: 300px;
@@ -29,17 +31,17 @@ const LeafletMap = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-  console.log(TourDetails.locationNames[1].position);
+  let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+  });
+  L.Marker.prototype.options.icon = DefaultIcon;
 
   return (
-    <Map center={["50.9375", "6.9603"]} zoom={11} scrollWheelZoom={false}>
+    <Map center={["50.9375", "6.9603"]} zoom={13} scrollWheelZoom={"center"}>
       {TourDetails.locationNames.map((locationName) => (
-        <Marker
-          key={locationName.name}
-          position={locationName.position}
-          icon={<MarkerIcon />}
-        >
-          <Popup>Das ist deine Location</Popup>
+        <Marker key={locationName.name} position={locationName.position}>
+          <Popup>{locationName.name}</Popup>
         </Marker>
       ))}
       <TileLayer

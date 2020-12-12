@@ -1,3 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 21 20">
-  <path id="Polygon_1" data-name="Polygon 1" d="M10.5,0l3.15,6.714L21,7.639l-5.4,5.075L16.989,20,10.5,16.422,4.011,20,5.4,12.714,0,7.639l7.35-.925Z" fill="#0f4e8f"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="36.155" height="30.7" viewBox="0 0 36.155 30.7">
+  <g id="Gruppe_204" data-name="Gruppe 204" transform="translate(-1134 -1083)">
+    <path id="Polygon_2" data-name="Polygon 2" d="M5,0l5,21H0Z" transform="matrix(-0.574, 0.819, -0.819, -0.574, 1170.155, 1105.508)" fill="#dd755d"/>
+    <g id="Gruppe_203" data-name="Gruppe 203">
+      <circle id="Ellipse_13" data-name="Ellipse 13" cx="12.5" cy="12.5" r="12.5" transform="translate(1134 1083)" fill="#dd755d"/>
+      <circle id="Ellipse_14" data-name="Ellipse 14" cx="7.5" cy="7.5" r="7.5" transform="translate(1139 1088)" fill="#0f4e8f"/>
+    </g>
+  </g>
 </svg>

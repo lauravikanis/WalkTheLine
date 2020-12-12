@@ -71,6 +71,7 @@ const Location = () => {
         zoomdistance="15"
         mapCenter={locationByName.position}
         markerPosition={locationByName.position}
+        locationName={name}
       />
     </LocationDiv>
   );

@@ -1,23 +1,37 @@
 import React from "react";
-import { MapContainer, Popup, TileLayer /* Popup */ } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
-import { ReactComponent as MarkerIcon } from "../../assets/marker.svg";
-import Marker from "react-leaflet-enhanced-marker";
-// import Markers from "./VenueMarkers";
+
+// import Marker from "react-leaflet-enhanced-marker";
+import L from "leaflet";
 
 import PropTypes from "prop-types";
+
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 const Map = styled(MapContainer)`
   height: 300px;
   border-radius: 15px;
 `;
 
-const LeafletMap = ({ zoomdistance, mapCenter, markerPosition }) => {
+const LeafletMap = ({
+  zoomdistance,
+  mapCenter,
+  markerPosition,
+  locationName,
+}) => {
+  let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+  });
+  L.Marker.prototype.options.icon = DefaultIcon;
+
   return (
-    <Map center={mapCenter} zoom={zoomdistance} scrollWheelZoom={false}>
-      <Marker icon={<MarkerIcon />} position={markerPosition}>
-        <Popup>Das ist deine Location</Popup>
+    <Map center={mapCenter} zoom={zoomdistance} scrollWheelZoom={"center"}>
+      <Marker position={markerPosition}>
+        <Popup>Die Location ist hier: {locationName}</Popup>
       </Marker>
 
       <TileLayer
@@ -30,6 +44,7 @@ const LeafletMap = ({ zoomdistance, mapCenter, markerPosition }) => {
 export default LeafletMap;
 LeafletMap.propTypes = {
   zoomdistance: PropTypes.string,
+  locationName: PropTypes.string,
   mapCenter: PropTypes.array,
   markerPosition: PropTypes.array,
 };
