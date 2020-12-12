@@ -4,10 +4,8 @@ import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
 
 // import Marker from "react-leaflet-enhanced-marker";
-import L from "leaflet";
-
 import PropTypes from "prop-types";
-
+import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
@@ -31,7 +29,7 @@ const LeafletMap = ({
   return (
     <Map center={mapCenter} zoom={zoomdistance} scrollWheelZoom={"center"}>
       <Marker position={markerPosition}>
-        <Popup>Die Location ist hier: {locationName}</Popup>
+        <Popup>{locationName}</Popup>
       </Marker>
 
       <TileLayer

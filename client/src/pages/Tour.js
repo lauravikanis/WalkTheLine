@@ -34,7 +34,6 @@ const Tour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-
   return (
     <TourDiv>
       {TourDetails && (
