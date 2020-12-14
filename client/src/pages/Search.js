@@ -7,8 +7,8 @@ import { getEveryLocation } from "../api/search";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
-
-import Standort from "../components/Standorte/Standort";
+import Searchbar from "../components/SearchBar/Searchbar";
+import LocationList from "../components/Standorte/LocationList";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -19,30 +19,30 @@ const SearchDiv = styled.div`
 `;
 
 const Search = () => {
-  [search, setSearch] = useState("");
-  const { isLoading, error, data: locationByName } = useQuery(
-    search,
-    getLocationByName
-  );
-  if (isLoading) {
-    return "Laden...";
-  }
+  // [search, setSearch] = useState("");
+  // const { isLoading, error, data: locationByName } = useQuery(
+  //   search,
+  //   getLocationByName
+  // );
+  // if (isLoading) {
+  //   return "Laden...";
+  // }
 
-  if (error) {
-    return `Ein Fehler ist aufgetreten: ${error.message}`;
-  }
+  // if (error) {
+  //   return `Ein Fehler ist aufgetreten: ${error.message}`;
+  // }
 
-  const handleChange = (event) => {
-    setSearch(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setSearch(event.target.value);
+  // };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!search) {
-      return null;
-    }
-    const results = await getEveryLocation(search);
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   if (!search) {
+  //     return null;
+  //   }
+  //   const results = await getEveryLocation(search);
+  // };
 
   return (
     <SearchDiv>
@@ -51,15 +51,15 @@ const Search = () => {
         <Input
           type="text"
           placeholder="🔍  Was willst du suchen?"
-          value={search}
-          onChange={handleChange}
+          // value={search}
+          // onChange={handleChange}
         />
       </Searchbar>
-      <Standort>
-        {locationByName.name.map((search) => (
+      <LocationList>
+        {/* {locationByName.name.map((search) => (
           <p key={search}> {search} </p>
-        ))}
-      </Standort>
+        ))} */}
+      </LocationList>
     </SearchDiv>
   );
 };
