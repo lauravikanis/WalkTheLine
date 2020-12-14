@@ -19,16 +19,17 @@ const AppHeader = styled.header`
 
 const Header = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
-    <AppHeader>
-      <div> {location === "/home" && <BackButton />}</div>
-      <Link to="/">
-        <img src={Splashlogo} alt="Walk the Line Logo" />
-      </Link>
-      <div></div>
-    </AppHeader>
+    <>
+      <AppHeader>
+        <div> {location.pathname !== "/" && <BackButton />}</div>
+        <Link to="/">
+          <img src={Splashlogo} alt="Walk the Line Logo" />
+        </Link>
+        <div></div>
+      </AppHeader>
+    </>
   );
 };
 

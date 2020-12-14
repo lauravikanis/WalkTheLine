@@ -24,7 +24,7 @@ function App() {
   const [page, setPage] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setPage(false), 3500);
+    setTimeout(() => setPage(false), 2500);
   }, []);
 
   return (
@@ -33,8 +33,9 @@ function App() {
       <Header />
       <Main>
         <Switch>
-          <Route path="/">{page ? <Splashscreen /> : <Home />}</Route>
-
+          <Route exact path="/">
+            {page ? <Splashscreen /> : <Home />}
+          </Route>
           <Route path="/choice">
             <Choice />
           </Route>
