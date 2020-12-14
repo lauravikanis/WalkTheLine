@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import styled from "styled-components/macro";
 import { getLocationByName } from "../api/locations";
 import { getEveryLocation } from "../api/search";
+import Header from "../components/Header/Header";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
@@ -46,6 +47,7 @@ const Search = () => {
 
   return (
     <SearchDiv>
+      <Header />
       <PageHeadline>Suche</PageHeadline>
       <Searchbar>
         <Input

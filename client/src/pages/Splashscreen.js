@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Splash = styled.div`
   display: flex;
   justify-content: center;
-  align-content: center;
-  height: 90vh;
+  align-items: center;
+  height: 100vh;
 `;
 
 const Splashscreen = () => {
