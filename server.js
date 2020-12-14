@@ -2,10 +2,9 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const { connect } = require("./lib/database");
 
 const { getLocationByName, getTourDetails } = require("./lib/locations");
-
-const { connect } = require("./lib/database");
 const { getEveryLocation } = require("./lib/search");
 
 const app = express();
@@ -35,9 +34,9 @@ app.get("/api/locations", async (req, res) => {
 });
 
 app.get("/api/search", async (req, res) => {
-  const { name } = req.query;
+  const { input } = req.query;
   try {
-    const locationValue = await getEveryLocation(name);
+    const locationValue = await getEveryLocation(input);
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;

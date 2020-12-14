@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 
 import styled from "styled-components/macro";
-import { getEveryLocation } from "../../../lib/search";
+import { getLocationByName } from "../api/locations";
+import { getEveryLocation } from "../api/search";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
 
-import Searchbar from "../components/SearchBar/Searchbar";
 import Standort from "../components/Standorte/Standort";
 
 const SearchDiv = styled.div`
@@ -18,16 +18,11 @@ const SearchDiv = styled.div`
   width: 90%;
 `;
 
-// const ButtonDiv = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-
 const Search = () => {
-  [searchInput, setsearchInput] = useState("");
-  const { isLoading, error, data: everyLocation } = useQuery(
-    value,
-    getEveryLocation
+  [search, setSearch] = useState("");
+  const { isLoading, error, data: locationByName } = useQuery(
+    search,
+    getLocationByName
   );
   if (isLoading) {
     return "Laden...";
@@ -37,13 +32,16 @@ const Search = () => {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleChange = (event) => {
+    setSearch(event.target.value);
   };
 
-  const handleChange = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setsearchInput(event.target.value);
+    if (!search) {
+      return null;
+    }
+    const results = await getEveryLocation(search);
   };
 
   return (
@@ -51,16 +49,15 @@ const Search = () => {
       <PageHeadline>Suche</PageHeadline>
       <Searchbar>
         <Input
-          value={searchInput}
           type="text"
           placeholder="🔍  Was willst du suchen?"
+          value={search}
           onChange={handleChange}
-          onSubmit={handleSubmit}
         />
       </Searchbar>
       <Standort>
-        {everyLocation.map((search) => (
-          <li key={search}>{search}</li>
+        {locationByName.name.map((search) => (
+          <p key={search}> {search} </p>
         ))}
       </Standort>
     </SearchDiv>
