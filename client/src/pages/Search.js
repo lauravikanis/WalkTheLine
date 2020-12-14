@@ -20,30 +20,31 @@ const SearchDiv = styled.div`
 `;
 
 const Search = () => {
-  // [search, setSearch] = useState("");
-  // const { isLoading, error, data: locationByName } = useQuery(
-  //   search,
-  //   getLocationByName
-  // );
-  // if (isLoading) {
-  //   return "Laden...";
-  // }
+  const [search, setSearch] = useState("");
 
-  // if (error) {
-  //   return `Ein Fehler ist aufgetreten: ${error.message}`;
-  // }
+  const { isLoading, error, data: locationByName } = useQuery(
+    "search",
+    getLocationByName
+  );
+  if (isLoading) {
+    return "Laden...";
+  }
 
-  // const handleChange = (event) => {
-  //   setSearch(event.target.value);
-  // };
+  if (error) {
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
+  }
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   if (!search) {
-  //     return null;
-  //   }
-  //   const results = await getEveryLocation(search);
-  // };
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!search) {
+      return null;
+    }
+    const results = await getEveryLocation(search);
+  };
 
   return (
     <SearchDiv>
@@ -53,8 +54,8 @@ const Search = () => {
         <Input
           type="text"
           placeholder="🔍  Was willst du suchen?"
-          // value={search}
-          // onChange={handleChange}
+          value={search}
+          onChange={handleChange}
         />
       </Searchbar>
       <LocationList>
