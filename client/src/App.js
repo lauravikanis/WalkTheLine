@@ -11,7 +11,6 @@ import MapPage from "./pages/Map";
 import Favourites from "./pages/Favourites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
-import Header from "./components/Header/Header";
 import styled from "styled-components";
 
 const Main = styled.main`

@@ -15,6 +15,7 @@ const HomeDiv = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
 `;
 
 const Home = () => {
