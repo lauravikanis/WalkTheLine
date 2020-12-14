@@ -24,7 +24,7 @@ function App() {
   const [page, setPage] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setPage(false), 2500);
+    setTimeout(() => setPage(false), 1000);
   }, []);
 
   return (
