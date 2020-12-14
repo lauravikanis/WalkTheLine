@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const Standort = styled.ol`
+const LocationList = styled.ol`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +12,8 @@ const Standort = styled.ol`
     color: var(--secondary-color);
   }
 `;
-Standort.propTypes = {
+LocationList.propTypes = {
   primary: PropTypes.bool,
 };
 
-export default Standort;
+export default LocationList;

@@ -1,12 +1,12 @@
 import React from "react";
-import Standort from "./Standort";
+import LocationList from "./LocationList";
 
 export default {
   title: "Components/Standorte",
-  component: Standort,
+  component: LocationList,
 };
 
-const Template = (args) => <Standort {...args} />;
+const Template = (args) => <LocationList {...args} />;
 
 export const StandortExample = Template.bind({});
 StandortExample.args = {

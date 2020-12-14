@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-import Standort from "../components/Standorte/Standort";
+import LocationList from "../components/Standorte/LocationList";
 import { useQuery } from "react-query";
 
 import { Link, useLocation } from "react-router-dom";
@@ -40,7 +40,7 @@ const Tour = () => {
         <>
           <PageHeadline>{TourDetails.name}</PageHeadline>
           <p>{TourDetails.description}</p>
-          <Standort>
+          <LocationList>
             {TourDetails.locationNames.map((locationName) => (
               <li key={locationName.name}>
                 <Link to={`/location/${locationName.name}`}>
@@ -48,7 +48,7 @@ const Tour = () => {
                 </Link>
               </li>
             ))}
-          </Standort>{" "}
+          </LocationList>
           <LeafletMap />
         </>
       )}

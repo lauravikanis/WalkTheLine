@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import Button from "../components/Button/Button";
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
-import Standort from "../components/Standorte/Standort";
+import LocationList from "../components/Standorte/LocationList";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -27,11 +27,11 @@ const Search = () => {
         <Button active>Venue</Button>
         <Button active>Poi</Button>
       </ButtonDiv>
-      <Standort>
+      <LocationList>
         <li>Suchergebnis</li>
         <li>Suchergebnis</li> <li>Suchergebnis</li> <li>Suchergebnis</li>{" "}
         <li>Suchergebnis</li>
-      </Standort>
+      </LocationList>
     </SearchDiv>
   );
 };
