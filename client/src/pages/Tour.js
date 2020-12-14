@@ -29,10 +29,10 @@ const Tour = () => {
   );
 
   if (isLoading) {
-    return "Loading...";
+    return "Laden...";
   }
   if (error) {
-    return `An error has occurred: ${error.message}`;
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
   return (
     <TourDiv>

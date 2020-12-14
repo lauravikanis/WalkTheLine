@@ -33,29 +33,31 @@ const Location = () => {
     getLocationByName
   );
   if (isLoading) {
-    return "Loading...";
+    return "Laden...";
   }
 
   if (error) {
-    return `An error has occurred: ${error.message}`;
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
   return (
     <LocationDiv>
-      <PageHeadline>
-        {locationByName.name}
-        <FavouriteButton
-          onClick={() => toggleFavorite(locationByName.name)}
-          isFavorite={favorites.includes(locationByName.name)}
-        />
-      </PageHeadline>
-      <p>{locationByName.about}</p>
-      <DetailCard>
-        {locationByName.address.map((name) => (
-          <p key={name}> {name} </p>
-        ))}
-        <p> {locationByName.openingHours}</p>
-      </DetailCard>
-      {/* <ImageCard>
+      {locationByName && (
+        <>
+          <PageHeadline>
+            {locationByName.name}
+            <FavouriteButton
+              onClick={() => toggleFavorite(locationByName.name)}
+              isFavorite={favorites.includes(locationByName.name)}
+            />
+          </PageHeadline>
+          <p>{locationByName.about}</p>
+          <DetailCard>
+            {locationByName.address.map((name) => (
+              <p key={name}> {name} </p>
+            ))}
+            <p> {locationByName.openingHours}</p>
+          </DetailCard>
+          {/* <ImageCard>
         <Link to="/pictures">
           <img src={placeholder} alt="placeholder" />
         </Link>
@@ -66,12 +68,14 @@ const Location = () => {
           <img src={placeholder} alt="placeholder" />
         </Link>
       </ImageCard> */}
-      <LeafletMap
-        zoomdistance="15"
-        mapCenter={locationByName.position}
-        markerPosition={locationByName.position}
-        locationName={name}
-      />
+          <LeafletMap
+            zoomdistance="15"
+            mapCenter={locationByName.position}
+            markerPosition={locationByName.position}
+            locationName={name}
+          />
+        </>
+      )}
     </LocationDiv>
   );
 };
