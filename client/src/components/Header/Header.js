@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Splashlogo from "../../assets/logo.svg";
 import BackButton from "../Button/BackButton";
@@ -17,13 +17,19 @@ const AppHeader = styled.header`
   }
 `;
 
-const Header = () => (
-  <AppHeader>
-    <BackButton />
-    <Link to="/">
-      <img src={Splashlogo} alt="Walk the Line Logo" />
-    </Link>
-  </AppHeader>
-);
+const Header = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+
+  return (
+    <AppHeader>
+      <div> {location === "/home" && <BackButton />}</div>
+      <Link to="/">
+        <img src={Splashlogo} alt="Walk the Line Logo" />
+      </Link>
+      <div></div>
+    </AppHeader>
+  );
+};
 
 export default Header;
