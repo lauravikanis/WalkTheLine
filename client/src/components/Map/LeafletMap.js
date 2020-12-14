@@ -10,7 +10,7 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 const Map = styled(MapContainer)`
-  height: 300px;
+  height: 40vh;
   border-radius: 15px;
 `;
 
