@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+
 import styled from "styled-components/macro";
-import Button from "../components/Button/Button";
-import Header from "../components/Header/Header";
+import { getEveryLocation } from "../../../lib/search";
+
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
-import LocationList from "../components/Standorte/LocationList";
+
+import Searchbar from "../components/SearchBar/Searchbar";
+import Standort from "../components/Standorte/Standort";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -14,28 +18,51 @@ const SearchDiv = styled.div`
   width: 90%;
 `;
 
-const ButtonDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+// const ButtonDiv = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
 
 const Search = () => {
+  [searchInput, setsearchInput] = useState("");
+  const { isLoading, error, data: everyLocation } = useQuery(
+    value,
+    getEveryLocation
+  );
+  if (isLoading) {
+    return "Laden...";
+  }
+
+  if (error) {
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setsearchInput(event.target.value);
+  };
+
   return (
     <SearchDiv>
-      <Header />
-
       <PageHeadline>Suche</PageHeadline>
-      <Input placeholder="🕵️‍♀️ Was willst du suchen?" />
-      <ButtonDiv>
-        <Button active>Shop</Button>
-        <Button active>Venue</Button>
-        <Button active>Poi</Button>
-      </ButtonDiv>
-      <LocationList>
-        <li>Suchergebnis</li>
-        <li>Suchergebnis</li> <li>Suchergebnis</li> <li>Suchergebnis</li>{" "}
-        <li>Suchergebnis</li>
-      </LocationList>
+      <Searchbar>
+        <Input
+          value={searchInput}
+          type="text"
+          placeholder="🔍  Was willst du suchen?"
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
+      </Searchbar>
+      <Standort>
+        {everyLocation.map((search) => (
+          <li key={search}>{search}</li>
+        ))}
+      </Standort>
     </SearchDiv>
   );
 };

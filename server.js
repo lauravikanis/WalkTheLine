@@ -6,6 +6,7 @@ const path = require("path");
 const { getLocationByName, getTourDetails } = require("./lib/locations");
 
 const { connect } = require("./lib/database");
+const { getEveryLocation } = require("./lib/search");
 
 const app = express();
 const port = process.env.PORT || 2601;
@@ -21,6 +22,22 @@ app.get("/api/locations", async (req, res) => {
   const { name } = req.query;
   try {
     const locationValue = await getLocationByName(name);
+    if (!locationValue) {
+      res.status(404).send("could not find the content you are looking for");
+      return;
+    }
+    res.send(locationValue);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server error");
+  }
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
+app.get("/api/search", async (req, res) => {
+  const { name } = req.query;
+  try {
+    const locationValue = await getEveryLocation(name);
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
