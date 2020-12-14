@@ -5,6 +5,7 @@ import placeholder from "../assets/placeholder.jpeg";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import PictureContainer from "../components/Image/Picture";
+import Header from "../components/Header/Header";
 
 const PicturesDiv = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const PicturesDiv = styled.div`
 const Pictures = () => {
   return (
     <PicturesDiv>
+      <Header />
       <PageHeadline>Bildname</PageHeadline>
       <PictureContainer>
         <img src={placeholder} alt="placeholder" />

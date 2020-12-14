@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import GlobalStyle from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,7 +11,6 @@ import MapPage from "./pages/Map";
 import Favourites from "./pages/Favourites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
-import Header from "./components/Header/Header";
 import styled from "styled-components";
 
 const Main = styled.main`
@@ -21,14 +20,19 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [page, setPage] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setPage(false), 1000);
+  }, []);
+
   return (
     <Router>
       <GlobalStyle />
-      <Header />
       <Main>
         <Switch>
-          <Route path="/splashscreen">
-            <Splashscreen />
+          <Route exact path="/">
+            {page ? <Splashscreen /> : <Home />}
           </Route>
           <Route path="/choice">
             <Choice />
@@ -50,9 +54,6 @@ function App() {
           </Route>
           <Route path="/map">
             <MapPage />
-          </Route>
-          <Route path="/">
-            <Home />
           </Route>
         </Switch>
         <a href="/storybook">To Storybook</a>

@@ -8,17 +8,21 @@ import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
 
 import "leaflet/dist/leaflet.css";
+import Header from "../components/Header/Header";
 
 const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
 `;
 
 const Home = () => {
   return (
     <HomeDiv>
+      <Header />
+
       <PageHeadline>HOME</PageHeadline>
       <Link to="/choice">
         <Card primary>

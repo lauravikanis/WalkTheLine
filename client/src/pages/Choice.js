@@ -6,17 +6,20 @@ import indierockPath from "../assets/indierock.svg";
 import electronicaPath from "../assets/electronica.svg";
 import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
+import Header from "../components/Header/Header";
 
 const ChoiceDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
 `;
 
 const Home = () => {
   return (
     <ChoiceDiv>
+      <Header />
       <PageHeadline>CHOICE</PageHeadline>
       <Link to="/tour/electronic">
         <Card>

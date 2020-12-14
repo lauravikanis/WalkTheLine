@@ -11,6 +11,7 @@ import DetailCard from "../components/Card/LocationDetails";
 import useFavorites from "../hooks/useFavorites";
 import FavouriteButton from "../components/Favourite/FavouriteButton";
 import LeafletMap from "../components/Map/LeafletMap";
+import Header from "../components/Header/Header";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -41,6 +42,7 @@ const Location = () => {
   }
   return (
     <LocationDiv>
+      <Header />
       {locationByName && (
         <>
           <PageHeadline>
