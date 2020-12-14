@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 import FavouriteButton from "../components/Favourite/FavouriteButton";
 
 import PageHeadline from "../components/Header/PageHeadline";
-import Standort from "../components/Standorte/Standort";
+import LocationList from "../components/Standorte/LocationList";
 import useFavorites from "../hooks/useFavorites";
 
 const FavouriteDiv = styled.div`
@@ -24,7 +24,7 @@ const Favourite = () => {
   return (
     <FavouriteDiv>
       <PageHeadline>Favoriten</PageHeadline>
-      <Standort>
+      <LocationList>
         {storagefavorites.map((name) => (
           <li key={name}>
             <Link to={`/location/${name}`}>{name}</Link>
@@ -34,7 +34,7 @@ const Favourite = () => {
             />
           </li>
         ))}
-      </Standort>
+      </LocationList>
     </FavouriteDiv>
   );
 };
