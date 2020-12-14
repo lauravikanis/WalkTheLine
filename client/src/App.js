@@ -30,7 +30,6 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      <Header />
       <Main>
         <Switch>
           <Route exact path="/">

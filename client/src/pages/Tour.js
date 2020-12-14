@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
 import LeafletMap from "../components/Map/LeafletMap_Tour";
+import Header from "../components/Header/Header";
 
 const TourDiv = styled.div`
   display: flex;
@@ -36,6 +37,8 @@ const Tour = () => {
   }
   return (
     <TourDiv>
+      <Header />
+
       {TourDetails && (
         <>
           <PageHeadline>{TourDetails.name}</PageHeadline>
