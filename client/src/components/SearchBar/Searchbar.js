@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 const Searchbar = styled.form`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 export default Searchbar;

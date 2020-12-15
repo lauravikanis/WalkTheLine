@@ -14,13 +14,13 @@ const FavouriteDiv = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  width: 90%;
 `;
 
 const Favourite = () => {
   const { toggleFavorite, favorites } = useFavorites("favorites", []);
 
   const storagefavorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log(favorites);
 
   return (
     <FavouriteDiv>

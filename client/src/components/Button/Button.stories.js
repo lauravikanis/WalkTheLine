@@ -11,12 +11,12 @@ const Template = (args) => <Button {...args} />;
 
 export const passive = Template.bind({});
 passive.args = {
-  active: true,
-  children: <h2>Shop</h2>,
+  onClick: true,
+  label: "Shop",
 };
 
 export const active = Template.bind({});
 active.args = {
-  active: true,
-  children: <h2>Shop</h2>,
+  onClick: true,
+  label: "Shop",
 };
