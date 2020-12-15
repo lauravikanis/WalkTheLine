@@ -13,4 +13,5 @@ Searchbar.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };

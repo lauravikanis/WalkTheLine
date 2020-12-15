@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import { useQuery } from "react-query";
-
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
-import { getLocationByName } from "../api/locations";
 import { getEveryLocation } from "../api/search";
 import Header from "../components/Header/Header";
 
@@ -20,32 +17,18 @@ const SearchDiv = styled.div`
 `;
 
 const Search = () => {
-  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
+  const [searchFilter, setSearchFilter] = useState("");
 
-  const { isLoading, error, data: locationByName } = useQuery(
-    "search",
-    getLocationByName
-  );
-  if (isLoading) {
-    return "Laden...";
-  }
-
-  if (error) {
-    return `Ein Fehler ist aufgetreten: ${error.message}`;
-  }
-
-  const handleChange = (event) => {
-    setSearch(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!search) {
-      return null;
+  useEffect(() => {
+    async function fetchData() {
+      const newResults = await getEveryLocation();
+      setResults(newResults);
+      console.log(newResults);
     }
-    const results = await getEveryLocation(search);
-  };
-
+    fetchData();
+  }, []);
+  console.log(results);
   return (
     <SearchDiv>
       <Header />
@@ -54,14 +37,16 @@ const Search = () => {
         <Input
           type="text"
           placeholder="🔍  Was willst du suchen?"
-          value={search}
-          onChange={handleChange}
+          value={searchFilter}
+          onChange={(event) => setSearchFilter(event.target.value)}
         />
       </Searchbar>
       <LocationList>
-        {/* {locationByName.name.map((search) => (
-          <p key={search}> {search} </p>
-        ))} */}
+        {results
+          .filter((results) => results.name.includes(searchFilter))
+          .map((filterResult) => (
+            <li key={filterResult.name}> {filterResult.name} </li>
+          ))}
       </LocationList>
     </SearchDiv>
   );

@@ -34,9 +34,8 @@ app.get("/api/locations", async (req, res) => {
 });
 
 app.get("/api/search", async (req, res) => {
-  const { input } = req.query;
   try {
-    const locationValue = await getEveryLocation(input);
+    const locationValue = await getEveryLocation();
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
