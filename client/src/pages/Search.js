@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
-// import RadioButton from "../components/Button/Button";
 
 import Header from "../components/Header/Header";
 
@@ -9,6 +8,10 @@ import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
 import Searchbar from "../components/SearchBar/Searchbar";
 import LocationList from "../components/Standorte/LocationList";
+
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -22,20 +25,10 @@ const SearchDiv = styled.div`
   }
 `;
 
-// const ButtonBar = styled.form`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: space-around;
-//   max-width: 600px;
-//   width: 90%;
-// `;
-
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-
-  // const [TypeFilter, setTypeFilter] = useState(false);
+  const [value, setValue] = React.useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -45,12 +38,9 @@ const Search = () => {
     fetchData();
   }, []);
 
-  // const handleOptionChange = (event) => {
-  //   event.preventDefault();
-  //   setTypeFilter({
-  //     checked: event.target.value,
-  //   });
-  // };
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <SearchDiv>
@@ -64,26 +54,32 @@ const Search = () => {
           onChange={(event) => setSearchFilter(event.target.value)}
         />
       </Searchbar>
-      {/* <ButtonBar onSubmit={(event) => TypeFilter(event.target.value)}>
-        <RadioButton
+      <RadioGroup
+        row
+        aria-label="type"
+        name="type1"
+        value={value}
+        onChange={handleChange}
+      >
+        <FormControlLabel
+          labelPlacement={"bottom"}
           value="shop"
-          name="type"
-          checked={setTypeFilter.value === "shop"}
-          onChange={handleOptionChange}
+          control={<Radio />}
+          label="SHOP"
         />
-        <RadioButton
-          value="poi"
-          name="type"
-          checked={setTypeFilter.value === "poi"}
-          onChange={handleOptionChange}
-        />
-        <RadioButton
+        <FormControlLabel
+          labelPlacement={"bottom"}
           value="venue"
-          name="type"
-          checked={setTypeFilter.value === "venue"}
-          onChange={handleOptionChange}
+          control={<Radio />}
+          label="VENUE"
         />
-      </ButtonBar> */}
+        <FormControlLabel
+          labelPlacement={"bottom"}
+          value="poi"
+          control={<Radio />}
+          label="POI"
+        />
+      </RadioGroup>
       <LocationList>
         {results
 

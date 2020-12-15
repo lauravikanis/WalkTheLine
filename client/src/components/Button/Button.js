@@ -23,22 +23,25 @@ const SearchButton = styled.input`
     color: var(--primary-color);
   } */
 `;
-const RadioButton = ({ value, name, checked, onChange }) => {
+const RadioOption = ({ value, name, selectedValue, onChange, label }) => {
   return (
     <SearchButton
       type="radio"
       value={value}
       name={name}
-      checked={checked}
+      selectedValue={selectedValue}
       onChange={onChange}
-    ></SearchButton>
+    >
+      <label>{label}</label>
+    </SearchButton>
   );
 };
 
-RadioButton.propTypes = {
+RadioOption.propTypes = {
   value: PropTypes.string,
   name: PropTypes.string,
-  checked: PropTypes.bool,
+  selectedValue: PropTypes.bool,
   onChange: PropTypes.func,
+  label: PropTypes.string,
 };
-export default RadioButton;
+export default RadioOption;
