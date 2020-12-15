@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const Searchbar = styled.form`
   display: flex;
@@ -10,10 +10,10 @@ const Searchbar = styled.form`
 
 export default Searchbar;
 
-Searchbar.propTypes = {
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-};
+// Searchbar.propTypes = {
+//   type: PropTypes.string,
+//   placeholder: PropTypes.string,
+//   value: PropTypes.string,
+//   onChange: PropTypes.func,
+//   onSubmit: PropTypes.func,
+// };
