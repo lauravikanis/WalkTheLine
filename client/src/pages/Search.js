@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
-import RadioButton from "../components/Button/Button";
-// import Button from "../components/Button/Button";
+// import RadioButton from "../components/Button/Button";
+
 import Header from "../components/Header/Header";
 
 import PageHeadline from "../components/Header/PageHeadline";
@@ -22,42 +22,35 @@ const SearchDiv = styled.div`
   }
 `;
 
-const ButtonBar = styled.form`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  max-width: 600px;
-  width: 90%;
-`;
+// const ButtonBar = styled.form`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-around;
+//   max-width: 600px;
+//   width: 90%;
+// `;
 
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-  // const [shopFilter, setShopFilter] = useState("");
-  // const [poiFilter, setPoiFilter] = useState(false);
-  const [TypeFilter, setTypeFilter] = useState(false);
 
-  const [clickState, setClickState] = useState(false);
+  // const [TypeFilter, setTypeFilter] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       const newResults = await getEveryLocation();
-      // setShopFilter();
       setResults(newResults);
-      console.log(newResults);
     }
     fetchData();
   }, []);
 
-  const handleOptionChange = (event) => {
-    event.preventDefault();
-    setClickState({
-      selectedOption: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => event.preventDefault();
+  // const handleOptionChange = (event) => {
+  //   event.preventDefault();
+  //   setTypeFilter({
+  //     checked: event.target.value,
+  //   });
+  // };
 
   return (
     <SearchDiv>
@@ -71,29 +64,26 @@ const Search = () => {
           onChange={(event) => setSearchFilter(event.target.value)}
         />
       </Searchbar>
-      <ButtonBar onSubmit={handleSubmit}>
+      {/* <ButtonBar onSubmit={(event) => TypeFilter(event.target.value)}>
         <RadioButton
-          label="shop"
-          value="option1"
-          name="shop"
-          checked={setTypeFilter.selectedOption === "option1"}
-          onChange={{ handleOptionChange }}
+          value="shop"
+          name="type"
+          checked={setTypeFilter.value === "shop"}
+          onChange={handleOptionChange}
         />
         <RadioButton
-          label="poi"
-          value="option1"
-          name="poi"
-          checked={setTypeFilter.selectedOption === "option2"}
-          onChange={{ handleOptionChange }}
+          value="poi"
+          name="type"
+          checked={setTypeFilter.value === "poi"}
+          onChange={handleOptionChange}
         />
         <RadioButton
-          label="venue"
-          value="option3"
-          name="venue"
-          checked={setTypeFilter.selectedOption === "option3"}
-          onChange={{ handleOptionChange }}
+          value="venue"
+          name="type"
+          checked={setTypeFilter.value === "venue"}
+          onChange={handleOptionChange}
         />
-      </ButtonBar>
+      </ButtonBar> */}
       <LocationList>
         {results
 
