@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
-import FavoriteButton from "../components/Favorite/FavoriteButton";
+import FavoriteButton from "../components/Button/FavoriteButton";
 import Header from "../components/Header/Header";
 
 import PageHeadline from "../components/Header/PageHeadline";

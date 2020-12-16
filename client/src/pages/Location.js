@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import useFavorites from "../hooks/useFavorites";
-import FavoriteButton from "../components/Favorite/FavoriteButton";
+import FavoriteButton from "../components/Button/FavoriteButton";
 import LeafletMap from "../components/Map/LeafletMap";
 import Header from "../components/Header/Header";
 

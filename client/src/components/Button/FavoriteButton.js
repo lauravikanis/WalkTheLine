@@ -15,7 +15,6 @@ const FavoriteIcon = styled.button`
 `;
 
 const FavoriteButton = ({ onClick, isFavorite }) => {
-  console.log(isFavorite);
   return (
     <FavoriteIcon onClick={onClick} favorite={isFavorite}>
       {isFavorite ? <FavOn /> : <FavOff />}

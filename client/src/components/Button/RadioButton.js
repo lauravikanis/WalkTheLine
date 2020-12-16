@@ -1,8 +1,9 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const Button = styled.input`
+const ButtonLabel = styled.label`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
@@ -24,8 +25,23 @@ const Button = styled.input`
   }
 `;
 
-Button.propTypes = {
-  value: PropTypes.string,
-  type: PropTypes.string,
+const Input = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+`;
+
+const RadioButton = (type_name) => {
+  return (
+    <ButtonLabel>
+      <Input type="radio" name={type_name} />
+      <span>Type</span>
+    </ButtonLabel>
+  );
 };
-export default Button;
+
+RadioButton.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+};
+export default RadioButton;
