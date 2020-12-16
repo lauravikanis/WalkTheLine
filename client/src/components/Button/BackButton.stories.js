@@ -1,9 +1,8 @@
 import React from "react";
-
 import BackButton from "./BackButton";
 
 export default {
-  title: "Components/BackButton",
+  title: "Components/Button_back",
   component: BackButton,
 };
 
