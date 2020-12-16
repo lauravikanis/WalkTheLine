@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
-import Button from "../components/Button/Button";
+import { getEveryLocation } from "../api/search";
+
 import Header from "../components/Header/Header";
+
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
 import LocationList from "../components/Standorte/LocationList";
+
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -12,29 +18,88 @@ const SearchDiv = styled.div`
   align-content: center;
   max-width: 600px;
   width: 90%;
+
+  li {
+    list-style: none;
+  }
 `;
 
-const ButtonDiv = styled.div`
+const RadioForm = styled(RadioGroup)`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+
+  span {
+    color: var(--primary-color);
+    font-family: var(--titleFont);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 `;
 
 const Search = () => {
+  const [results, setResults] = useState([]);
+  const [searchFilter, setSearchFilter] = useState("");
+  const [type, setType] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      const newResults = await getEveryLocation();
+      setResults(newResults);
+    }
+    fetchData();
+  }, []);
+
+  const handleChange = (event) => {
+    setType(event.target.value);
+  };
+
   return (
     <SearchDiv>
       <Header />
-
       <PageHeadline>Suche</PageHeadline>
-      <Input placeholder="🕵️‍♀️ Was willst du suchen?" />
-      <ButtonDiv>
-        <Button active>Shop</Button>
-        <Button active>Venue</Button>
-        <Button active>Poi</Button>
-      </ButtonDiv>
+      <form>
+        <Input
+          type="text"
+          placeholder="🔍  Was willst du suchen?"
+          value={searchFilter}
+          onChange={(event) => setSearchFilter(event.target.value)}
+        />
+      </form>
+      <RadioForm
+        row
+        aria-label="type"
+        name="type1"
+        value={type}
+        onChange={handleChange}
+      >
+        <FormControlLabel
+          labelPlacement={"bottom"}
+          value="shop"
+          control={<Radio />}
+          label="SHOP"
+        />
+        <FormControlLabel
+          labelPlacement={"bottom"}
+          value="venue"
+          control={<Radio />}
+          label="VENUE"
+        />
+        <FormControlLabel
+          labelPlacement={"bottom"}
+          value="poi"
+          control={<Radio />}
+          label="POI"
+        />
+      </RadioForm>
       <LocationList>
-        <li>Suchergebnis</li>
-        <li>Suchergebnis</li> <li>Suchergebnis</li> <li>Suchergebnis</li>{" "}
-        <li>Suchergebnis</li>
+        {results
+
+          .filter((results) => results.type.includes(type))
+          .filter((results) => results.name.includes(searchFilter))
+          // .filter((results) => results.type.includes(shopFilter))
+          .map((filterResult) => (
+            <li key={filterResult.name}> {filterResult.name} </li>
+          ))}
       </LocationList>
     </SearchDiv>
   );

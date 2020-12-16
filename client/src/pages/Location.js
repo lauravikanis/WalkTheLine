@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-// import placeholder from "../assets/placeholder.jpeg";
-// import ImageCard from "../components/Card/ImageCard";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import useFavorites from "../hooks/useFavorites";
-import FavouriteButton from "../components/Favourite/FavouriteButton";
+import FavoriteButton from "../components/Favorite/FavoriteButton";
 import LeafletMap from "../components/Map/LeafletMap";
 import Header from "../components/Header/Header";
 
@@ -47,7 +45,7 @@ const Location = () => {
         <>
           <PageHeadline>
             {locationByName.name}
-            <FavouriteButton
+            <FavoriteButton
               onClick={() => toggleFavorite(locationByName.name)}
               isFavorite={favorites.includes(locationByName.name)}
             />

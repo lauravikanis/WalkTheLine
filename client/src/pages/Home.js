@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import Card from "../components/Card/Card";
 import tourPath from "../assets/tour.svg";
 import searchPath from "../assets/search.svg";
-import favoritePath from "../assets/favourites.svg";
+import favoritePath from "../assets/favorites.svg";
 import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ const Home = () => {
           <img src={searchPath} alt="searchicon" />
         </Card>
       </Link>
-      <Link to="/favourites">
+      <Link to="/favorites">
         <Card primary>
           <h2>FAVORITEN</h2>
           <img src={favoritePath} alt="favoriteicon" />
