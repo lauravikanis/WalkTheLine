@@ -6,5 +6,5 @@
 
 Eine App von und für Musiklibebhaber.
 
-Du willst die wichtgen Locations undinsider Tipps der Musikzene in Köln kennenlernen?
+Du willst die wichtgste Locations und Insider-Tipps der Musikzene in Köln kennenlernen?
 Such dir mit Walk The Line dein Lieblingsgenre und erkunde die Stadt.
