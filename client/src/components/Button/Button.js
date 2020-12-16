@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
-const SearchButton = styled.input`
+const Button = styled.input`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,17 +23,9 @@ const SearchButton = styled.input`
     color: var(--primary-color);
   }
 `;
-const Button = ({ value, onChange, label }) => {
-  return (
-    <SearchButton type="radio" value={value} onChange={onChange}>
-      <label>{label}</label>
-    </SearchButton>
-  );
-};
 
 Button.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func,
-  label: PropTypes.string,
+  type: PropTypes.string,
 };
 export default Button;
