@@ -25,6 +25,18 @@ const SearchDiv = styled.div`
   }
 `;
 
+const RadioForm = styled(RadioGroup)`
+  display: flex;
+  justify-content: center;
+
+  span {
+    color: var(--primary-color);
+    font-family: var(--titleFont);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+`;
+
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
@@ -41,6 +53,7 @@ const Search = () => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+  console.log(results);
 
   return (
     <SearchDiv>
@@ -54,7 +67,7 @@ const Search = () => {
           onChange={(event) => setSearchFilter(event.target.value)}
         />
       </Searchbar>
-      <RadioGroup
+      <RadioForm
         row
         aria-label="type"
         name="type1"
@@ -79,12 +92,11 @@ const Search = () => {
           control={<Radio />}
           label="POI"
         />
-      </RadioGroup>
+      </RadioForm>
       <LocationList>
         {results
 
           .filter((results) => results.type.includes(value))
-          // .filter((results) => results.type.includes(venueFilter))
           .filter((results) => results.name.includes(searchFilter))
           // .filter((results) => results.type.includes(shopFilter))
           .map((filterResult) => (
