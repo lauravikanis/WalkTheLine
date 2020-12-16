@@ -39,7 +39,7 @@ const RadioForm = styled(RadioGroup)`
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-  const [value, setValue] = useState("");
+  const [type, setType] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -50,24 +50,26 @@ const Search = () => {
   }, []);
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setType(event.target.value);
   };
 
   return (
     <SearchDiv>
       <Header />
       <PageHeadline>Suche</PageHeadline>
-      <Input
-        type="text"
-        placeholder="🔍  Was willst du suchen?"
-        value={searchFilter}
-        onChange={(event) => setSearchFilter(event.target.value)}
-      />
+      <form>
+        <Input
+          type="text"
+          placeholder="🔍  Was willst du suchen?"
+          value={searchFilter}
+          onChange={(event) => setSearchFilter(event.target.value)}
+        />
+      </form>
       <RadioForm
         row
         aria-label="type"
         name="type1"
-        value={value}
+        value={type}
         onChange={handleChange}
       >
         <FormControlLabel
@@ -92,7 +94,7 @@ const Search = () => {
       <LocationList>
         {results
 
-          .filter((results) => results.type.includes(value))
+          .filter((results) => results.type.includes(type))
           .filter((results) => results.name.includes(searchFilter))
           // .filter((results) => results.type.includes(shopFilter))
           .map((filterResult) => (
