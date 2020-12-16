@@ -1,5 +1,10 @@
 ![Node.js CI](https://github.com/lauravikanis/WalkTheLine/workflows/Node.js%20CI/badge.svg)
 
+### My Gesellenstück for the neuefische WebDev Bootcamp
+
 # Walk The Line
 
-### My Gesellenstück for the neuefische WebDev Bootcamp
+Eine App von und für Musiklibebhaber.
+
+Du willst die wichtgen Locations undinsider Tipps der Musikzene in Köln kennenlernen?
+Such dir mit Walk The Line dein Lieblingsgenre und erkunde die Stadt.
