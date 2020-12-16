@@ -53,7 +53,6 @@ const Search = () => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-  console.log(results);
 
   return (
     <SearchDiv>
