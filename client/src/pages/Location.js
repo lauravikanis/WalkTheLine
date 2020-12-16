@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
-// import placeholder from "../assets/placeholder.jpeg";
-// import ImageCard from "../components/Card/ImageCard";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";

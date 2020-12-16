@@ -6,7 +6,6 @@ import Header from "../components/Header/Header";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import Input from "../components/Input/Input";
-import Form from "../components/SearchBar/Searchbar";
 import LocationList from "../components/Standorte/LocationList";
 
 import Radio from "@material-ui/core/Radio";
@@ -58,14 +57,12 @@ const Search = () => {
     <SearchDiv>
       <Header />
       <PageHeadline>Suche</PageHeadline>
-      <Form>
-        <Input
-          type="text"
-          placeholder="🔍  Was willst du suchen?"
-          value={searchFilter}
-          onChange={(event) => setSearchFilter(event.target.value)}
-        />
-      </Form>
+      <Input
+        type="text"
+        placeholder="🔍  Was willst du suchen?"
+        value={searchFilter}
+        onChange={(event) => setSearchFilter(event.target.value)}
+      />
       <RadioForm
         row
         aria-label="type"
