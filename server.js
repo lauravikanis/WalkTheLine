@@ -17,7 +17,7 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.get("/api/locations", async (req, res) => {
+app.get("/api/location", async (req, res) => {
   const { name } = req.query;
   try {
     const locationValue = await getLocationByName(name);
@@ -33,7 +33,7 @@ app.get("/api/locations", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.get("/api/search", async (req, res) => {
+app.get("/api/locations", async (req, res) => {
   try {
     const locationValue = await getEveryLocation();
     if (!locationValue) {

@@ -8,7 +8,7 @@ import Location from "./pages/Location";
 import Search from "./pages/Search";
 import MapPage from "./pages/Map";
 
-import Favourites from "./pages/Favourites";
+import Favorites from "./pages/Favorites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
 import styled from "styled-components";
@@ -49,8 +49,8 @@ function App() {
           <Route path="/pictures">
             <Pictures />
           </Route>
-          <Route path="/favourites">
-            <Favourites />
+          <Route path="/favorites">
+            <Favorites />
           </Route>
           <Route path="/map">
             <MapPage />

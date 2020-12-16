@@ -9,7 +9,7 @@ import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
 import useFavorites from "../hooks/useFavorites";
-import FavouriteButton from "../components/Favourite/FavouriteButton";
+import FavoriteButton from "../components/Favorite/FavoriteButton";
 import LeafletMap from "../components/Map/LeafletMap";
 import Header from "../components/Header/Header";
 
@@ -47,7 +47,7 @@ const Location = () => {
         <>
           <PageHeadline>
             {locationByName.name}
-            <FavouriteButton
+            <FavoriteButton
               onClick={() => toggleFavorite(locationByName.name)}
               isFavorite={favorites.includes(locationByName.name)}
             />

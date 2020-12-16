@@ -1,9 +1,9 @@
 import React from "react";
-import Favourite from "./Favourites";
+import Favorite from "./Favorites";
 
 export default {
-  title: "Pages/Favourite",
-  component: Favourite,
+  title: "Pages/Favorite",
+  component: Favorite,
 };
 
-export const favourite = (args) => <Favourite {...args} />;
+export const favorite = (args) => <Favorite {...args} />;
