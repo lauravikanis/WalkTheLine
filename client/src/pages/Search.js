@@ -28,7 +28,7 @@ const SearchDiv = styled.div`
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -83,7 +83,7 @@ const Search = () => {
       <LocationList>
         {results
 
-          // .filter((results) => results.type.includes(poiFilter))
+          .filter((results) => results.type.includes(value))
           // .filter((results) => results.type.includes(venueFilter))
           .filter((results) => results.name.includes(searchFilter))
           // .filter((results) => results.type.includes(shopFilter))
