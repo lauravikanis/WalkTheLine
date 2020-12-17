@@ -11,6 +11,7 @@ import LocationList from "../components/Standorte/LocationList";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { Link } from "react-router-dom";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -57,14 +58,12 @@ const Search = () => {
     <SearchDiv>
       <Header />
       <PageHeadline>Suche</PageHeadline>
-      <form>
-        <Input
-          type="text"
-          placeholder="🔍  Was willst du suchen?"
-          value={searchFilter}
-          onChange={(event) => setSearchFilter(event.target.value)}
-        />
-      </form>
+      <Input
+        type="text"
+        placeholder="🔍  Was willst du suchen?"
+        value={searchFilter}
+        onChange={(event) => setSearchFilter(event.target.value)}
+      />
       <RadioForm
         row
         aria-label="type"
@@ -72,6 +71,12 @@ const Search = () => {
         value={type}
         onChange={handleChange}
       >
+        <FormControlLabel
+          labelPlacement={"bottom"}
+          value=""
+          control={<Radio />}
+          label="All Types"
+        />
         <FormControlLabel
           labelPlacement={"bottom"}
           value="shop"
@@ -94,11 +99,14 @@ const Search = () => {
       <LocationList>
         {results
 
+          .filter((results) => new RegExp(searchFilter, "i").test(results.name))
           .filter((results) => results.type.includes(type))
-          .filter((results) => results.name.includes(searchFilter))
-          // .filter((results) => results.type.includes(shopFilter))
           .map((filterResult) => (
-            <li key={filterResult.name}> {filterResult.name} </li>
+            <li key={filterResult.name}>
+              <Link to={`/location/${filterResult.name}`}>
+                {filterResult.name}
+              </Link>
+            </li>
           ))}
       </LocationList>
     </SearchDiv>
