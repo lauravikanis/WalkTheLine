@@ -57,14 +57,12 @@ const Search = () => {
     <SearchDiv>
       <Header />
       <PageHeadline>Suche</PageHeadline>
-      <form>
-        <Input
-          type="text"
-          placeholder="🔍  Was willst du suchen?"
-          value={searchFilter}
-          onChange={(event) => setSearchFilter(event.target.value)}
-        />
-      </form>
+      <Input
+        type="text"
+        placeholder="🔍  Was willst du suchen?"
+        value={searchFilter}
+        onChange={(event) => setSearchFilter(event.target.value)}
+      />
       <RadioForm
         row
         aria-label="type"
