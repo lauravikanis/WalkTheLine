@@ -73,6 +73,12 @@ const Search = () => {
       >
         <FormControlLabel
           labelPlacement={"bottom"}
+          value=""
+          control={<Radio />}
+          label="All Types"
+        />
+        <FormControlLabel
+          labelPlacement={"bottom"}
           value="shop"
           control={<Radio />}
           label="SHOP"
@@ -93,13 +99,12 @@ const Search = () => {
       <LocationList>
         {results
 
-          .filter((results) => results.type.includes(type))
           .filter((results) => new RegExp(searchFilter, "i").test(results.name))
+          .filter((results) => results.type.includes(type))
           .map((filterResult) => (
             <li key={filterResult.name}>
               <Link to={`/location/${filterResult.name}`}>
-                {" "}
-                {filterResult.name}{" "}
+                {filterResult.name}
               </Link>
             </li>
           ))}
