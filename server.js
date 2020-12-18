@@ -4,11 +4,7 @@ const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
 
-const {
-  getLocationByName,
-  getTourDetails,
-  getLocationDetails,
-} = require("./lib/locations");
+const { getLocationByName, getTourDetails } = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
 
 const app = express();
