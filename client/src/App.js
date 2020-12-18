@@ -46,7 +46,7 @@ function App() {
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/pictures">
+          <Route path="/locations/:name/pic">
             <Pictures />
           </Route>
           <Route path="/favorites">
@@ -56,7 +56,7 @@ function App() {
             <MapPage />
           </Route>
         </Switch>
-        <a href="/storybook">To Storybook</a>
+        {/* <a href="/storybook">To Storybook</a> */}
       </Main>
     </Router>
   );

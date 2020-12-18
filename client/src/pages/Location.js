@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
@@ -39,7 +39,8 @@ const Location = () => {
   if (error) {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
-
+  const locationName = name;
+  console.log(locationName);
   return (
     <LocationDiv>
       <Header />
@@ -71,7 +72,11 @@ const Location = () => {
           {locationByName.pic && (
             <ImageCard>
               {locationByName.pic.map((name) => (
-                <img key={name.name} src={name.link} alt={name.name} />
+                <div key={name.name}>
+                  <Link to={`/location/${locationName}/${name.name}`}>
+                    <img src={name.link} alt={name.name} />
+                  </Link>
+                </div>
               ))}
             </ImageCard>
           )}
