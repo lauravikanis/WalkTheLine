@@ -73,7 +73,7 @@ const Location = () => {
             <ImageCard>
               {locationByName.pic.map((name) => (
                 <div key={name.name}>
-                  <Link to={`/location/${locationName}/${name.name}`}>
+                  <Link to={`/locations/${locationByName.name}/${name.name}`}>
                     <img src={name.link} alt={name.name} />
                   </Link>
                 </div>
