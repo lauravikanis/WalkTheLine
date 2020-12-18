@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import PageHeadline from "../components/Header/PageHeadline";
 
-import { /* Link, */ useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import DetailCard from "../components/Card/LocationDetails";
@@ -11,7 +11,6 @@ import FavoriteButton from "../components/Button/FavoriteButton";
 import LeafletMap from "../components/Map/LeafletMap";
 import Header from "../components/Header/Header";
 import ImageCard from "../components/Card/ImageCard";
-// import placeholder from "../assets/placeholder.jpeg";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -41,8 +40,6 @@ const Location = () => {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
 
-  console.log(locationByName.pic);
-
   return (
     <LocationDiv>
       <Header />
@@ -66,7 +63,7 @@ const Location = () => {
 
             {locationByName.website && (
               <p>
-                <a href={locationByName.website}>Website</a>
+                <a href={locationByName.website}>zu Locationwebsite</a>
               </p>
             )}
           </DetailCard>
@@ -74,7 +71,7 @@ const Location = () => {
           {locationByName.pic && (
             <ImageCard>
               {locationByName.pic.map((name) => (
-                <img key={name.name} src={name.link} alt={name.description} />
+                <img key={name.name} src={name.link} alt={name.name} />
               ))}
             </ImageCard>
           )}

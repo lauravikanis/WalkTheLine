@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Button from "../components/Button/Button";
+
 import placeholder from "../assets/placeholder.jpeg";
 
 import PageHeadline from "../components/Header/PageHeadline";
@@ -25,10 +25,9 @@ const Pictures = () => {
       <p>
         Bildbeschreibung Lorem ipsum dolor sit amet, consetetur sadipscing
         elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. <hr />
-        Du willst dich mir Bildmaterial beteiligen? Dann klick hier
+        aliquyam erat, sed diam voluptua. Du willst dich mir Bildmaterial
+        beteiligen? Dann klick hier
       </p>
-      <Button active>Bild Upload</Button>
     </PicturesDiv>
   );
 };
