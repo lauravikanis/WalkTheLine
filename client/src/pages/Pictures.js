@@ -17,9 +17,6 @@ const PicturesDiv = styled.div`
 
 const Pictures = () => {
   const locationName = useParams();
-  console.log(locationName.name);
-  console.log(locationName.pic);
-
   const pictureName = locationName.pic;
 
   const { isLoading, error, data: locationByName } = useQuery(
