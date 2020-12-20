@@ -40,14 +40,14 @@ function App() {
           <Route path="/tour/:tourname">
             <Tour />
           </Route>
-          <Route path="/location/:name">
-            <Location />
-          </Route>
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/locations/:name/pic">
+          <Route path="/location/:name/:pic">
             <Pictures />
+          </Route>
+          <Route path="/location/:name">
+            <Location />
           </Route>
           <Route path="/favorites">
             <Favorites />

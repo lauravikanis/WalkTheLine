@@ -8,10 +8,6 @@ import { getLocationByName } from "../api/locations";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
-// import { getLocationByName } from "../api/locations";
-// import { useQuery } from "react-query";
-// import { useParams } from "react-router-dom";
-
 const PicturesDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,8 +18,9 @@ const PicturesDiv = styled.div`
 const Pictures = () => {
   const locationName = useParams();
   console.log(locationName.name);
+  console.log(locationName.pic);
 
-  const pictureName = "Köln West";
+  const pictureName = locationName.pic;
 
   const { isLoading, error, data: locationByName } = useQuery(
     locationName.name,
