@@ -13,6 +13,7 @@ const PicturesDiv = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  text-align: center;
 `;
 
 const Pictures = () => {

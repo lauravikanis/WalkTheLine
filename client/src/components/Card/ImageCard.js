@@ -7,14 +7,6 @@ const ImageCard = styled.div`
   align-items: center;
   width: 100%;
   margin: 15px auto;
-
-  img {
-    width: 5rem;
-    height: 5rem;
-    margin: 5px;
-    border-radius: 15px;
-    object-fit: cover;
-  }
 `;
 
 export default ImageCard;

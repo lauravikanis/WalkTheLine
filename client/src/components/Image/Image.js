@@ -3,18 +3,14 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ImageContainer = styled(Link)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 15px;
-  max-width: 100%;
-  padding: 2px;
-  margin-top: 15px;
+  object-fit: scale-down;
 
   img {
-    max-width: 100%;
+    width: 6rem;
+    height: 6rem;
+    margin: 5px;
     border-radius: 15px;
-    object-fit: scale-down;
+    object-fit: cover;
   }
 `;
 
