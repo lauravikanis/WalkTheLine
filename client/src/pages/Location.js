@@ -55,8 +55,8 @@ const Location = () => {
           </PageHeadline>
           <p>{locationByName.about}</p>
           <DetailCard>
-            {locationByName.address.map((name) => (
-              <p key={name}> {name} </p>
+            {locationByName.address.map((locationAddress) => (
+              <p key={locationAddress}> {locationAddress} </p>
             ))}
             {locationByName.openingHours && (
               <p> {locationByName.openingHours}</p>
