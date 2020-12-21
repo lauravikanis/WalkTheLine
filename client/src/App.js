@@ -56,7 +56,6 @@ function App() {
             <MapPage />
           </Route>
         </Switch>
-        <a href="/storybook">To Storybook</a>
       </Main>
     </Router>
   );
