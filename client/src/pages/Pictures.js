@@ -1,34 +1,51 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Button from "../components/Button/Button";
-import placeholder from "../assets/placeholder.jpeg";
 
 import PageHeadline from "../components/Header/PageHeadline";
 import PictureContainer from "../components/Image/Picture";
 import Header from "../components/Header/Header";
+import { getLocationByName } from "../api/locations";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
 
 const PicturesDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   max-width: 600px;
+  text-align: center;
 `;
 
 const Pictures = () => {
+  const locationName = useParams();
+  const pictureName = locationName.pic;
+
+  const { isLoading, error, data: locationByName } = useQuery(
+    locationName.name,
+    getLocationByName
+  );
+  if (isLoading) {
+    return "Laden...";
+  }
+
+  if (error) {
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
+  }
+
+  const filterByPicName = locationByName.pic;
+
+  const picDetails = filterByPicName.filter((onePic) =>
+    onePic.name.includes(pictureName)
+  );
+
   return (
     <PicturesDiv>
       <Header />
-      <PageHeadline>Bildname</PageHeadline>
+      <PageHeadline>{picDetails[0].name}</PageHeadline>
       <PictureContainer>
-        <img src={placeholder} alt="placeholder" />
+        <img src={picDetails[0].link} alt="placeholder" />
       </PictureContainer>
-      <p>
-        Bildbeschreibung Lorem ipsum dolor sit amet, consetetur sadipscing
-        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. <hr />
-        Du willst dich mir Bildmaterial beteiligen? Dann klick hier
-      </p>
-      <Button active>Bild Upload</Button>
+      <p> {picDetails[0].description}</p>
     </PicturesDiv>
   );
 };
