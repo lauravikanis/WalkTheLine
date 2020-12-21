@@ -3,7 +3,7 @@ import ImageCard from "./ImageCard";
 import placeholder from "../../assets/placeholder.jpeg";
 
 export default {
-  title: "Components/Card",
+  title: "Components/Card_Image",
   component: ImageCard,
 };
 
