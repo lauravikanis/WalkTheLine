@@ -17,7 +17,7 @@ const Map = styled(MapContainer)`
   border-radius: 15px;
 `;
 
-const LeafletMap = () => {
+const LeafletMapTour = () => {
   let location = useLocation();
 
   const { isLoading, error, data: TourDetails } = useQuery(
@@ -51,8 +51,8 @@ const LeafletMap = () => {
     </Map>
   );
 };
-export default LeafletMap;
-LeafletMap.propTypes = {
+export default LeafletMapTour;
+LeafletMapTour.propTypes = {
   zoomdistance: PropTypes.string,
   markerPosition: PropTypes.array,
 };

@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components/macro";
-import PageHeadline from "../components/Header/PageHeadline";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
-import DetailCard from "../components/Card/LocationDetails";
 import useFavorites from "../hooks/useFavorites";
-import FavoriteButton from "../components/Button/FavoriteButton";
-import LeafletMap from "../components/Map/LeafletMap";
-import Header from "../components/Header/Header";
-import ImageCard from "../components/Card/ImageCard";
-import Image from "../components/Image/Image";
+
+import {
+  Header,
+  DetailCard,
+  PageHeadline,
+  FavoriteButton,
+  LeafletMap,
+  ImageCard,
+  Image,
+} from "../imports";
 
 const LocationDiv = styled.div`
   display: flex;

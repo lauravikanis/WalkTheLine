@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
+
 import { getEveryLocation } from "../api/search";
-
-import Header from "../components/Header/Header";
-
-import PageHeadline from "../components/Header/PageHeadline";
-import Input from "../components/Input/Input";
-import LocationList from "../components/Standorte/LocationList";
+import { Link } from "react-router-dom";
 
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import { Link } from "react-router-dom";
+
+import { Header, PageHeadline, Input, LocationList } from "../imports";
 
 const SearchDiv = styled.div`
   display: flex;

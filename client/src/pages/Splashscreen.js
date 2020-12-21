@@ -1,6 +1,6 @@
 import React from "react";
 import Splashlogo from "../assets/logo.svg";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 const Splash = styled.div`

@@ -2,11 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
-import FavoriteButton from "../components/Button/FavoriteButton";
-import Header from "../components/Header/Header";
 
-import PageHeadline from "../components/Header/PageHeadline";
-import LocationList from "../components/Standorte/LocationList";
+import { Header, FavoriteButton, PageHeadline, LocationList } from "../imports";
+
 import useFavorites from "../hooks/useFavorites";
 
 const FavoriteDiv = styled.div`
