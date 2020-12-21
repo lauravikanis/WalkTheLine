@@ -1,6 +1,6 @@
 import React from "react";
 import placeholder from "../../assets/placeholder.jpeg";
-import PictureContainer from "./Picture";
+import PictureContainer from "./PictureContainer";
 
 export default {
   title: "Components/Pictures",
