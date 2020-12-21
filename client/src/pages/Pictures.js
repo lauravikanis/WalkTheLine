@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import PageHeadline from "../components/Header/PageHeadline";
-import PictureContainer from "../components/Image/Picture";
-import Header from "../components/Header/Header";
 import { getLocationByName } from "../api/locations";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+
+import { Header, PageHeadline, PictureContainer } from "../imports";
 
 const PicturesDiv = styled.div`
   display: flex;

@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Card from "../components/Card/Card";
 import jazzPath from "../assets/jazz.svg";
 import indierockPath from "../assets/indierock.svg";
 import electronicaPath from "../assets/electronica.svg";
-import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
-import Header from "../components/Header/Header";
+import { Header, PageHeadline, Card } from "../imports";
 
 const ChoiceDiv = styled.div`
   display: flex;

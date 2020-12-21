@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
-import PageHeadline from "../components/Header/PageHeadline";
-import LocationList from "../components/Standorte/LocationList";
-import { useQuery } from "react-query";
 
+import { useQuery } from "react-query";
 import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
-import LeafletMap from "../components/Map/LeafletMap_Tour";
-import Header from "../components/Header/Header";
+
+import { Header, PageHeadline, LocationList, LeafletMapTour } from "../imports";
 
 const TourDiv = styled.div`
   display: flex;
@@ -52,7 +50,7 @@ const Tour = () => {
               </li>
             ))}
           </LocationList>
-          <LeafletMap />
+          <LeafletMapTour />
         </>
       )}
     </TourDiv>

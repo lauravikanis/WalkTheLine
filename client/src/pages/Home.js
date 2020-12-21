@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Card from "../components/Card/Card";
 import tourPath from "../assets/tour.svg";
 import searchPath from "../assets/search.svg";
 import favoritePath from "../assets/favorites.svg";
-import PageHeadline from "../components/Header/PageHeadline";
 import { Link } from "react-router-dom";
-
 import "leaflet/dist/leaflet.css";
-import Header from "../components/Header/Header";
+
+import { Header, Card, PageHeadline } from "../imports";
 
 const HomeDiv = styled.div`
   display: flex;

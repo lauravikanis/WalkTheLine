@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Header from "../components/Header/Header";
 
-import PageHeadline from "../components/Header/PageHeadline";
-import LeafletMap from "../components/Map/LeafletMap";
+import { Header, PageHeadline, LeafletMap } from "../imports";
 
 const MapDiv = styled.div`
   display: flex;

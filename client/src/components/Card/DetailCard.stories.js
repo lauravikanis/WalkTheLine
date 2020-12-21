@@ -1,15 +1,15 @@
 import React from "react";
-import DetailCard from "./LocationDetails";
+import DetailCard from "./DetailCard";
 
 export default {
-  title: "Components/DetailCard",
+  title: "Components/Card_Detail",
   component: DetailCard,
 };
 
 const Template = (args) => <DetailCard {...args} />;
 
-export const details = Template.bind({});
-details.args = {
+export const detailCard = Template.bind({});
+detailCard.args = {
   visibility: true,
   children: (
     <>
