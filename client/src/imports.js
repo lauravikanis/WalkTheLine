@@ -12,7 +12,7 @@ import PictureContainer from "./components/Image/PictureContainer";
 import Input from "./components/Input/Input";
 import LeafletMap from "./components/Map/LeafletMap";
 import LeafletMapTour from "./components/Map/LeafletMapTour";
-import Placeholder from "./components/Placeholder/Placeholder";
+
 import LocationList from "./components/Locations/LocationList";
 
 export {
@@ -30,6 +30,5 @@ export {
   Input,
   LeafletMap,
   LeafletMapTour,
-  Placeholder,
   LocationList,
 };
