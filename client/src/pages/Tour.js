@@ -33,6 +33,9 @@ const Tour = () => {
   if (error) {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
+
+  console.log(TourDetails);
+
   return (
     <TourDiv>
       <Header />
