@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components/macro";
+import spotifyPath from "../assets/spotify.svg";
 
 import { useQuery } from "react-query";
 import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
 
-import { Header, PageHeadline, LocationList, LeafletMapTour } from "../imports";
+import {
+  Header,
+  PageHeadline,
+  LocationList,
+  LeafletMapTour,
+  Card,
+} from "../imports";
 
 const TourDiv = styled.div`
   display: flex;
@@ -44,6 +51,19 @@ const Tour = () => {
         <>
           <PageHeadline>{TourDetails.name}</PageHeadline>
           <p>{TourDetails.description}</p>
+          <Card>
+            Den passenden Sound zur Tour findest du hier:
+            {TourDetails.playlist.map((playlists) => (
+              <a
+                key={playlists.link}
+                href={playlists.spotify}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={spotifyPath} alt="spotifyicon" />
+              </a>
+            ))}
+          </Card>
           <LocationList>
             {TourDetails.locationNames.map((locationName) => (
               <li key={locationName.name}>
