@@ -5,7 +5,13 @@ import { useQuery } from "react-query";
 import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
 
-import { Header, PageHeadline, LocationList, LeafletMapTour } from "../imports";
+import {
+  Header,
+  PageHeadline,
+  LocationList,
+  LeafletMapTour,
+  PlayCard,
+} from "../imports";
 
 const TourDiv = styled.div`
   display: flex;
@@ -33,6 +39,7 @@ const Tour = () => {
   if (error) {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
+
   return (
     <TourDiv>
       <Header />
@@ -41,6 +48,22 @@ const Tour = () => {
         <>
           <PageHeadline>{TourDetails.name}</PageHeadline>
           <p>{TourDetails.description}</p>
+          <PlayCard>
+            Den passenden Sound zur Tour findest du hier:
+            <div>
+              {TourDetails.playlist.map((playlists) => (
+                <a
+                  key={playlists.link}
+                  href={playlists.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img src={playlists.icon} alt={`${playlists.name}logo`} />
+                </a>
+              ))}
+            </div>
+          </PlayCard>
+
           <LocationList>
             {TourDetails.locationNames.map((locationName) => (
               <li key={locationName.name}>

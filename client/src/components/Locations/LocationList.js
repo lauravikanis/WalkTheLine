@@ -6,7 +6,7 @@ const LocationList = styled.ol`
   flex-direction: column;
   justify-content: center;
   padding: 0;
-  margin: 15px;
+  margin-bottom: 1.75rem;
 
   a {
     color: var(--secondary-color);

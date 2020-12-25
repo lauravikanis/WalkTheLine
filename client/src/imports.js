@@ -3,6 +3,7 @@ import Button from "./components/Button/BackButton";
 import RadioButton from "./components/Button/BackButton";
 import FavoriteButton from "./components/Button/FavoriteButton";
 import Card from "./components/Card/Card";
+import PlayCard from "./components/Card/PlayCard";
 import ImageCard from "./components/Card/ImageCard";
 import DetailCard from "./components/Card/DetailCard";
 import Header from "./components/Header/Header";
@@ -21,6 +22,7 @@ export {
   RadioButton,
   FavoriteButton,
   Card,
+  PlayCard,
   ImageCard,
   DetailCard,
   Header,
