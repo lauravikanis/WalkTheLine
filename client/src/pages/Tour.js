@@ -40,8 +40,6 @@ const Tour = () => {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
 
-  console.log(TourDetails);
-
   return (
     <TourDiv>
       <Header />
@@ -60,8 +58,7 @@ const Tour = () => {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  {console.log(playlists.name)}
-                  <img src={playlists.icon} alt="streaminglogo" />
+                  <img src={playlists.icon} alt={`${playlists.name}logo`} />
                 </a>
               ))}
             </div>
