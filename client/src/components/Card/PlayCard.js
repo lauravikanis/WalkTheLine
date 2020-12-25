@@ -9,7 +9,6 @@ const PlayCard = styled.div`
   border-radius: 15px;
   width: 100%;
   height: 100px;
-  margin: 15px auto;
   padding: 1rem 2.5rem;
   color: var(--secondary-color);
 

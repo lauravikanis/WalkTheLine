@@ -66,6 +66,7 @@ const Tour = () => {
               ))}
             </div>
           </PlayCard>
+
           <LocationList>
             {TourDetails.locationNames.map((locationName) => (
               <li key={locationName.name}>
