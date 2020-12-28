@@ -14,6 +14,9 @@ const SearchDiv = styled.div`
   max-width: 600px;
   width: 90%;
 
+  ol {
+    margin-top: 0;
+  }
   li {
     list-style: none;
   }

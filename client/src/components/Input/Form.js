@@ -3,10 +3,7 @@ import styled from "styled-components";
 const Form = styled.form`
   display: flex;
   text-align: center;
-  border-bottom: 3px solid #0f4e8f;
   width: 100%;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
 
   input[type="radio"] {
     opacity: 0;
@@ -24,7 +21,7 @@ const Form = styled.form`
     width: 25%;
     max-width: 150px;
     height: 50px;
-    margin: 15px auto;
+    margin: 0.75rem auto;
     color: white;
     font-size: 1rem;
     text-align: center;
