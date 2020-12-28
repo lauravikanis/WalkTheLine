@@ -5,7 +5,7 @@ const Card = styled.div`
   display: flex;
   justify-content: ${(props) => (props.details ? "center" : "space-between")};
   align-items: center;
-  background: ${(props) => (props.primary ? "var(--primary-color)" : "white")};
+  background: var(--primary-color);
   border-radius: 15px;
   width: 100%;
   height: 100px;
@@ -30,7 +30,6 @@ const Card = styled.div`
   }
 `;
 Card.propTypes = {
-  primary: PropTypes.bool,
   details: PropTypes.bool,
 };
 
