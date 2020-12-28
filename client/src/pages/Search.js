@@ -4,10 +4,6 @@ import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
-// import Radio from "@material-ui/core/Radio";
-// import RadioGroup from "@material-ui/core/RadioGroup";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-
 import { Header, PageHeadline, Input, LocationList } from "../imports";
 
 const SearchDiv = styled.div`
@@ -21,18 +17,6 @@ const SearchDiv = styled.div`
     list-style: none;
   }
 `;
-
-// const RadioForm = styled(RadioGroup)`
-//   display: flex;
-//   justify-content: center;
-
-//   span {
-//     color: var(--primary-color);
-//     font-family: var(--titleFont);
-//     font-weight: bold;
-//     text-transform: uppercase;
-//   }
-// `;
 
 const Search = () => {
   const [results, setResults] = useState([]);
@@ -94,38 +78,6 @@ const Search = () => {
         </label>
       </form>
 
-      {/* <RadioForm
-        row
-        aria-label="type"
-        name="type1"
-        value={type}
-        onChange={handleChange}
-      >
-        <FormControlLabel
-          labelPlacement={"bottom"}
-          value=""
-          control={<Radio />}
-          label="All Types"
-        />
-        <FormControlLabel
-          labelPlacement={"bottom"}
-          value="shop"
-          control={<Radio />}
-          label="SHOP"
-        />
-        <FormControlLabel
-          labelPlacement={"bottom"}
-          value="venue"
-          control={<Radio />}
-          label="VENUE"
-        />
-        <FormControlLabel
-          labelPlacement={"bottom"}
-          value="poi"
-          control={<Radio />}
-          label="POI"
-        />
-      </RadioForm> */}
       <LocationList>
         {results
 
