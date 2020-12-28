@@ -23,19 +23,19 @@ const Home = () => {
 
       <PageHeadline>HOME</PageHeadline>
       <Link to="/choice">
-        <Card primary>
+        <Card>
           <h2>TOUR</h2>
           <img src={tourPath} alt="touricon" />
         </Card>
       </Link>
       <Link to="/search">
-        <Card primary>
+        <Card>
           <h2>SUCHE</h2>
           <img src={searchPath} alt="searchicon" />
         </Card>
       </Link>
       <Link to="/favorites">
-        <Card primary>
+        <Card>
           <h2>FAVORITEN</h2>
           <img src={favoritePath} alt="favoriteicon" />
         </Card>

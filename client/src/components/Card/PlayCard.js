@@ -3,19 +3,28 @@ import styled from "styled-components/macro";
 const PlayCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  background: var(--primary-color);
+  background: white;
   border-radius: 15px;
   width: 100%;
-  height: 100px;
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 2.5rem;
   color: var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
 
   img {
-    width: 40px;
-    margin-left: 2rem;
+    width: 80px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-top: 0.5rem;
+  }
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

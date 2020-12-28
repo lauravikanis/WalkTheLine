@@ -48,13 +48,15 @@ li {
   justify-content: ${(props) => (props.details ? "space-between" : "center")};
   font-size: 1.5rem;
   color: var(--secondary-color);
-  background: white;
+  background: var(--primary-color);
   font-family: var(--titleFont);
   font-weight: bold;
   text-align: center;
   padding: 0.5rem  2.5rem;
   margin-top: 10px;
   border-radius: 15px;
+ 
+
   
 
 
