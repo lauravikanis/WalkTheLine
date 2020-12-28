@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Form = styled.form`
   display: flex;
@@ -15,20 +16,21 @@ const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: ${(props) =>
+      props.checked ? "white" : "var(--primary-color);"};
     border-radius: 15px;
     border: none;
     width: 25%;
     max-width: 150px;
     height: 50px;
     margin: 0.75rem auto;
-    color: white;
+    color: ${(props) => (props.checked ? "var(--primary-color);" : "white")};
     font-size: 1rem;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
   }
-  input[type="checkbox"] label:after {
+  input:checked + label {
     background-color: white;
     color: var(--primary-color);
   }
@@ -37,11 +39,9 @@ const Form = styled.form`
     background-color: white;
     color: var(--primary-color);
   }
-
-  label:focus {
-    background-color: red;
-    color: var(--primary-color);
-  }
 `;
+Form.propTypes = {
+  details: PropTypes.bool,
+};
 
 export default Form;
