@@ -13,6 +13,10 @@ const FavoriteDiv = styled.div`
   align-content: center;
   max-width: 600px;
   width: 90%;
+
+  li {
+    list-style: none;
+  }
 `;
 
 const Favorite = () => {
