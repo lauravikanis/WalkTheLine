@@ -4,9 +4,9 @@ import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import Radio from "@material-ui/core/Radio";
+// import RadioGroup from "@material-ui/core/RadioGroup";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import { Header, PageHeadline, Input, LocationList } from "../imports";
 
@@ -22,22 +22,23 @@ const SearchDiv = styled.div`
   }
 `;
 
-const RadioForm = styled(RadioGroup)`
-  display: flex;
-  justify-content: center;
+// const RadioForm = styled(RadioGroup)`
+//   display: flex;
+//   justify-content: center;
 
-  span {
-    color: var(--primary-color);
-    font-family: var(--titleFont);
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-`;
+//   span {
+//     color: var(--primary-color);
+//     font-family: var(--titleFont);
+//     font-weight: bold;
+//     text-transform: uppercase;
+//   }
+// `;
 
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
   const [type, setType] = useState("");
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -47,7 +48,8 @@ const Search = () => {
     fetchData();
   }, []);
 
-  const handleChange = (event) => {
+  const handleOptionChange = (event) => {
+    setChecked(event.target.value);
     setType(event.target.value);
   };
 
@@ -61,7 +63,38 @@ const Search = () => {
         value={searchFilter}
         onChange={(event) => setSearchFilter(event.target.value)}
       />
-      <RadioForm
+
+      <form onChange={handleOptionChange}>
+        <label>
+          <input
+            type="radio"
+            value="shop"
+            checked={checked === "shop"}
+            onChange={(event) => setType(event.target.value)}
+          />
+          Option 1
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="venue"
+            checked={checked === "venue"}
+            onChange={(event) => setType(event.target.value)}
+          />
+          Option 2
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="poi"
+            checked={checked === "poi"}
+            onChange={(event) => setType(event.target.value)}
+          />
+          Option 3
+        </label>
+      </form>
+
+      {/* <RadioForm
         row
         aria-label="type"
         name="type1"
@@ -92,7 +125,7 @@ const Search = () => {
           control={<Radio />}
           label="POI"
         />
-      </RadioForm>
+      </RadioForm> */}
       <LocationList>
         {results
 
