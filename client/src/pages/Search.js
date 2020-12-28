@@ -5,6 +5,7 @@ import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
 import { Header, PageHeadline, Input, LocationList } from "../imports";
+import Form from "../components/Input/Form";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -48,7 +49,7 @@ const Search = () => {
         onChange={(event) => setSearchFilter(event.target.value)}
       />
 
-      <form onChange={handleOptionChange}>
+      <Form onChange={handleOptionChange}>
         <label>
           <input
             type="radio"
@@ -56,7 +57,7 @@ const Search = () => {
             checked={checked === "shop"}
             onChange={(event) => setType(event.target.value)}
           />
-          Option 1
+          shop
         </label>
         <label>
           <input
@@ -65,7 +66,7 @@ const Search = () => {
             checked={checked === "venue"}
             onChange={(event) => setType(event.target.value)}
           />
-          Option 2
+          venue{" "}
         </label>
         <label>
           <input
@@ -74,9 +75,9 @@ const Search = () => {
             checked={checked === "poi"}
             onChange={(event) => setType(event.target.value)}
           />
-          Option 3
+          poi
         </label>
-      </form>
+      </Form>
 
       <LocationList>
         {results
