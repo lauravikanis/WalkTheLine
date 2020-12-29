@@ -31,8 +31,13 @@ const Form = styled.form`
     text-transform: uppercase;
   }
   input:checked + label {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: #bfb;
+    border-color: #4c4;
+  }
+
+  input:checked + label:after {
+    background-color: #bfb;
+    border-color: #4c4;
   }
 
   label:active {

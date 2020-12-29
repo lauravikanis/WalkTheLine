@@ -5,7 +5,7 @@ import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
 import { Header, PageHeadline, Input, LocationList } from "../imports";
-import Form from "../components/Input/Form";
+// import Form from "../components/Input/Form";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -22,11 +22,46 @@ const SearchDiv = styled.div`
   }
 `;
 
+const Form = styled.form`
+  display: flex;
+  text-align: center;
+  width: 100%;
+`;
+
+const Radio = styled.input`
+  opacity: 0;
+  position: fixed;
+  width: 0;
+`;
+
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  border: none;
+  width: 25%;
+  max-width: 150px;
+  height: 50px;
+  margin: 0.75rem auto;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  ${Radio}:checked + & {
+    background-color: white;
+    color: var(--primary-color);
+  }
+`;
+
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-  const [type, setType] = useState("");
-  const [checked, setChecked] = useState(false);
+  const [searchType, setSearchType] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -35,11 +70,6 @@ const Search = () => {
     }
     fetchData();
   }, []);
-
-  const handleOptionChange = (event) => {
-    setChecked(event.target.value);
-    setType(event.target.value);
-  };
 
   return (
     <SearchDiv>
@@ -52,41 +82,42 @@ const Search = () => {
         onChange={(event) => setSearchFilter(event.target.value)}
       />
 
-      <Form onChange={handleOptionChange}>
-        <label>
-          <input
-            type="radio"
-            value="shop"
-            checked={checked === "shop"}
-            onChange={(event) => setType(event.target.value)}
-          />
+      <Form>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="shop"
+          value="shop"
+          checked={searchType === "shop"}
+          onChange={() => setSearchType("shop")}
+        />
+        <Label htmlFor="shop" checked={searchType === "shop"}>
           shop
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="venue"
-            checked={checked === "venue"}
-            onChange={(event) => setType(event.target.value)}
-          />
-          venue{" "}
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="poi"
-            checked={checked === "poi"}
-            onChange={(event) => setType(event.target.value)}
-          />
-          poi
-        </label>
+        </Label>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="venue"
+          value="venue"
+          checked={searchType === "venue"}
+          onChange={() => setSearchType("venue")}
+        />
+        <Label htmlFor="venue">venue</Label>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="poi"
+          value="poi"
+          checked={searchType === "poi"}
+          onChange={() => setSearchType("poi")}
+        />
+        <Label htmlFor="poi">poi</Label>
       </Form>
-
       <LocationList>
         {results
 
           .filter((results) => new RegExp(searchFilter, "i").test(results.name))
-          .filter((results) => results.type.includes(type))
+          .filter((results) => results.type.includes(searchType))
           .map((filterResult) => (
             <li key={filterResult.name}>
               <Link to={`/location/${filterResult.name}`}>
