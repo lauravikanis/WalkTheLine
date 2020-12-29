@@ -10,14 +10,14 @@ const Label = styled.label`
   border: 3px solid var(--primary-color);
   width: 25%;
   max-width: 150px;
-  height: 50px;
+  height: 35px;
   margin: 0.75rem auto;
   color: var(--primary-color);
   font-size: 1rem;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  transition: 0.25s;
+  transition: 0.5s;
 
   ${Radio}:checked + & {
     background-color: var(--primary-color);
