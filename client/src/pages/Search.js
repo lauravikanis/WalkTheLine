@@ -39,22 +39,24 @@ const Label = styled.label`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
+  background-color: white;
   border-radius: 15px;
-  border: none;
+  border: 3px solid var(--primary-color);
   width: 25%;
   max-width: 150px;
   height: 50px;
   margin: 0.75rem auto;
-  color: white;
+  color: var(--primary-color);
   font-size: 1rem;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+  transition: 0.25s;
 
   ${Radio}:checked + & {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+    border: 3px solid var(--primary-color);
   }
 `;
 
