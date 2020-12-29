@@ -4,11 +4,15 @@ import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
-import { Header, PageHeadline, Input, LocationList } from "../imports";
-import Form from "../components/Input/Form";
-import Radio from "../components/Input/Radio";
-import Label from "../components/Input/Label";
-// import Form from "../components/Input/Form";
+import {
+  Header,
+  PageHeadline,
+  Input,
+  Form,
+  Radio,
+  Label,
+  LocationList,
+} from "../imports";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -24,44 +28,6 @@ const SearchDiv = styled.div`
     list-style: none;
   }
 `;
-
-// const Form = styled.form`
-//   display: flex;
-//   text-align: center;
-//   width: 100%;
-// `;
-
-// const Radio = styled.input`
-//   opacity: 0;
-//   position: fixed;
-//   width: 0;
-// `;
-
-// const Label = styled.label`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: white;
-//   border-radius: 15px;
-//   border: 3px solid var(--primary-color);
-//   width: 25%;
-//   max-width: 150px;
-//   height: 50px;
-//   margin: 0.75rem auto;
-//   color: var(--primary-color);
-//   font-size: 1rem;
-//   text-align: center;
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   transition: 0.25s;
-
-//   ${Radio}:checked + & {
-//     background-color: var(--primary-color);
-//     color: white;
-//     border: 3px solid var(--primary-color);
-//   }
-// `;
 
 const Search = () => {
   const [results, setResults] = useState([]);
