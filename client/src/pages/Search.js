@@ -4,11 +4,15 @@ import styled from "styled-components/macro";
 import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-
-import { Header, PageHeadline, Input, LocationList } from "../imports";
+import {
+  Header,
+  PageHeadline,
+  Input,
+  Form,
+  Radio,
+  Label,
+  LocationList,
+} from "../imports";
 
 const SearchDiv = styled.div`
   display: flex;
@@ -17,27 +21,18 @@ const SearchDiv = styled.div`
   max-width: 600px;
   width: 90%;
 
+  ol {
+    margin-top: 0;
+  }
   li {
     list-style: none;
-  }
-`;
-
-const RadioForm = styled(RadioGroup)`
-  display: flex;
-  justify-content: center;
-
-  span {
-    color: var(--primary-color);
-    font-family: var(--titleFont);
-    font-weight: bold;
-    text-transform: uppercase;
   }
 `;
 
 const Search = () => {
   const [results, setResults] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
-  const [type, setType] = useState("");
+  const [searchType, setSearchType] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -46,10 +41,6 @@ const Search = () => {
     }
     fetchData();
   }, []);
-
-  const handleChange = (event) => {
-    setType(event.target.value);
-  };
 
   return (
     <SearchDiv>
@@ -61,43 +52,43 @@ const Search = () => {
         value={searchFilter}
         onChange={(event) => setSearchFilter(event.target.value)}
       />
-      <RadioForm
-        row
-        aria-label="type"
-        name="type1"
-        value={type}
-        onChange={handleChange}
-      >
-        <FormControlLabel
-          labelPlacement={"bottom"}
-          value=""
-          control={<Radio />}
-          label="All Types"
-        />
-        <FormControlLabel
-          labelPlacement={"bottom"}
+
+      <Form>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="shop"
           value="shop"
-          control={<Radio />}
-          label="SHOP"
+          checked={searchType === "shop"}
+          onChange={() => setSearchType("shop")}
         />
-        <FormControlLabel
-          labelPlacement={"bottom"}
+        <Label htmlFor="shop" checked={searchType === "shop"}>
+          shop
+        </Label>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="venue"
           value="venue"
-          control={<Radio />}
-          label="VENUE"
+          checked={searchType === "venue"}
+          onChange={() => setSearchType("venue")}
         />
-        <FormControlLabel
-          labelPlacement={"bottom"}
+        <Label htmlFor="venue">venue</Label>
+        <Radio
+          name="searchType"
+          type="radio"
+          id="poi"
           value="poi"
-          control={<Radio />}
-          label="POI"
+          checked={searchType === "poi"}
+          onChange={() => setSearchType("poi")}
         />
-      </RadioForm>
+        <Label htmlFor="poi">poi</Label>
+      </Form>
       <LocationList>
         {results
 
           .filter((results) => new RegExp(searchFilter, "i").test(results.name))
-          .filter((results) => results.type.includes(type))
+          .filter((results) => results.type.includes(searchType))
           .map((filterResult) => (
             <li key={filterResult.name}>
               <Link to={`/location/${filterResult.name}`}>
