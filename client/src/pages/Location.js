@@ -88,7 +88,7 @@ const Location = () => {
             </ImageCard>
           )}
           <LeafletMap
-            zoomdistance="15"
+            zoomdistance="16"
             mapCenter={locationByName.position}
             markerPosition={locationByName.position}
             locationName={name}
