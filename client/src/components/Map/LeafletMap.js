@@ -9,9 +9,6 @@ import PropTypes from "prop-types";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-require("dotenv").config();
-
-const Mapboxtoken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const Map = styled(MapContainer)`
   height: 40vh;
@@ -39,7 +36,7 @@ const LeafletMap = ({
       <TileLayer
         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>
         '
-        url={`https://api.mapbox.com/styles/v1/lauravikanis/ckjbesrwvj9681at4kry1zw4s/tiles/256/{z}/{x}/{y}@2x?access_token=${Mapboxtoken}`}
+        url={`https://api.mapbox.com/styles/v1/lauravikanis/ckjbesrwvj9681at4kry1zw4s/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
       />
     </Map>
   );
