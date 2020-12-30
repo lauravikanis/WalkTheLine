@@ -18,6 +18,21 @@ const Map = styled(MapContainer)`
   border-radius: 15px;
 `;
 
+const PopupContainer = styled.div`
+  font-size: 1rem;
+  font-family: var(--titleFont);
+  font-weight: bold;
+
+  hr {
+    border: 0.5px solid var(--text-color: );
+    margin: 2.5px 0;
+  }
+  div {
+    font-size: 0.75rem;
+    font-family: "Roboto", sans-serif;
+  }
+`;
+
 const LeafletMapTour = () => {
   let location = useLocation();
 
@@ -42,7 +57,15 @@ const LeafletMapTour = () => {
     <Map center={["50.9375", "6.9603"]} zoom={13} scrollWheelZoom={"center"}>
       {TourDetails.locationNames.map((locationName) => (
         <Marker key={locationName.name} position={locationName.position}>
-          <Popup>{locationName.name}</Popup>
+          <Popup>
+            <PopupContainer>
+              {locationName.name}
+              <hr />
+              {locationName.address.map((locationAddress) => (
+                <div key={locationAddress}> {locationAddress} </div>
+              ))}
+            </PopupContainer>
+          </Popup>
         </Marker>
       ))}
       <TileLayer
