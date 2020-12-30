@@ -67,7 +67,7 @@ const Location = () => {
 
             {locationByName.website && (
               <p>
-                <a href={locationByName.website}>zu Locationwebsite</a>
+                <a href={locationByName.website}>{locationByName.website}</a>
               </p>
             )}
           </DetailCard>
