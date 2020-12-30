@@ -4,7 +4,6 @@ import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-// import Marker from "react-leaflet-enhanced-marker";
 import PropTypes from "prop-types";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";

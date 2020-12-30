@@ -13,8 +13,6 @@ import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-// const Mapboxtoken = process.env.REACT_APP_MAPBOX_TOKEN;
-
 const Map = styled(MapContainer)`
   height: 40vh;
   border-radius: 15px;
