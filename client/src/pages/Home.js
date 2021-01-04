@@ -24,7 +24,7 @@ const Home = () => {
       <PageHeadline>HOME</PageHeadline>
       <Link to="/choice">
         <Card>
-          <h2>TOUR</h2>
+          <h2>Los gehts!</h2>
           <img src={tourPath} alt="touricon" />
         </Card>
       </Link>
