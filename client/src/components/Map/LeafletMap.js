@@ -8,6 +8,9 @@ import PropTypes from "prop-types";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import useCurrentLocation from "../../hooks/useCurrentLocation";
+import LocationMarker from "../../hooks/Userlocation";
+import { geolocationOptions } from "../../hooks/geolocationOptions";
 
 const Map = styled(MapContainer)`
   height: 40vh;
@@ -19,8 +22,11 @@ const LeafletMap = ({
   mapCenter,
   markerPosition,
   locationName,
-  // currentPosition,
 }) => {
+  const { location: currentLocation, error: currentError } = useCurrentLocation(
+    geolocationOptions
+  );
+
   let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
@@ -33,9 +39,7 @@ const LeafletMap = ({
         <Popup>{locationName}</Popup>
       </Marker>
 
-      {/* <Marker position={currentPosition}>
-        <Popup>Das bist du</Popup>
-      </Marker> */}
+      <LocationMarker location={currentLocation} error={currentError} />
 
       <TileLayer
         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>
