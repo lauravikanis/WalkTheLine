@@ -9,8 +9,8 @@ import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
-import LocationMarker from "../../hooks/Userlocation";
-import { geolocationOptions } from "../../hooks/geolocationOptions";
+import LocationMarker from "../Map/Userlocation";
+import { geolocationOptions } from "../Map/geolocationOptions";
 
 const Map = styled(MapContainer)`
   height: 40vh;

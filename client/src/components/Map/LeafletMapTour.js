@@ -12,6 +12,9 @@ import { getTourDetails } from "../../api/locations";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import useCurrentLocation from "../../hooks/useCurrentLocation";
+import LocationMarker from "../Map/Userlocation";
+import { geolocationOptions } from "../Map/geolocationOptions";
 
 const Map = styled(MapContainer)`
   height: 40vh;
@@ -24,7 +27,7 @@ const PopupContainer = styled.div`
   font-weight: bold;
 
   hr {
-    border: 0.5px solid var(--text-color: );
+    border: 0.5px solid var(--text-color);
     margin: 2.5px 0;
   }
   div {
@@ -35,6 +38,9 @@ const PopupContainer = styled.div`
 
 const LeafletMapTour = () => {
   let location = useLocation();
+  const { location: currentLocation, error: currentError } = useCurrentLocation(
+    geolocationOptions
+  );
 
   const { isLoading, error, data: TourDetails } = useQuery(
     location.pathname,
@@ -47,6 +53,7 @@ const LeafletMapTour = () => {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
+
   let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
@@ -68,6 +75,8 @@ const LeafletMapTour = () => {
           </Popup>
         </Marker>
       ))}
+      <LocationMarker location={currentLocation} error={currentError} />
+
       <TileLayer
         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>
         '
