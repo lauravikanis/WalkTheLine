@@ -25,6 +25,7 @@ const LocationMarker = ({ location, error }) => {
 LocationMarker.propTypes = {
   location: PropTypes.object,
   error: PropTypes.string,
+  icon: PropTypes.string,
 };
 
 export default LocationMarker;
