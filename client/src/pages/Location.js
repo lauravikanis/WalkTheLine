@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import useFavorites from "../hooks/useFavorites";
+import useCurrentLocation from "../hooks/useCurrentLocation";
 
 import {
   Header,
@@ -29,9 +30,27 @@ const LocationDiv = styled.div`
   }
 `;
 
+// const geolocationOptions = {
+//   // Using this option you can define when should the location request timeout and
+//   // call the error callback with timeout message.
+//   timeout: 6000,
+// };
+
 const Location = () => {
   const { name } = useParams();
+
+  const { location } = useCurrentLocation(/* geolocationOptions */);
+  console.log(location);
+
+  const latitude = location.longitude.toString();
+  console.log(latitude);
+
+  // const longitude = location.latitude.toString();
+  // const myLocation = [latitude, longitude];
+  // console.log(myLocation);
+
   const { toggleFavorite, favorites } = useFavorites("favorites", []);
+
   const { isLoading, error, data: locationByName } = useQuery(
     name,
     getLocationByName
@@ -92,6 +111,7 @@ const Location = () => {
             mapCenter={locationByName.position}
             markerPosition={locationByName.position}
             locationName={name}
+            // currentPosition={myLocation}
           />
         </>
       )}

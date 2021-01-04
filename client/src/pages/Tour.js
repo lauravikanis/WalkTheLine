@@ -27,7 +27,6 @@ const TourDiv = styled.div`
 
 const Tour = () => {
   let location = useLocation();
-
   const { isLoading, error, data: TourDetails } = useQuery(
     location.pathname,
     getTourDetails
@@ -63,7 +62,6 @@ const Tour = () => {
               ))}
             </div>
           </PlayCard>
-
           <LocationList>
             {TourDetails.locationNames.map((locationName) => (
               <li key={locationName.name}>
