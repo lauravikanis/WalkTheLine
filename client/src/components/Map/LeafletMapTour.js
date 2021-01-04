@@ -10,7 +10,7 @@ import { useQuery } from "react-query";
 import { getTourDetails } from "../../api/locations";
 
 import L from "leaflet";
-import icon from "leaflet/dist/images/marker-icon.png";
+import icon from "../../assets/icon_blue.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import LocationMarker from "../Map/Userlocation";
@@ -54,7 +54,7 @@ const LeafletMapTour = () => {
     return `An error has occurred: ${error.message}`;
   }
 
-  let DefaultIcon = L.icon({
+  const DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
   });

@@ -6,11 +6,12 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 import PropTypes from "prop-types";
 import L from "leaflet";
-import icon from "leaflet/dist/images/marker-icon.png";
+
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import LocationMarker from "../Map/Userlocation";
 import { geolocationOptions } from "../Map/geolocationOptions";
+import icon from "../../assets/icon_blue.png";
 
 const Map = styled(MapContainer)`
   height: 40vh;
@@ -27,7 +28,7 @@ const LeafletMap = ({
     geolocationOptions
   );
 
-  let DefaultIcon = L.icon({
+  const DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
   });
