@@ -75,7 +75,9 @@ const LeafletMapTour = () => {
           </Popup>
         </Marker>
       ))}
-      <LocationMarker location={currentLocation} error={currentError} />
+      {currentLocation && (
+        <LocationMarker location={currentLocation} error={currentError} />
+      )}
 
       <TileLayer
         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>
