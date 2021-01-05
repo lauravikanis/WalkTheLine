@@ -31,7 +31,9 @@ const LocationDiv = styled.div`
 
 const Location = () => {
   const { name } = useParams();
+
   const { toggleFavorite, favorites } = useFavorites("favorites", []);
+
   const { isLoading, error, data: locationByName } = useQuery(
     name,
     getLocationByName

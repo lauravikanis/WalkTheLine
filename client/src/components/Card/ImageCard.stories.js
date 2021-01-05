@@ -1,6 +1,6 @@
 import React from "react";
 import ImageCard from "./ImageCard";
-import placeholder from "../../assets/placeholder.jpeg";
+import placeholder from "../../assets/icon_blue.png";
 
 export default {
   title: "Components/Card_Image",
