@@ -22,8 +22,6 @@ const Home = () => {
     <HomeDiv>
       <Header />
       <PageHeadline>HOME</PageHeadline>
-      <CoronaNote />
-
       <Link to="/choice">
         <Card>
           <h2>Los gehts!</h2>
@@ -41,7 +39,8 @@ const Home = () => {
           <h2>FAVORITEN</h2>
           <img src={favoritePath} alt="favoriteicon" />
         </Card>
-      </Link>
+      </Link>{" "}
+      <CoronaNote />
     </HomeDiv>
   );
 };
