@@ -16,6 +16,7 @@ import icon from "../../assets/icon_blue.png";
 const Map = styled(MapContainer)`
   height: 40vh;
   border-radius: 15px;
+  margin-bottom: 1.5rem;
 `;
 
 const LeafletMap = ({

@@ -19,6 +19,7 @@ import { geolocationOptions } from "../Map/geolocationOptions";
 const Map = styled(MapContainer)`
   height: 40vh;
   border-radius: 15px;
+  margin-bottom: 2.5rem;
 `;
 
 const PopupContainer = styled.div`
@@ -28,7 +29,7 @@ const PopupContainer = styled.div`
 
   hr {
     border: 0.5px solid var(--text-color);
-    margin: 2.5px 0;
+    margin: 1.5px 0;
   }
   div {
     font-size: 0.75rem;
