@@ -13,7 +13,7 @@ const WarnNote = styled.div`
   }
   p {
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     margin-top: 0.25rem;
     margin-bottom: 0;
   }
