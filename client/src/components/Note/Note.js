@@ -14,11 +14,8 @@ const WarnNote = styled.div`
   p {
     color: white;
     font-size: 0.75rem;
+    margin-top: 0.25rem;
     margin-bottom: 0;
-    a {
-      color: white;
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -33,18 +30,6 @@ const CoronaNote = () => {
         können bitten wir euch, euch an die geltenden Abstand und
         Hygienemaßnahmen zu halten. Damit wir bald wieder zusammen Konzerte und
         Partys besuchen können.
-      </p>
-      <p>
-        {" "}
-        Mehr zu den Hygienebestimmungen findest du
-        <a
-          href="https://www.zusammengegencorona.de/aha/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          hier
-        </a>
       </p>
     </WarnNote>
   );
