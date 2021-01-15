@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
 import { Header, Card, PageHeadline } from "../imports";
+import CoronaNote from "../components/Note/Note";
 
 const HomeDiv = styled.div`
   display: flex;
@@ -20,8 +21,9 @@ const Home = () => {
   return (
     <HomeDiv>
       <Header />
-
       <PageHeadline>HOME</PageHeadline>
+      <CoronaNote />
+
       <Link to="/choice">
         <Card>
           <h2>Los gehts!</h2>
