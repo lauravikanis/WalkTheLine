@@ -9,9 +9,10 @@ const Label = styled.label`
   border-radius: 15px;
   border: 3px solid var(--primary-color);
   width: 25%;
-  max-width: 150px;
+  max-width: 125px;
+  min-width: 105px;
   height: 35px;
-  margin: 0.75rem auto;
+  margin: 0.2rem;
   color: var(--primary-color);
   font-size: 1rem;
   text-align: center;
