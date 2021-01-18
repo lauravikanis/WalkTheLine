@@ -10,6 +10,7 @@ const Input = styled.input`
   border-bottom: 3px solid #0f4e8f;
   width: 100%;
   padding-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 export default Input;
