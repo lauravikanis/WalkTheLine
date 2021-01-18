@@ -27,6 +27,11 @@ const SearchDiv = styled.div`
   li {
     list-style: none;
   }
+
+  summary {
+    color: var(--primary-color);
+    text-align: center;
+  }
 `;
 
 const Search = () => {
@@ -53,7 +58,7 @@ const Search = () => {
         onChange={(event) => setSearchFilter(event.target.value)}
       />
       <details>
-        <summary>Filter</summary>
+        <summary>Suchfilter</summary>
         <Form>
           <Radio
             name="searchType"
