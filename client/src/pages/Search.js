@@ -52,49 +52,51 @@ const Search = () => {
         value={searchFilter}
         onChange={(event) => setSearchFilter(event.target.value)}
       />
-
-      <Form>
-        <Radio
-          name="searchType"
-          type="radio"
-          id="all"
-          value=""
-          checked={searchType === ""}
-          onChange={() => setSearchType("")}
-        />
-        <Label htmlFor="all" checked={searchType === "all"}>
-          Kein Filter
-        </Label>
-        <Radio
-          name="searchType"
-          type="radio"
-          id="shop"
-          value="shop"
-          checked={searchType === "shop"}
-          onChange={() => setSearchType("shop")}
-        />
-        <Label htmlFor="shop" checked={searchType === "shop"}>
-          shop
-        </Label>
-        <Radio
-          name="searchType"
-          type="radio"
-          id="venue"
-          value="venue"
-          checked={searchType === "venue"}
-          onChange={() => setSearchType("venue")}
-        />
-        <Label htmlFor="venue">venue</Label>
-        <Radio
-          name="searchType"
-          type="radio"
-          id="poi"
-          value="poi"
-          checked={searchType === "poi"}
-          onChange={() => setSearchType("poi")}
-        />
-        <Label htmlFor="poi">poi</Label>
-      </Form>
+      <details>
+        <summary>Filter</summary>
+        <Form>
+          <Radio
+            name="searchType"
+            type="radio"
+            id="all"
+            value=""
+            checked={searchType === ""}
+            onChange={() => setSearchType("")}
+          />
+          <Label htmlFor="all" checked={searchType === "all"}>
+            Kein Filter
+          </Label>
+          <Radio
+            name="searchType"
+            type="radio"
+            id="shop"
+            value="shop"
+            checked={searchType === "shop"}
+            onChange={() => setSearchType("shop")}
+          />
+          <Label htmlFor="shop" checked={searchType === "shop"}>
+            shop
+          </Label>
+          <Radio
+            name="searchType"
+            type="radio"
+            id="venue"
+            value="venue"
+            checked={searchType === "venue"}
+            onChange={() => setSearchType("venue")}
+          />
+          <Label htmlFor="venue">venue</Label>
+          <Radio
+            name="searchType"
+            type="radio"
+            id="poi"
+            value="poi"
+            checked={searchType === "poi"}
+            onChange={() => setSearchType("poi")}
+          />
+          <Label htmlFor="poi">poi</Label>
+        </Form>
+      </details>
       <LocationList>
         {results
 
