@@ -57,6 +57,17 @@ const Search = () => {
         <Radio
           name="searchType"
           type="radio"
+          id="all"
+          value="all"
+          checked={searchType === "all"}
+          onChange={() => setSearchType("")}
+        />
+        <Label htmlFor="all" checked={searchType === ""}>
+          Kein Filter
+        </Label>
+        <Radio
+          name="searchType"
+          type="radio"
           id="shop"
           value="shop"
           checked={searchType === "shop"}
