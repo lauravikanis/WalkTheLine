@@ -18,6 +18,9 @@ const DisclaimerDiv = styled.div`
     margin: 0.5rem 0.5rem 1rem;
     font-size: 0.75rem;
   }
+  a {
+    text-decoration: underline;
+  }
 `;
 
 const Disclaimer = () => {
@@ -67,6 +70,10 @@ const Disclaimer = () => {
         Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
         entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
         wir derartige Inhalte umgehend entfernen.
+      </p>
+      <p>
+        Disclaimer von{" "}
+        <a href="https://www.e-recht24.de/muster-disclaimer.html">eRecht24</a>
       </p>
     </DisclaimerDiv>
   );
