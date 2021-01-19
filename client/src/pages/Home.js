@@ -17,7 +17,6 @@ const HomeDiv = styled.div`
   width: 90%;
 
   h5 {
-    margin: 0.5rem;
     text-align: center;
   }
 `;

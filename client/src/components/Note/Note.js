@@ -9,7 +9,11 @@ const WarnNote = styled.div`
   border-radius: 15px;
   h5 {
     color: white;
-    margin: 0;
+    margin-top: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   p {
     color: white;
