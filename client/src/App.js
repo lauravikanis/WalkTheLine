@@ -7,6 +7,7 @@ import Tour from "./pages/Tour";
 import Location from "./pages/Location";
 import Search from "./pages/Search";
 import MapPage from "./pages/Map";
+import Disclaimer from "./pages/Disclaimer";
 
 import Favorites from "./pages/Favorites";
 import Pictures from "./pages/Pictures";
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route path="/favorites">
             <Favorites />
+          </Route>
+          <Route path="/disclaimer">
+            <Disclaimer />
           </Route>
           <Route path="/map">
             <MapPage />

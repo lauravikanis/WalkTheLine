@@ -15,6 +15,10 @@ const HomeDiv = styled.div`
   align-content: center;
   max-width: 600px;
   width: 90%;
+
+  h5 {
+    text-align: center;
+  }
 `;
 
 const Home = () => {
@@ -39,8 +43,11 @@ const Home = () => {
           <h2>FAVORITEN</h2>
           <img src={favoritePath} alt="favoriteicon" />
         </Card>
-      </Link>{" "}
+      </Link>
       <CoronaNote />
+      <Link to="/disclaimer">
+        <h5>Disclaimer</h5>
+      </Link>
     </HomeDiv>
   );
 };
