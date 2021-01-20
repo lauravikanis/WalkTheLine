@@ -7,7 +7,8 @@ const WarnNote = styled.div`
   text-align: center;
   padding: 1rem;
   border-radius: 15px;
-  h5 {
+  margin: 15px auto;
+  h4 {
     color: white;
     margin-top: 0;
     margin-block-start: 0;
@@ -26,7 +27,7 @@ const WarnNote = styled.div`
 const CoronaNote = () => {
   return (
     <WarnNote>
-      <h5> ! Achtung ! </h5>
+      <h4> ! Achtung ! </h4>
       <p>
         Auf Grund der aktuellen Corvid-19 Pandemie sind die meisten der hier
         gelisteten Locations aktuell geschlossen. Ein Ende der Pandemie ist

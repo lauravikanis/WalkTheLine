@@ -18,6 +18,7 @@ const HomeDiv = styled.div`
 
   h5 {
     text-align: center;
+    margin: 0 auto;
   }
 `;
 
