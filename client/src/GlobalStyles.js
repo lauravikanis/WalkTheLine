@@ -26,11 +26,11 @@ body {
   
  }
  a {
-  color: var(--text-color);
+  color: ${(props) => props.theme.color};
   text-decoration: none;
 }
 p{
-  color: var(--text-color);
+  color: ${(props) => props.theme.color};
   font-size: 1.125rem;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -39,12 +39,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h1 {  font-size: 2rem;
-  color: var(--primary-color);
+  color:${(props) => props.theme.h1color};
 }
 h2 {
   font-size: 1.5rem;
-  color: var(--primary-color);
-}
+  color:${(props) => props.theme.h1color};
+  }
 li { 
   list-style-position:inside;
   justify-content: ${(props) => (props.details ? "space-between" : "center")};

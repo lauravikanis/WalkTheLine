@@ -30,6 +30,7 @@ const Home = ({ toggleTheme }) => {
       <Header />
       <PageHeadline>HOME</PageHeadline>
       <ThemeTogglerButton onClick={toggleTheme} />
+
       <Link to="/choice">
         <Card>
           <h2>Los gehts!</h2>
