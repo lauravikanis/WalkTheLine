@@ -26,7 +26,7 @@ body {
   
  }
  a {
-  color: ${(props) => props.theme.color};
+  color: var(--text-color);
   text-decoration: none;
 }
 p{
