@@ -10,7 +10,9 @@ const GlobalStyle = createGlobalStyle`
   --titleFont: "'Poppins", sans-serif;
   --textFont: "Roboto", sans-serif;
   --background: #ededed;
+  --background-dark: #3d4849;
   --text-color: #707070;
+  --text-color-dark: #ffffff;
   --primary-color: #0f4e8f;
   --secondary-color: #ec9b49;
   --favorite-color:#dd755d;
@@ -19,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 body {
   margin: 0 ;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background);
+  background-color: ${(props) => props.theme.bg};
 
   
  }
