@@ -17,8 +17,6 @@ import styled from "styled-components";
 import useStorage from "./hooks/useStorage";
 import { dark, light } from "./utils/theme";
 
-import { ThemeTogglerButton } from "./components/Button/ThemeTogglerButton";
-
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -42,10 +40,13 @@ function App() {
       <ThemeProvider theme={storedValue === "dark" ? dark : light}>
         <GlobalStyle />
         <Main>
-          <ThemeTogglerButton toggleTheme={handleChangeTheme} />
           <Switch>
             <Route exact path="/">
-              {page ? <Splashscreen /> : <Home />}
+              {page ? (
+                <Splashscreen />
+              ) : (
+                <Home toggleTheme={handleChangeTheme} />
+              )}
             </Route>
             <Route path="/choice">
               <Choice />
@@ -72,7 +73,7 @@ function App() {
               <MapPage />
             </Route>
           </Switch>
-        </Main>{" "}
+        </Main>
       </ThemeProvider>
     </Router>
   );

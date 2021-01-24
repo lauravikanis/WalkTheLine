@@ -1,9 +1,9 @@
 export const light = {
   theme: "light",
-  bg: "var(--background-dark)",
+  bg: "#ededed",
 };
 
 export const dark = {
   theme: "dark",
-  bg: "var(--background-dark)",
+  bg: "#3d4849",
 };

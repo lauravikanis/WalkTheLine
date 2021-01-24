@@ -1,28 +1,29 @@
 import PropTypes from "prop-types";
-import styled, { useTheme } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { ReactComponent as Toggler } from "../../assets/toggler.svg";
 
-export const IconButton = styled.button`
-  display: flex;
+export const IconButton = styled.div`
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-
-  svg {
-    fill: ${(props) => props.theme.icon};
+  align-items: center; */
+  border: none;
+  margin: 0;
+  padding: 0;
+  img {
+    width: 30px;
+    padding: 0;
   }
 `;
 
-export const ThemeTogglerButton = ({ onClick, toggleTheme }) => {
-  const theme = useTheme().theme;
-
+const ThemeTogglerButton = ({ onClick }) => {
   return (
     <IconButton onClick={onClick}>
       <Toggler />
     </IconButton>
   );
 };
+export default ThemeTogglerButton;
 
 ThemeTogglerButton.propTypes = {
   onClick: PropTypes.func,
-  toggleTheme: PropTypes.func,
 };
