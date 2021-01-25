@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
-
 import { ReactComponent as LogoLight } from "../../assets/logo_white.svg";
 import { ReactComponent as LogoDark } from "../../assets/logo.svg";
 import BackButton from "../Button/BackButton";
@@ -13,10 +12,12 @@ const AppHeader = styled.header`
   display: grid;
   grid-template-columns: 20% auto 20%;
   justify-content: space-between;
+  width: 90%;
+  max-width: 600px;
 
   svg {
     height: 55px;
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 `;
 

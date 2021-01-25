@@ -4,10 +4,6 @@ import { ReactComponent as Toggler } from "../../assets/sun.svg";
 import { ReactComponent as TogglerDark } from "../../assets/night-mode.svg";
 
 export const IconButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border: none;
   margin: 0;
   padding: 0;
@@ -16,10 +12,10 @@ export const IconButton = styled.button`
   transition: 0.5s;
 
   svg {
-    /* width: 40px;
-    height: 50px; */
-    /* padding: 0; */
-    /* margin: 10px; */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
   }
 `;
 
