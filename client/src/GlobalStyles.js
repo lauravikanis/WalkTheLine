@@ -39,11 +39,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h1 {  font-size: 2rem;
-  color:${(props) => props.theme.h1color};
+  color:${(props) => props.theme.hcolor};
 }
 h2 {
   font-size: 1.5rem;
-  color:${(props) => props.theme.h1color};
+  color:${(props) => props.theme.hcolor};
   }
 li { 
   list-style-position:inside;
