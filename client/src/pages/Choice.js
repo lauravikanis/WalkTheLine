@@ -4,7 +4,7 @@ import jazzPath from "../assets/jazz.svg";
 import indierockPath from "../assets/indierock.svg";
 import electronicaPath from "../assets/electronica.svg";
 import { Link } from "react-router-dom";
-import { Header, PageHeadline, Card } from "../imports";
+import { PageHeadline, Card } from "../imports";
 
 const ChoiceDiv = styled.div`
   display: flex;
@@ -17,7 +17,6 @@ const ChoiceDiv = styled.div`
 const Home = () => {
   return (
     <ChoiceDiv>
-      <Header />
       <PageHeadline>CHOICE</PageHeadline>
       <Link to="/tour/electronic">
         <Card>

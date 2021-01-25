@@ -42,7 +42,6 @@ function App() {
         <GlobalStyle />
         <Main>
           {page ? <></> : <Header toggleTheme={handleChangeTheme} />}
-
           <Switch>
             <Route exact path="/">
               {page ? <Splashscreen /> : <Home />}

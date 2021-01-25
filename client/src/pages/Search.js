@@ -5,7 +5,6 @@ import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
 import {
-  Header,
   PageHeadline,
   Input,
   Form,
@@ -49,7 +48,6 @@ const Search = () => {
 
   return (
     <SearchDiv>
-      <Header />
       <PageHeadline>Suche</PageHeadline>
       <Input
         type="text"

@@ -15,16 +15,12 @@ export const IconButton = styled.button`
   background: none;
   transition: 0.5s;
 
-  p {
-    margin: 0;
+  svg {
+    /* width: 40px;
+    height: 50px; */
+    /* padding: 0; */
+    /* margin: 10px; */
   }
-
-  /* svg {
-    width: 40px;
-    height: 50px;
-    padding: 0;
-    margin: 10px;
-  } */
 `;
 
 const ThemeTogglerButton = ({ onClick }) => {

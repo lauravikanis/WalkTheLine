@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 import { getTourDetails } from "../api/locations";
 
 import {
-  Header,
   PageHeadline,
   LocationList,
   LeafletMapTour,
@@ -41,8 +40,6 @@ const Tour = () => {
 
   return (
     <TourDiv>
-      <Header />
-
       {TourDetails && (
         <>
           <PageHeadline>{TourDetails.name}</PageHeadline>
