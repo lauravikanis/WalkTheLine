@@ -5,11 +5,9 @@ import searchPath from "../assets/search.svg";
 import favoritePath from "../assets/favorites.svg";
 import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
-import PropTypes from "prop-types";
 
-import { Header, Card, PageHeadline } from "../imports";
+import { Card, PageHeadline } from "../imports";
 import CoronaNote from "../components/Note/Note";
-import ThemeTogglerButton from "../components/Button/ThemeTogglerButton";
 
 const HomeDiv = styled.div`
   display: flex;
@@ -24,13 +22,10 @@ const HomeDiv = styled.div`
   }
 `;
 
-const Home = ({ toggleTheme }) => {
+const Home = () => {
   return (
     <HomeDiv>
-      <Header />
       <PageHeadline>HOME</PageHeadline>
-      <ThemeTogglerButton onClick={toggleTheme} />
-
       <Link to="/choice">
         <Card>
           <h2>Los gehts!</h2>
@@ -55,9 +50,6 @@ const Home = ({ toggleTheme }) => {
       </Link>
     </HomeDiv>
   );
-};
-Home.propTypes = {
-  toggleTheme: PropTypes.func,
 };
 
 export default Home;

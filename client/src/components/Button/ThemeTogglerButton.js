@@ -19,12 +19,12 @@ export const IconButton = styled.button`
     margin: 0;
   }
 
-  svg {
+  /* svg {
     width: 40px;
     height: 50px;
     padding: 0;
     margin: 10px;
-  }
+  } */
 `;
 
 const ThemeTogglerButton = ({ onClick }) => {

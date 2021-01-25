@@ -16,6 +16,7 @@ import Splashscreen from "./pages/Splashscreen";
 import styled from "styled-components";
 import useStorage from "./hooks/useStorage";
 import { dark, light } from "./utils/theme";
+import Header from "./components/Header/Header";
 
 const Main = styled.main`
   display: flex;
@@ -40,13 +41,11 @@ function App() {
       <ThemeProvider theme={storedValue === "dark" ? dark : light}>
         <GlobalStyle />
         <Main>
+          {page ? <></> : <Header toggleTheme={handleChangeTheme} />}
+
           <Switch>
             <Route exact path="/">
-              {page ? (
-                <Splashscreen />
-              ) : (
-                <Home toggleTheme={handleChangeTheme} />
-              )}
+              {page ? <Splashscreen /> : <Home />}
             </Route>
             <Route path="/choice">
               <Choice />
