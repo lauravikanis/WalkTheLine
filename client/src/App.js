@@ -26,14 +26,14 @@ const Main = styled.main`
 
 function App() {
   const [page, setPage] = useState(true);
-  const [storedValue, setValue] = useStorage("theme", "light");
+  const [storedValue, setStoredValue] = useStorage("theme", "light");
 
   useEffect(() => {
     setTimeout(() => setPage(false), 1000);
   }, []);
 
   const handleChangeTheme = () => {
-    setValue(storedValue === "dark" ? "light" : "dark");
+    setStoredValue(storedValue === "dark" ? "light" : "dark");
   };
 
   return (
