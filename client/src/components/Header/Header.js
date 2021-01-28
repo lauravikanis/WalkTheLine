@@ -16,7 +16,7 @@ const AppHeader = styled.header`
   max-width: 600px;
 
   svg {
-    height: 55px;
+    max-height: 55px;
     padding: 0 1rem;
   }
 `;

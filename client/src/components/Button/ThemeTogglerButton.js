@@ -13,9 +13,12 @@ export const IconButton = styled.button`
 
   svg {
     width: 100%;
+    max-width: 70px;
+
     height: 100%;
     padding: 0;
     margin: 0;
+    margin-right: 1rem;
   }
 `;
 
