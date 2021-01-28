@@ -24,8 +24,6 @@ const DetailCard = styled.div`
 `;
 DetailCard.propTypes = {
   visibility: PropTypes.bool,
-};
-DetailCard.propTypes = {
   label: PropTypes.string,
 };
 

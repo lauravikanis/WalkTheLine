@@ -28,7 +28,7 @@ const SearchDiv = styled.div`
   }
 
   summary {
-    color: var(--primary-color);
+    color: ${(props) => props.theme.headColor};
     text-align: center;
   }
 `;
