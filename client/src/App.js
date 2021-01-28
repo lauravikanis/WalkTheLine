@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GlobalStyle from "./GlobalStyles";
+import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Choice from "./pages/Choice";
@@ -13,6 +14,9 @@ import Favorites from "./pages/Favorites";
 import Pictures from "./pages/Pictures";
 import Splashscreen from "./pages/Splashscreen";
 import styled from "styled-components";
+import useStorage from "./hooks/useStorage";
+import { dark, light } from "./utils/theme";
+import Header from "./components/Header/Header";
 
 const Main = styled.main`
   display: flex;
@@ -22,45 +26,53 @@ const Main = styled.main`
 
 function App() {
   const [page, setPage] = useState(true);
+  const [storedValue, setStoredValue] = useStorage("theme", "light");
 
   useEffect(() => {
     setTimeout(() => setPage(false), 1000);
   }, []);
 
+  const handleChangeTheme = () => {
+    setStoredValue(storedValue === "dark" ? "light" : "dark");
+  };
+
   return (
     <Router>
-      <GlobalStyle />
-      <Main>
-        <Switch>
-          <Route exact path="/">
-            {page ? <Splashscreen /> : <Home />}
-          </Route>
-          <Route path="/choice">
-            <Choice />
-          </Route>
-          <Route path="/tour/:tourname">
-            <Tour />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/location/:name/:pic">
-            <Pictures />
-          </Route>
-          <Route path="/location/:name">
-            <Location />
-          </Route>
-          <Route path="/favorites">
-            <Favorites />
-          </Route>
-          <Route path="/disclaimer">
-            <Disclaimer />
-          </Route>
-          <Route path="/map">
-            <MapPage />
-          </Route>
-        </Switch>
-      </Main>
+      <ThemeProvider theme={storedValue === "dark" ? dark : light}>
+        <GlobalStyle />
+        <Main>
+          {page ? <></> : <Header toggleTheme={handleChangeTheme} />}
+          <Switch>
+            <Route exact path="/">
+              {page ? <Splashscreen /> : <Home />}
+            </Route>
+            <Route path="/choice">
+              <Choice />
+            </Route>
+            <Route path="/tour/:tourname">
+              <Tour />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/location/:name/:pic">
+              <Pictures />
+            </Route>
+            <Route path="/location/:name">
+              <Location />
+            </Route>
+            <Route path="/favorites">
+              <Favorites />
+            </Route>
+            <Route path="/disclaimer">
+              <Disclaimer />
+            </Route>
+            <Route path="/map">
+              <MapPage />
+            </Route>
+          </Switch>
+        </Main>
+      </ThemeProvider>
     </Router>
   );
 }

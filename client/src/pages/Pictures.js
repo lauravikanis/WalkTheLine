@@ -5,7 +5,7 @@ import { getLocationByName } from "../api/locations";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
-import { Header, PageHeadline, PictureContainer } from "../imports";
+import { PageHeadline, PictureContainer } from "../imports";
 
 const PicturesDiv = styled.div`
   display: flex;
@@ -39,7 +39,6 @@ const Pictures = () => {
 
   return (
     <PicturesDiv>
-      <Header />
       <PageHeadline>{picDetails[0].name}</PageHeadline>
       <PictureContainer>
         <img src={picDetails[0].link} alt="placeholder" />

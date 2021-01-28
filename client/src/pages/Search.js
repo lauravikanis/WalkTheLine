@@ -5,7 +5,6 @@ import { getEveryLocation } from "../api/search";
 import { Link } from "react-router-dom";
 
 import {
-  Header,
   PageHeadline,
   Input,
   Form,
@@ -29,7 +28,7 @@ const SearchDiv = styled.div`
   }
 
   summary {
-    color: var(--primary-color);
+    color: ${(props) => props.theme.headColor};
     text-align: center;
   }
 `;
@@ -49,7 +48,6 @@ const Search = () => {
 
   return (
     <SearchDiv>
-      <Header />
       <PageHeadline>Suche</PageHeadline>
       <Input
         type="text"

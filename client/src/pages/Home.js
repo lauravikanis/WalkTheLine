@@ -6,7 +6,7 @@ import favoritePath from "../assets/favorites.svg";
 import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
-import { Header, Card, PageHeadline } from "../imports";
+import { Card, PageHeadline } from "../imports";
 import CoronaNote from "../components/Note/Note";
 
 const HomeDiv = styled.div`
@@ -25,7 +25,6 @@ const HomeDiv = styled.div`
 const Home = () => {
   return (
     <HomeDiv>
-      <Header />
       <PageHeadline>HOME</PageHeadline>
       <Link to="/choice">
         <Card>
@@ -52,4 +51,5 @@ const Home = () => {
     </HomeDiv>
   );
 };
+
 export default Home;

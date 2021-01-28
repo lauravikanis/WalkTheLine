@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
-import { Header, FavoriteButton, PageHeadline, LocationList } from "../imports";
+import { FavoriteButton, PageHeadline, LocationList } from "../imports";
 
 import useFavorites from "../hooks/useFavorites";
 
@@ -26,7 +26,6 @@ const Favorite = () => {
 
   return (
     <FavoriteDiv>
-      <Header />
       <PageHeadline>Favoriten</PageHeadline>
       <LocationList>
         {storagefavorites.map((name) => (

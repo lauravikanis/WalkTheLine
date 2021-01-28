@@ -7,7 +7,6 @@ import { getLocationByName } from "../api/locations";
 import useFavorites from "../hooks/useFavorites";
 
 import {
-  Header,
   DetailCard,
   PageHeadline,
   FavoriteButton,
@@ -48,7 +47,6 @@ const Location = () => {
 
   return (
     <LocationDiv>
-      <Header />
       {locationByName && (
         <>
           <PageHeadline>

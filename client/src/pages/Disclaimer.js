@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { Header, PageHeadline } from "../imports";
+import { PageHeadline } from "../imports";
 
 const DisclaimerDiv = styled.div`
   display: flex;
@@ -26,7 +26,6 @@ const DisclaimerDiv = styled.div`
 const Disclaimer = () => {
   return (
     <DisclaimerDiv>
-      <Header />
       <PageHeadline>Disclaimer</PageHeadline>
 
       <h3>Haftung für Inhalte</h3>

@@ -6,7 +6,7 @@ const DetailCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: white;
+  background: ${(props) => props.theme.bgDetailCard};
   border-radius: 15px;
   width: 100%;
   min-height: 50px;
@@ -24,8 +24,6 @@ const DetailCard = styled.div`
 `;
 DetailCard.propTypes = {
   visibility: PropTypes.bool,
-};
-DetailCard.propTypes = {
   label: PropTypes.string,
 };
 

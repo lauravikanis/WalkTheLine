@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { Header, PageHeadline, LeafletMap } from "../imports";
+import { PageHeadline, LeafletMap } from "../imports";
 
 const MapDiv = styled.div`
   display: flex;
@@ -12,7 +12,6 @@ const MapDiv = styled.div`
 const MapPage = () => {
   return (
     <MapDiv>
-      <Header />
       <PageHeadline>Map</PageHeadline>
       <LeafletMap />
     </MapDiv>
