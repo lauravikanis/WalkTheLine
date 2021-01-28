@@ -30,7 +30,6 @@ const Favorite = () => {
   return (
     <FavoriteDiv>
       <PageHeadline>Favoriten</PageHeadline>
-      {console.log(storagefavorites)}
       {favorites.length === 0 ? (
         <p>Du hast noch keine Favoriten</p>
       ) : (
