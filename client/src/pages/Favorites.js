@@ -17,6 +17,9 @@ const FavoriteDiv = styled.div`
   li {
     list-style: none;
   }
+  p {
+    text-align: center;
+  }
 `;
 
 const Favorite = () => {
@@ -27,17 +30,22 @@ const Favorite = () => {
   return (
     <FavoriteDiv>
       <PageHeadline>Favoriten</PageHeadline>
-      <LocationList>
-        {storagefavorites.map((name) => (
-          <li key={name}>
-            <Link to={`/location/${name}`}>{name}</Link>
-            <FavoriteButton
-              onClick={() => toggleFavorite(name)}
-              isFavorite={favorites.includes(name)}
-            />
-          </li>
-        ))}
-      </LocationList>
+      {console.log(storagefavorites)}
+      {favorites.length === 0 ? (
+        <p>Du hast noch keine Favoriten</p>
+      ) : (
+        <LocationList>
+          {storagefavorites.map((name) => (
+            <li key={name}>
+              <Link to={`/location/${name}`}>{name}</Link>
+              <FavoriteButton
+                onClick={() => toggleFavorite(name)}
+                isFavorite={favorites.includes(name)}
+              />
+            </li>
+          ))}
+        </LocationList>
+      )}
     </FavoriteDiv>
   );
 };
