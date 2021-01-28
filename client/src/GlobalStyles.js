@@ -26,11 +26,11 @@ body {
   
  }
  a {
-  color: ${(props) => props.theme.a};
+  color: ${(props) => props.theme.linkColor};
   text-decoration: none;
 }
 p{
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.textColor};
   font-size: 1.125rem;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -39,11 +39,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h1 {  font-size: 2rem;
-  color:${(props) => props.theme.hcolor};
+  color:${(props) => props.theme.headColor};
 }
 h2 {
   font-size: 1.5rem;
-  color:${(props) => props.theme.hcolor};
+  color:${(props) => props.theme.headColor};
   }
 li { 
   list-style-position:inside;

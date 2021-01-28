@@ -6,7 +6,7 @@ const DetailCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: ${(props) => props.theme.detailCard};
+  background: ${(props) => props.theme.bgDetailCard};
   border-radius: 15px;
   width: 100%;
   min-height: 50px;

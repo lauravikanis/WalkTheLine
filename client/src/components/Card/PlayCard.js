@@ -4,7 +4,7 @@ const PlayCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${(props) => props.theme.detailCard};
+  background: ${(props) => props.theme.bgDetailCard};
   border-radius: 15px;
   width: 100%;
   padding: 0.75rem 2.5rem;
