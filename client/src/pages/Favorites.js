@@ -18,7 +18,6 @@ const FavoriteDiv = styled.div`
     list-style: none;
   }
   h3 {
-    font-size: 1rem;
     text-align: center;
   }
   p {

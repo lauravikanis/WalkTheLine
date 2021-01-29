@@ -47,6 +47,7 @@ h2 {
   }
 
 h3 {
+  font-size: 1rem;
   color:${(props) => props.theme.headColor};
   }
 
