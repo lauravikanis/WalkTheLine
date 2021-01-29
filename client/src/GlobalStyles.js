@@ -45,6 +45,12 @@ h2 {
   font-size: 1.5rem;
   color:${(props) => props.theme.headColor};
   }
+
+h3 {
+  font-size: 1rem;
+  color:${(props) => props.theme.headColor};
+  }
+
 li { 
   list-style-position:inside;
   justify-content: ${(props) => (props.details ? "space-between" : "center")};
