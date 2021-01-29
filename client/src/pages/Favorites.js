@@ -17,7 +17,12 @@ const FavoriteDiv = styled.div`
   li {
     list-style: none;
   }
+  h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
   p {
+    margin-top: 0;
     text-align: center;
   }
 `;
@@ -31,7 +36,13 @@ const Favorite = () => {
     <FavoriteDiv>
       <PageHeadline>Favoriten</PageHeadline>
       {favorites.length === 0 ? (
-        <p>Du hast noch keine Favoriten</p>
+        <>
+          <h3>Du hast leider noch keine Favoriten.</h3>
+          <p>
+            Schau dir die Locations in der App an und füge sie durch Klicken auf
+            das Herzsymbol zu deinen Favoriten hinzu.
+          </p>
+        </>
       ) : (
         <LocationList>
           {storagefavorites.map((name) => (
