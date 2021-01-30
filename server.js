@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
 
+const { getImageDataOfLocation, setImage } = require("./lib/picdata");
 const { getLocationByName, getTourDetails } = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
 
@@ -16,6 +17,48 @@ app.use(
   "/storybook",
   express.static(path.join(__dirname, "client/storybook-static"))
 );
+
+//PictureUpload
+
+app.post("/api/picupload", async (request, response) => {
+  try {
+    const { image, locationName } = request.body;
+    await setImage(image, locationName);
+    response.status(201).send("Upload successful");
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error 500");
+  }
+});
+
+app.get("/api/piclocation/:locationName", async (request, response) => {
+  const { locationName } = request.params;
+  try {
+    const locationEntry = await getImageDataOfLocation(locationName);
+    if (!locationEntry) {
+      response.status(404).send("Not found");
+      return;
+    }
+    response.status(200).send(locationEntry);
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error 500 occured");
+  }
+});
+
+app.post("/api/piclocation/:locationName", async (request, response) => {
+  const imageObj = request.body;
+
+  try {
+    await setImage(imageObj);
+    response.send(`Image ${imageObj.url} posted`);
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error 500 occured.");
+  }
+});
+
+//Text
 
 app.get("/api/location", async (req, res) => {
   const { name } = req.query;

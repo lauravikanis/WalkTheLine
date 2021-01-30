@@ -22,8 +22,10 @@ const PictureUpload = () => {
       <PictureContainer>
         <img src={placeholder} alt="placeholder" />
       </PictureContainer>
-      <Input placeholder="Bildname" />
-      <Input placeholder="Bildbeschreibung" />
+      <form>
+        <Input placeholder="Bildname" />
+        <Input placeholder="Bildbeschreibung" />
+      </form>
       <Button value="Upload" type="button" onClick="handleClick" />
     </UploadDiv>
   );
