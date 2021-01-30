@@ -17,6 +17,13 @@ const FavoriteDiv = styled.div`
   li {
     list-style: none;
   }
+  h3 {
+    text-align: center;
+  }
+  p {
+    margin-top: 0;
+    text-align: center;
+  }
 `;
 
 const Favorite = () => {
@@ -27,17 +34,27 @@ const Favorite = () => {
   return (
     <FavoriteDiv>
       <PageHeadline>Favoriten</PageHeadline>
-      <LocationList>
-        {storagefavorites.map((name) => (
-          <li key={name}>
-            <Link to={`/location/${name}`}>{name}</Link>
-            <FavoriteButton
-              onClick={() => toggleFavorite(name)}
-              isFavorite={favorites.includes(name)}
-            />
-          </li>
-        ))}
-      </LocationList>
+      {favorites.length === 0 ? (
+        <>
+          <h3>Du hast leider noch keine Favoriten.</h3>
+          <p>
+            Schau dir die Locations in der App an und füge sie durch Klicken auf
+            das Herzsymbol zu deinen Favoriten hinzu.
+          </p>
+        </>
+      ) : (
+        <LocationList>
+          {storagefavorites.map((name) => (
+            <li key={name}>
+              <Link to={`/location/${name}`}>{name}</Link>
+              <FavoriteButton
+                onClick={() => toggleFavorite(name)}
+                isFavorite={favorites.includes(name)}
+              />
+            </li>
+          ))}
+        </LocationList>
+      )}
     </FavoriteDiv>
   );
 };

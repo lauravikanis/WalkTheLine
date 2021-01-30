@@ -11,7 +11,6 @@ const DisclaimerDiv = styled.div`
   width: 90%;
 
   h3 {
-    font-size: 1rem;
     margin: 0.5rem;
   }
   p {
