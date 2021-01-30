@@ -11,7 +11,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import LocationMarker from "../Map/Userlocation";
 import { geolocationOptions } from "../Map/geolocationOptions";
-import icon from "../../assets/icon_blue.png";
+import iconLight from "../../assets/icon_light.png";
 
 const Map = styled(MapContainer)`
   height: 40vh;
@@ -32,7 +32,7 @@ const LeafletMap = ({
   );
 
   const DefaultIcon = L.icon({
-    iconUrl: icon,
+    iconUrl: iconLight,
     shadowUrl: iconShadow,
   });
   L.Marker.prototype.options.icon = DefaultIcon;

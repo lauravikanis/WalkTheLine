@@ -11,6 +11,7 @@ import { getTourDetails } from "../../api/locations";
 
 import L from "leaflet";
 import icon from "../../assets/icon_blue.png";
+import iconLight from "../../assets/icon_light.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import LocationMarker from "../Map/Userlocation";
@@ -58,9 +59,15 @@ const LeafletMapTour = () => {
   }
 
   const DefaultIcon = L.icon({
-    iconUrl: icon,
+    iconUrl: iconLight,
     shadowUrl: iconShadow,
   });
+
+  const LightIcon = L.icon({
+    iconUrl: iconLight,
+    shadowUrl: iconShadow,
+  });
+
   L.Marker.prototype.options.icon = DefaultIcon;
 
   return (
