@@ -36,7 +36,9 @@ app.get("/api/piclocation/:locationName", async (request, response) => {
   try {
     const locationEntry = await getImageDataOfLocation(locationName);
     if (!locationEntry) {
-      response.status(404).send("Not found");
+      response
+        .status(404)
+        .send("could not find the content you are looking for");
       return;
     }
     response.status(200).send(locationEntry);
@@ -48,7 +50,6 @@ app.get("/api/piclocation/:locationName", async (request, response) => {
 
 app.post("/api/piclocation/:locationName", async (request, response) => {
   const imageObj = request.body;
-
   try {
     await setImage(imageObj);
     response.send(`Image ${imageObj.url} posted`);
