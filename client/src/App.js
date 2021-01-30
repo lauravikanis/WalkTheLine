@@ -12,6 +12,8 @@ import Disclaimer from "./pages/Disclaimer";
 
 import Favorites from "./pages/Favorites";
 import Pictures from "./pages/Pictures";
+import PictureUpload from "./pages/PictureUpload";
+
 import Splashscreen from "./pages/Splashscreen";
 import styled from "styled-components";
 import useStorage from "./hooks/useStorage";
@@ -63,6 +65,9 @@ function App() {
             </Route>
             <Route path="/favorites">
               <Favorites />
+            </Route>
+            <Route path="/upload">
+              <PictureUpload />
             </Route>
             <Route path="/disclaimer">
               <Disclaimer />
