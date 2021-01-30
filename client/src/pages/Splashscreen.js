@@ -1,6 +1,7 @@
 import React from "react";
-import Splashlogo from "../assets/logo.svg";
-import styled from "styled-components/macro";
+import { ReactComponent as LogoLight } from "../assets/logo_white.svg";
+import { ReactComponent as LogoDark } from "../assets/logo.svg";
+import styled, { useTheme } from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 const Splash = styled.div`
@@ -11,11 +12,11 @@ const Splash = styled.div`
 `;
 
 const Splashscreen = () => {
+  const theme = useTheme().theme;
+
   return (
     <Splash>
-      <Link to="/home">
-        <img src={Splashlogo} alt="Walk the Line Logo" />
-      </Link>
+      <Link to="/home">{theme === "light" ? <LogoDark /> : <LogoLight />}</Link>
     </Splash>
   );
 };
