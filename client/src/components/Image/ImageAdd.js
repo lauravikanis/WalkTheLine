@@ -15,7 +15,7 @@ const ImageContainer = styled(Link)`
 
 const AddImage = ({ src, alt, picname, locationName }) => {
   return (
-    <ImageContainer to={`/location/Upload`}>
+    <ImageContainer to="/upload">
       <img src={src} alt={alt} picname={picname} locationname={locationName} />
     </ImageContainer>
   );
