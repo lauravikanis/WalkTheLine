@@ -18,6 +18,7 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
+//TextbasedRoutes
 app.get("/api/location", async (req, res) => {
   const { name } = req.query;
   try {
@@ -65,10 +66,11 @@ app.get("/api/tour/:tour", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.get("/api/locationImages/:location", async (req, res) => {
-  const { name } = req.query;
+//ImageRoutes
+app.get("/api/locationImages/:locationName", async (req, res) => {
+  const { locationName } = req.query;
   try {
-    const locationValue = await getImageDataOfLocation(name);
+    const locationValue = await getImageDataOfLocation(locationName);
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
