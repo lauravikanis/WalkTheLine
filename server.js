@@ -3,8 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
+const { getImageDataOfLocation } = require("./lib/images");
 
-const { getImageDataOfLocation, setImage } = require("./lib/picdata");
 const { getLocationByName, getTourDetails } = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
 
@@ -18,49 +18,7 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-//PictureUpload
-
-app.post("/api/picupload", async (request, response) => {
-  try {
-    const { image, locationName } = request.body;
-    await setImage(image, locationName);
-    response.status(201).send("Upload successful");
-  } catch (error) {
-    console.error(error);
-    response.status(500).send("Error 500");
-  }
-});
-
-app.get("/api/piclocation/:locationName", async (request, response) => {
-  const { locationName } = request.params;
-  try {
-    const locationEntry = await getImageDataOfLocation(locationName);
-    if (!locationEntry) {
-      response
-        .status(404)
-        .send("could not find the content you are looking for");
-      return;
-    }
-    response.status(200).send(locationEntry);
-  } catch (error) {
-    console.error(error);
-    response.status(500).send("Error 500 occured");
-  }
-});
-
-app.post("/api/piclocation/:locationName", async (request, response) => {
-  const imageObj = request.body;
-  try {
-    await setImage(imageObj);
-    response.send(`Image ${imageObj.url} posted`);
-  } catch (error) {
-    console.error(error);
-    response.status(500).send("Error 500 occured.");
-  }
-});
-
-//Text
-
+//TextbasedRoutes
 app.get("/api/location", async (req, res) => {
   const { name } = req.query;
   try {
@@ -108,14 +66,31 @@ app.get("/api/tour/:tour", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
+//ImageRoutes
+app.get("/api/locationImages/:locationName", async (req, res) => {
+  const { locationName } = req.query;
+  try {
+    const locationValue = await getImageDataOfLocation(locationName);
+    if (!locationValue) {
+      res.status(404).send("could not find the content you are looking for");
+      return;
+    }
+    res.send(locationValue);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server error");
+  }
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 async function run() {
   console.log("Connecting to database...");
   await connect(process.env.MONGO_DB_URI, process.env.MONGO_DB_NAME);
   console.log("Connected to database 🎉");
-
-  app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
-  });
 }
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
 
 run();
