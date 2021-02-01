@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 
 // import Button from "../components/Button/Button";
@@ -21,35 +21,29 @@ const UploadButton = styled.button`
 `;
 
 const ButtonWrapper = styled.div`
-  width: fit-content;
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 `;
+
 const ImageInput = styled.input`
-  font-size: 1.5rem;
+  /* font-size: 1.5rem;
   border-radius: 50%;
   width: 100%;
   position: absolute;
-  z-index: 1;
-`;
-const InputButton = styled.button`
-  color: var(--light);
-  background: var(--active);
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
+  z-index: 1; */
 `;
 
 const PictureUpload = () => {
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
-  const history = useHistory();
+  const [uploadNameInput, setUploadNameInput] = useState("");
+  const [uploadDetailInput, setUploadDetailInput] = useState("");
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    console.log("file", file);
     previewFile(file);
     setUploadInput(event.target.value);
   };
@@ -69,17 +63,24 @@ const PictureUpload = () => {
       console.log("No preview file");
     }
     await uploadImage(previewSrc);
-    history.push("/tagging");
+    // history.push("/tagging");
   };
 
   const uploadImage = async (base64EncodedImage) => {
     try {
       await fetch("/api/upload", {
         method: "POST",
-        body: JSON.stringify({ image: base64EncodedImage, userName: "sven" }),
+        body: JSON.stringify({
+          image: base64EncodedImage,
+          location: "test",
+          imagename: uploadNameInput,
+          imagedetails: uploadDetailInput,
+        }),
         headers: { "Content-Type": "application/json" },
       });
       setUploadInput("");
+      setUploadNameInput("");
+      setUploadDetailInput("");
       setPreviewSrc("");
     } catch (error) {
       console.error(error);
@@ -91,24 +92,25 @@ const PictureUpload = () => {
       <PageHeadline>Upload</PageHeadline>
       <form onSubmit={handleSubmit}>
         <ButtonWrapper>
-          <InputButton
-            style={{
-              background: previewSrc
-                ? "var(--background)"
-                : "linear-gradient(160deg, var(--active), var(--active-gradient))",
-            }}
-            htmlFor="upload"
-          >
-            Bild auswählen
-          </InputButton>
           <ImageInput
             type="file"
+            placeholder="Bild"
             value={uploadInput}
             onChange={handleImageChange}
           />
         </ButtonWrapper>
-        <Input placeholder="Bildname" />
-        <Input placeholder="Bildbeschreibung" />
+        <Input
+          placeholder="Bildname"
+          type="text"
+          value={uploadNameInput}
+          onChange={() => setUploadNameInput()}
+        />
+        <Input
+          placeholder="Bildbeschreibung"
+          type="text"
+          value={uploadDetailInput}
+          onChange={() => setUploadDetailInput()}
+        />
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (
