@@ -3,7 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
-const { getImageDataOfLocation } = require("./lib/images");
+const {
+  getImageDataOfLocation,
+  setImageDataOfLocation,
+} = require("./lib/images");
 
 const { getLocationByName, getTourDetails } = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
@@ -67,6 +70,18 @@ app.get("/api/tour/:tour", async (req, res) => {
 });
 
 //ImageRoutes
+
+app.post("/api/upload", async (request, response) => {
+  try {
+    const { image, location } = request.body;
+    await setImageDataOfLocation(image, location);
+    response.status(201).send("Upload successful");
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error 500");
+  }
+});
+
 app.get("/api/locationImages/:locationName", async (req, res) => {
   const { locationName } = req.query;
   try {

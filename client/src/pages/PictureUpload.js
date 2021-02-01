@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 
-// import Button from "../components/Button/Button";
 import UploadPreview from "../components/Image/UploadPreview";
 import Input from "../components/Input/Input";
 
@@ -28,20 +27,12 @@ const ButtonWrapper = styled.div`
   margin-bottom: 1rem;
 `;
 
-const ImageInput = styled.input`
-  /* font-size: 1.5rem;
-  border-radius: 50%;
-  width: 100%;
-  position: absolute;
-  z-index: 1; */
-`;
-
 const PictureUpload = () => {
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
   const [uploadNameInput, setUploadNameInput] = useState("");
   const [uploadDetailInput, setUploadDetailInput] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -64,12 +55,16 @@ const PictureUpload = () => {
       console.log("No preview file");
     }
     await uploadImage(previewSrc);
-    history.goBack();
+    // history.goBack();
   };
 
-  const uploadImage = async (base64EncodedImage) => {
+  const uploadImage = async (
+    base64EncodedImage,
+    uploadDetailInput,
+    uploadNameInput
+  ) => {
     try {
-      await fetch("/api/upload", {
+      await fetch("/api/locationImages/", {
         method: "POST",
         body: JSON.stringify({
           image: base64EncodedImage,
@@ -79,6 +74,8 @@ const PictureUpload = () => {
         }),
         headers: { "Content-Type": "application/json" },
       });
+      console.log(uploadNameInput);
+      console.log(uploadDetailInput);
       setUploadInput("");
       setUploadNameInput("");
       setUploadDetailInput("");
@@ -93,7 +90,7 @@ const PictureUpload = () => {
       <PageHeadline>Upload</PageHeadline>
       <form onSubmit={handleSubmit}>
         <ButtonWrapper>
-          <ImageInput
+          <input
             type="file"
             placeholder="Bild"
             value={uploadInput}
@@ -104,18 +101,18 @@ const PictureUpload = () => {
           placeholder="Bildname"
           type="text"
           value={uploadNameInput}
-          onChange={() => setUploadNameInput()}
+          onChange={(event) => setUploadNameInput(event.target.value)}
         />
         <Input
           placeholder="Bildbeschreibung"
           type="text"
           value={uploadDetailInput}
-          onChange={() => setUploadDetailInput()}
+          onChange={(event) => setUploadDetailInput(event.target.value)}
         />
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (
-            <UploadButton type="submit">Bild hochladen</UploadButton>
+            <UploadButton type="submit">Daten hochladen</UploadButton>
           )}
         </div>
       </form>
