@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 
 // import Button from "../components/Button/Button";
@@ -41,6 +41,7 @@ const PictureUpload = () => {
   const [previewSrc, setPreviewSrc] = useState("");
   const [uploadNameInput, setUploadNameInput] = useState("");
   const [uploadDetailInput, setUploadDetailInput] = useState("");
+  const history = useHistory();
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -63,7 +64,7 @@ const PictureUpload = () => {
       console.log("No preview file");
     }
     await uploadImage(previewSrc);
-    // history.push("/tagging");
+    history.goBack();
   };
 
   const uploadImage = async (base64EncodedImage) => {
