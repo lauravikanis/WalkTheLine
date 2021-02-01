@@ -3,13 +3,13 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
+
+const { getLocationByName, getTourDetails } = require("./lib/locations");
+const { getEveryLocation } = require("./lib/search");
 const {
   getImageDataOfLocation,
   setImageDataOfLocation,
 } = require("./lib/images");
-
-const { getLocationByName, getTourDetails } = require("./lib/locations");
-const { getEveryLocation } = require("./lib/search");
 
 const app = express();
 const port = process.env.PORT || 2601;
