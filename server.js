@@ -23,7 +23,7 @@ app.use(
 
 //TextbasedRoutes
 app.get("/api/location", async (req, res) => {
-  const { name } = req.query;
+  const { name } = req.params;
   try {
     const locationValue = await getLocationByName(name);
     if (!locationValue) {
@@ -38,7 +38,7 @@ app.get("/api/location", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.get("/api/locations", async (req, res) => {
+app.get("/api/locations", async (res) => {
   try {
     const locationValue = await getEveryLocation();
     if (!locationValue) {
@@ -82,10 +82,10 @@ app.post("/api/upload", async (request, response) => {
   }
 });
 
-app.get("/api/locationImages/:locationName", async (req, res) => {
-  const { locationName } = req.query;
+app.get("/api/locationImages/", async (req, res) => {
+  const { name } = req.query;
   try {
-    const locationValue = await getImageDataOfLocation(locationName);
+    const locationValue = await getImageDataOfLocation(name);
     if (!locationValue) {
       res.status(404).send("could not find the content you are looking for");
       return;
