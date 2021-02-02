@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 
 import UploadPreview from "../components/Image/UploadPreview";
 import Input from "../components/Input/Input";
+import { useParams } from "react-router-dom";
 
 import { PageHeadline } from "../imports";
 
@@ -28,6 +29,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const PictureUpload = () => {
+  const locationName = useParams();
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
   const [uploadNameInput, setUploadNameInput] = useState("");
@@ -68,7 +70,7 @@ const PictureUpload = () => {
         method: "POST",
         body: JSON.stringify({
           image: base64EncodedImage,
-          location: "test",
+          location: locationName,
           imagename: uploadNameInput,
           imagedetails: uploadDetailInput,
         }),

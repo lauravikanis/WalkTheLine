@@ -23,7 +23,7 @@ app.use(
 
 //TextbasedRoutes
 app.get("/api/location", async (req, res) => {
-  const { name } = req.params;
+  const { name } = req.query;
   try {
     const locationValue = await getLocationByName(name);
     if (!locationValue) {
@@ -38,7 +38,7 @@ app.get("/api/location", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.get("/api/locations", async (res) => {
+app.get("/api/locations", async (req, res) => {
   try {
     const locationValue = await getEveryLocation();
     if (!locationValue) {

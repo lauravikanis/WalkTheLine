@@ -79,8 +79,8 @@ const Location = () => {
               {locationByName.pic.map((locationPic) => (
                 <>
                   <Image
-                    key={locationPic.name}
-                    locationName={name}
+                    key={locationPic.link}
+                    locationname={name}
                     picname={locationPic.name}
                     src={locationPic.link}
                     alt={locationPic.name}
@@ -89,7 +89,7 @@ const Location = () => {
               ))}
               <AddImage
                 key="addImage"
-                locationName="addImage"
+                locationname={name}
                 picname="addImage"
                 src={placeholder}
                 alt="addImage"

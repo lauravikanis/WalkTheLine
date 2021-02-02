@@ -66,7 +66,7 @@ function App() {
             <Route path="/favorites">
               <Favorites />
             </Route>
-            <Route path="/upload">
+            <Route path="/upload/:name">
               <PictureUpload />
             </Route>
             <Route path="/disclaimer">
