@@ -29,7 +29,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const PictureUpload = () => {
-  const locationName = useParams();
+  const locationname = useParams();
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
   const [uploadNameInput, setUploadNameInput] = useState("");
@@ -47,7 +47,6 @@ const PictureUpload = () => {
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       setPreviewSrc(reader.result);
-      console.log(reader.result);
     };
   };
 
@@ -70,14 +69,12 @@ const PictureUpload = () => {
         method: "POST",
         body: JSON.stringify({
           image: base64EncodedImage,
-          location: locationName,
+          location: locationname.name,
           imagename: uploadNameInput,
           imagedetails: uploadDetailInput,
         }),
         headers: { "Content-Type": "application/json" },
       });
-      console.log(uploadNameInput);
-      console.log(uploadDetailInput);
       setUploadInput("");
       setUploadNameInput("");
       setUploadDetailInput("");
@@ -85,6 +82,10 @@ const PictureUpload = () => {
     } catch (error) {
       console.error(error);
     }
+
+    console.log(locationname.name);
+    console.log(uploadNameInput);
+    console.log(uploadDetailInput);
   };
 
   return (
