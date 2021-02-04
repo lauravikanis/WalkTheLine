@@ -60,33 +60,24 @@ const PictureUpload = () => {
     // history.goBack();
   };
 
-  const uploadImage = async (
-    base64EncodedImage
-    // uploadDetailInput,
-    // uploadNameInput
-  ) => {
+  const uploadImage = async (base64EncodedImage) => {
     try {
+      console.log(locationname.name);
+      console.log(base64EncodedImage);
+
       await fetch("/api/upload/", {
         method: "POST",
         body: JSON.stringify({
           image: base64EncodedImage,
           location: locationname.name,
-          // imagename: uploadNameInput,
-          // imagedetails: uploadDetailInput,
         }),
         headers: { "Content-Type": "application/json" },
       });
       setUploadInput("");
-      // setUploadNameInput("");
-      // setUploadDetailInput("");
       setPreviewSrc("");
     } catch (error) {
       console.error(error);
     }
-
-    console.log(locationname.name);
-    // console.log(uploadNameInput);
-    // console.log(uploadDetailInput);
   };
 
   return (
@@ -101,18 +92,6 @@ const PictureUpload = () => {
             onChange={handleImageChange}
           />
         </ButtonWrapper>
-        {/* <Input
-          placeholder="Bildname"
-          type="text"
-          value={uploadNameInput}
-          onChange={(event) => setUploadNameInput(event.target.value)}
-        />
-        <Input
-          placeholder="Bildbeschreibung"
-          type="text"
-          value={uploadDetailInput}
-          onChange={(event) => setUploadDetailInput(event.target.value)}
-        /> */}
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (
