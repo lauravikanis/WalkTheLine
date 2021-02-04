@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 
 import UploadPreview from "../components/Image/UploadPreview";
-import Input from "../components/Input/Input";
+// import Input from "../components/Input/Input";
 import { useParams } from "react-router-dom";
 
 import { PageHeadline } from "../imports";
@@ -30,10 +30,11 @@ const ButtonWrapper = styled.div`
 
 const PictureUpload = () => {
   const locationname = useParams();
+
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
-  const [uploadNameInput, setUploadNameInput] = useState("");
-  const [uploadDetailInput, setUploadDetailInput] = useState("");
+  // const [uploadNameInput, setUploadNameInput] = useState("");
+  // const [uploadDetailInput, setUploadDetailInput] = useState("");
   // const history = useHistory();
 
   const handleImageChange = (event) => {
@@ -60,32 +61,32 @@ const PictureUpload = () => {
   };
 
   const uploadImage = async (
-    base64EncodedImage,
-    uploadDetailInput,
-    uploadNameInput
+    base64EncodedImage
+    // uploadDetailInput,
+    // uploadNameInput
   ) => {
     try {
-      await fetch("/api/locationImages/", {
+      await fetch("/api/upload/", {
         method: "POST",
         body: JSON.stringify({
           image: base64EncodedImage,
           location: locationname.name,
-          imagename: uploadNameInput,
-          imagedetails: uploadDetailInput,
+          // imagename: uploadNameInput,
+          // imagedetails: uploadDetailInput,
         }),
         headers: { "Content-Type": "application/json" },
       });
       setUploadInput("");
-      setUploadNameInput("");
-      setUploadDetailInput("");
+      // setUploadNameInput("");
+      // setUploadDetailInput("");
       setPreviewSrc("");
     } catch (error) {
       console.error(error);
     }
 
     console.log(locationname.name);
-    console.log(uploadNameInput);
-    console.log(uploadDetailInput);
+    // console.log(uploadNameInput);
+    // console.log(uploadDetailInput);
   };
 
   return (
@@ -100,7 +101,7 @@ const PictureUpload = () => {
             onChange={handleImageChange}
           />
         </ButtonWrapper>
-        <Input
+        {/* <Input
           placeholder="Bildname"
           type="text"
           value={uploadNameInput}
@@ -111,7 +112,7 @@ const PictureUpload = () => {
           type="text"
           value={uploadDetailInput}
           onChange={(event) => setUploadDetailInput(event.target.value)}
-        />
+        /> */}
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (

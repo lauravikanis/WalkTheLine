@@ -6,10 +6,6 @@ const { connect } = require("./lib/database");
 
 const { getLocationByName, getTourDetails } = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
-const {
-  getImageDataOfLocation,
-  setImageDataOfLocation,
-} = require("./lib/images");
 
 const app = express();
 const port = process.env.PORT || 2601;
@@ -21,7 +17,6 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-//TextbasedRoutes
 app.get("/api/location", async (req, res) => {
   const { name } = req.query;
   try {
@@ -69,43 +64,14 @@ app.get("/api/tour/:tour", async (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-//ImageRoutes
-
-app.post("/api/upload", async (request, response) => {
-  try {
-    const { image, location } = request.body;
-    await setImageDataOfLocation(image, location);
-    response.status(201).send("Upload successful");
-  } catch (error) {
-    console.error(error);
-    response.status(500).send("Error 500");
-  }
-});
-
-app.get("/api/locationImages/", async (req, res) => {
-  const { name } = req.query;
-  try {
-    const locationValue = await getImageDataOfLocation(name);
-    if (!locationValue) {
-      res.status(404).send("could not find the content you are looking for");
-      return;
-    }
-    res.send(locationValue);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server error");
-  }
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
-
 async function run() {
   console.log("Connecting to database...");
   await connect(process.env.MONGO_DB_URI, process.env.MONGO_DB_NAME);
   console.log("Connected to database 🎉");
-}
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+  });
+}
 
 run();
