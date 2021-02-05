@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Input = styled.input`
   display: flex;
@@ -12,5 +13,8 @@ const Input = styled.input`
   padding-bottom: 8px;
   margin-bottom: 0.5rem;
 `;
+Input.propTypes = {
+  value: PropTypes.string.isRequired,
+};
 
 export default Input;

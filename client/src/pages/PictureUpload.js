@@ -69,11 +69,7 @@ const PictureUpload = () => {
     uploadDetailInput
   ) => {
     try {
-      console.log(locationname.name);
       const location = locationname.name;
-      console.log(uploadNameInput);
-      console.log(uploadDetailInput);
-
       await fetch("/api/upload", {
         method: "POST",
         body: JSON.stringify({
