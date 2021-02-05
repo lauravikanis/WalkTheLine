@@ -4,19 +4,20 @@ import { Link } from "react-router-dom";
 import imageAddpath from "../../assets/photo.svg";
 
 const UploadContainer = styled(Link)`
-  /* object-fit: scale-down; */
+  display: flex;
+  justify-content: center;
+
   img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 50%;
     margin: 5px;
-    object-fit: cover;
+    border-radius: 15px;
   }
 `;
 
 const AddImage = ({ locationname }) => {
   return (
     <UploadContainer to={`/upload/${locationname}`}>
-      <img src={imageAddpath} alt="pictureupload" locationName={locationname} />
+      <img src={imageAddpath} alt="Upload" locationName={locationname} />
     </UploadContainer>
   );
 };
