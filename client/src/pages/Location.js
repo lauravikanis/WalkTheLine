@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
 import useFavorites from "../hooks/useFavorites";
-import placeholder from "../assets/search.svg";
 
 import {
   DetailCard,
@@ -87,13 +86,7 @@ const Location = () => {
                   />
                 </>
               ))}
-              <AddImage
-                key="addImage"
-                locationname={name}
-                picname="addImage"
-                src={placeholder}
-                alt="addImage"
-              />
+              <AddImage key="addImage" locationname={name} alt="addImage" />
             </ImageCard>
           )}
 
