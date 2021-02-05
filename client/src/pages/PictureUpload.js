@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 import { PageHeadline } from "../imports";
 import Input from "../components/Input/Input";
+import { uploadImage } from "../api/image";
 
 const UploadDiv = styled.div`
   display: flex;
@@ -59,32 +60,15 @@ const PictureUpload = () => {
     if (!previewSrc) {
       console.log("No preview file");
     }
-    await uploadImage(previewSrc, uploadNameInput, uploadDetailInput);
+    await uploadImage(
+      previewSrc,
+      locationname,
+      uploadNameInput,
+      uploadDetailInput
+    );
+    setUploadInput("");
+    setPreviewSrc("");
     history.goBack();
-  };
-
-  const uploadImage = async (
-    base64EncodedImage,
-    uploadNameInput,
-    uploadDetailInput
-  ) => {
-    try {
-      const location = locationname.name;
-      await fetch("/api/upload", {
-        method: "POST",
-        body: JSON.stringify({
-          image: base64EncodedImage,
-          location: location,
-          name: uploadNameInput,
-          description: uploadDetailInput,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
-      setUploadInput("");
-      setPreviewSrc("");
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   return (
