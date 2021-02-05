@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import UploadPreview from "../components/Image/UploadPreview";
-// import Input from "../components/Input/Input";
 import { useParams } from "react-router-dom";
 
 import { PageHeadline } from "../imports";
+import Input from "../components/Input/Input";
 
 const UploadDiv = styled.div`
   display: flex;
@@ -14,6 +14,9 @@ const UploadDiv = styled.div`
   align-content: center;
   max-width: 600px;
   text-align: center;
+  p {
+    font-size: 0.75rem;
+  }
 `;
 
 const UploadButton = styled.button`
@@ -33,9 +36,9 @@ const PictureUpload = () => {
 
   const [uploadInput, setUploadInput] = useState("");
   const [previewSrc, setPreviewSrc] = useState("");
-  // const [uploadNameInput, setUploadNameInput] = useState("");
-  // const [uploadDetailInput, setUploadDetailInput] = useState("");
-  // const history = useHistory();
+  const [uploadNameInput, setUploadNameInput] = useState("");
+  const [uploadDetailInput, setUploadDetailInput] = useState("");
+  const history = useHistory();
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -56,31 +59,36 @@ const PictureUpload = () => {
     if (!previewSrc) {
       console.log("No preview file");
     }
-    await uploadImage(previewSrc);
-    // history.goBack();
+    await uploadImage(previewSrc, uploadNameInput, uploadDetailInput);
+    history.goBack();
   };
 
-  const uploadImage = async (base64EncodedImage) => {
-    // try {
-    console.log(locationname.name);
-    // console.log(base64EncodedImage);
-    const location = locationname.name;
-    console.log(typeof location);
-    await fetch("/api/upload", {
-      method: "POST",
-      body: JSON.stringify({
-        image: base64EncodedImage,
-        location: location,
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-    console.log("hi hier ist der fetch");
-    setUploadInput("");
-    setPreviewSrc("");
-    // } catch (error) {
-    //   console.error(error);
-    //   console.log("hi hier ist der fehler");
-    // }
+  const uploadImage = async (
+    base64EncodedImage,
+    uploadNameInput,
+    uploadDetailInput
+  ) => {
+    try {
+      console.log(locationname.name);
+      const location = locationname.name;
+      console.log(uploadNameInput);
+      console.log(uploadDetailInput);
+
+      await fetch("/api/upload", {
+        method: "POST",
+        body: JSON.stringify({
+          image: base64EncodedImage,
+          location: location,
+          name: uploadNameInput,
+          description: uploadDetailInput,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      setUploadInput("");
+      setPreviewSrc("");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -95,6 +103,22 @@ const PictureUpload = () => {
             onChange={handleImageChange}
           />
         </ButtonWrapper>
+        <Input
+          placeholder="Bildname"
+          type="text"
+          value={uploadNameInput}
+          onChange={(event) => {
+            setUploadNameInput(event.target.value);
+          }}
+        />
+        <Input
+          placeholder="Bildbeschreibung"
+          type="text"
+          value={uploadDetailInput}
+          onChange={(event) => {
+            setUploadDetailInput(event.target.value);
+          }}
+        />
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (
@@ -102,6 +126,7 @@ const PictureUpload = () => {
           )}
         </div>
       </form>
+      <p> Bitte gib deinem Bild einen Namen und eine Beschreibung.</p>
     </UploadDiv>
   );
 };
