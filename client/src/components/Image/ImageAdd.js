@@ -14,10 +14,10 @@ const UploadContainer = styled(Link)`
   }
 `;
 
-const AddImage = ({ locationname }) => {
+const AddImage = ({ locationName }) => {
   return (
-    <UploadContainer to={`/upload/${locationname}`}>
-      <img src={imageAddpath} alt="Upload" locationName={locationname} />
+    <UploadContainer to={`/upload/${locationName}`}>
+      <img src={imageAddpath} alt="Upload" locationName={locationName} />
     </UploadContainer>
   );
 };
@@ -25,5 +25,5 @@ export default AddImage;
 
 AddImage.propTypes = {
   src: PropTypes.string,
-  locationname: PropTypes.string,
+  locationName: PropTypes.string,
 };
