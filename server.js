@@ -19,7 +19,9 @@ app.use(express.json({ limit: "50mb" }));
 
 app.post("/api/upload", async (request, response) => {
   try {
-    const { image, location } = request.body;
+    const { location, image } = request.body;
+    // console.log(image);
+    console.log("das ist ein server log");
     await setImage(image, location);
     response.status(201).send("Upload successful");
   } catch (error) {

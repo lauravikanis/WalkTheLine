@@ -61,23 +61,26 @@ const PictureUpload = () => {
   };
 
   const uploadImage = async (base64EncodedImage) => {
-    try {
-      console.log(locationname.name);
-      console.log(base64EncodedImage);
-
-      await fetch("/api/upload/", {
-        method: "POST",
-        body: JSON.stringify({
-          image: base64EncodedImage,
-          location: locationname.name,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
-      setUploadInput("");
-      setPreviewSrc("");
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    console.log(locationname.name);
+    // console.log(base64EncodedImage);
+    const location = locationname.name;
+    console.log(typeof location);
+    await fetch("/api/upload", {
+      method: "POST",
+      body: JSON.stringify({
+        image: base64EncodedImage,
+        location: location,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log("hi hier ist der fetch");
+    setUploadInput("");
+    setPreviewSrc("");
+    // } catch (error) {
+    //   console.error(error);
+    //   console.log("hi hier ist der fehler");
+    // }
   };
 
   return (
