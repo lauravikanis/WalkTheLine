@@ -4,11 +4,29 @@ const express = require("express");
 const path = require("path");
 const { connect } = require("./lib/database");
 
-const { getLocationByName, getTourDetails } = require("./lib/locations");
+const {
+  getLocationByName,
+  getTourDetails,
+  setImage,
+} = require("./lib/locations");
 const { getEveryLocation } = require("./lib/search");
 
 const app = express();
 const port = process.env.PORT || 2601;
+
+app.use(express.static("public"));
+app.use(express.json({ limit: "50mb" }));
+
+app.post("/api/upload", async (request, response) => {
+  try {
+    const { location, image, name, description } = request.body;
+    await setImage(image, location, name, description);
+    response.status(201).send("Upload successful");
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error 500");
+  }
+});
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));

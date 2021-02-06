@@ -8,8 +8,6 @@ const Button = styled.input`
   background-color: var(--primary-color);
   border-radius: 15px;
   border: none;
-  width: 25%;
-  max-width: 150px;
   height: 50px;
   margin: 15px auto;
   color: white;
@@ -27,5 +25,6 @@ const Button = styled.input`
 Button.propTypes = {
   value: PropTypes.string,
   type: PropTypes.string,
+  onClick: PropTypes.func,
 };
 export default Button;

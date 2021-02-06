@@ -41,7 +41,7 @@ const Pictures = () => {
     <PicturesDiv>
       <PageHeadline>{picDetails[0].name}</PageHeadline>
       <PictureContainer>
-        <img src={picDetails[0].link} alt="placeholder" />
+        <img src={picDetails[0].link} alt={picDetails[0].name} />
       </PictureContainer>
       <p> {picDetails[0].description}</p>
     </PicturesDiv>

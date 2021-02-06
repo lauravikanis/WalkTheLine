@@ -14,6 +14,7 @@ import {
   ImageCard,
   Image,
 } from "../imports";
+import AddImage from "../components/Image/ImageAdd";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -77,16 +78,18 @@ const Location = () => {
               {locationByName.pic.map((locationPic) => (
                 <>
                   <Image
-                    key={locationPic.name}
-                    locationName={name}
+                    key={locationPic.link}
+                    locationname={name}
                     picname={locationPic.name}
                     src={locationPic.link}
                     alt={locationPic.name}
                   />
                 </>
               ))}
+              <AddImage key="addImage" locationname={name} alt="addImage" />
             </ImageCard>
           )}
+
           <LeafletMap
             zoomdistance="16"
             mapCenter={locationByName.position}

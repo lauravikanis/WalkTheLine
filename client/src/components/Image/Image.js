@@ -14,10 +14,10 @@ const ImageContainer = styled(Link)`
   }
 `;
 
-const Image = ({ src, alt, picname, locationName }) => {
+const Image = ({ src, alt, picName, locationName }) => {
   return (
-    <ImageContainer to={`/location/${locationName}/${picname}`}>
-      <img src={src} alt={alt} picname={picname} locationname={locationName} />
+    <ImageContainer to={`/location/${locationName}/${picName}`}>
+      <img src={src} alt={alt} picname={picName} locationName={locationName} />
     </ImageContainer>
   );
 };
@@ -25,6 +25,6 @@ export default Image;
 Image.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
-  picname: PropTypes.string,
+  picName: PropTypes.string,
   locationName: PropTypes.string,
 };
