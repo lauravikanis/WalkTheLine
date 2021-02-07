@@ -73,22 +73,19 @@ const Location = () => {
             )}
           </DetailCard>
 
-          {locationByName.pic && (
-            <ImageCard>
-              {locationByName.pic.map((locationPic) => (
-                <>
-                  <Image
-                    key={locationPic.link}
-                    locationname={name}
-                    picname={locationPic.name}
-                    src={locationPic.link}
-                    alt={locationPic.name}
-                  />
-                </>
+          <ImageCard>
+            {locationByName.pic &&
+              locationByName.pic.map((locationPic) => (
+                <Image
+                  key={locationPic.link}
+                  locationName={name}
+                  picName={locationPic.name}
+                  src={locationPic.link}
+                  alt={locationPic.name}
+                />
               ))}
-              <AddImage key="addImage" locationname={name} alt="addImage" />
-            </ImageCard>
-          )}
+            <AddImage key="addImage" locationName={name} alt="addImage" />
+          </ImageCard>
 
           <LeafletMap
             zoomdistance="16"
