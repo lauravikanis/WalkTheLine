@@ -79,14 +79,14 @@ const Location = () => {
                 <>
                   <Image
                     key={locationPic.link}
-                    locationname={name}
-                    picname={locationPic.name}
+                    locationName={name}
+                    picName={locationPic.name}
                     src={locationPic.link}
                     alt={locationPic.name}
                   />
                 </>
               ))}
-              <AddImage key="addImage" locationname={name} alt="addImage" />
+              <AddImage key="addImage" locationName={name} alt="addImage" />
             </ImageCard>
           )}
 
