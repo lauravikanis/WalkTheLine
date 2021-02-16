@@ -7,6 +7,12 @@ const ImageCard = styled.div`
   align-items: center;
   width: 100%;
   margin: 15px auto;
+
+  p {
+    font-size: 0.75rem;
+    display: flex;
+    width: 30%;
+  }
 `;
 
 export default ImageCard;
