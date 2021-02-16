@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components/macro";
 
 import UploadPreview from "../components/Image/UploadPreview";
 import { useParams } from "react-router-dom";
@@ -8,29 +7,9 @@ import { useParams } from "react-router-dom";
 import { PageHeadline } from "../imports";
 import Input from "../components/Input/Input";
 import { uploadImage } from "../api/image";
-
-const UploadDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  max-width: 600px;
-  text-align: center;
-  p {
-    font-size: 0.75rem;
-  }
-`;
-
-const UploadButton = styled.button`
-  background: linear-gradient(160deg, var(--active), var(--active-gradient));
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-`;
+import UploadDiv from "../components/Upload/UploadDiv";
+import ButtonWrapper from "../components/Upload/ButtonWrapper";
+import UploadButton from "../components/Button/UploadButton";
 
 const PictureUpload = () => {
   const locationname = useParams();

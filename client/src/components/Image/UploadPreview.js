@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 
 const Display = styled.div`
-  background: var(--image-container);
+  background: ${(props) => props.theme.bg};
   height: 50vw;
   width: 50vw;
-  margin: 2rem auto 2rem;
+  margin: 1rem auto 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media (min-width: 800px) {
     height: 50vh;
     width: 50vh;
