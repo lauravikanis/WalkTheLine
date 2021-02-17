@@ -10,6 +10,7 @@ import { uploadImage } from "../api/image";
 import UploadDiv from "../components/Upload/UploadDiv";
 import ButtonWrapper from "../components/Upload/ButtonWrapper";
 import UploadButton from "../components/Button/UploadButton";
+import toast, { Toaster } from "react-hot-toast";
 
 const PictureUpload = () => {
   const locationname = useParams();
@@ -38,25 +39,32 @@ const PictureUpload = () => {
     event.preventDefault();
     if (!previewSrc) {
       console.log("No preview file");
+      toast.error("Bitte wähle ein Bild");
     }
     if (!uploadNameInput || !uploadDetailInput) {
-      console.log("Please select a name");
+      console.log("Please a name and a description");
+      toast.error(
+        "Bitte wähle einen Namen für dein Bild und eine Beschreibung"
+      );
     }
 
-    await uploadImage(
-      previewSrc,
-      locationname,
-      uploadNameInput,
-      uploadDetailInput
-    );
-    setUploadInput("");
-    setPreviewSrc("");
-    history.goBack();
+    if ((previewSrc, locationname, uploadNameInput, uploadDetailInput)) {
+      await uploadImage(
+        previewSrc,
+        locationname,
+        uploadNameInput,
+        uploadDetailInput
+      );
+      setUploadInput("");
+      setPreviewSrc("");
+      history.goBack();
+    }
   };
 
   return (
     <UploadDiv>
       <PageHeadline>Upload</PageHeadline>
+      <Toaster />
       <form onSubmit={handleSubmit}>
         <ButtonWrapper>
           <input
