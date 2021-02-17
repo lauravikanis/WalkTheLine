@@ -39,6 +39,10 @@ const PictureUpload = () => {
     if (!previewSrc) {
       console.log("No preview file");
     }
+    if (!uploadNameInput || !uploadDetailInput) {
+      console.log("Please select a name");
+    }
+
     await uploadImage(
       previewSrc,
       locationname,
