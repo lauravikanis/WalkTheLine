@@ -89,7 +89,8 @@ const PictureUpload = () => {
           onChange={(event) => {
             setUploadDetailInput(event.target.value);
           }}
-        />
+        />{" "}
+        <p> Bitte gib deinem Bild einen Namen und eine Beschreibung.</p>
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
         <div>
           {previewSrc && (
@@ -97,7 +98,6 @@ const PictureUpload = () => {
           )}
         </div>
       </form>
-      <p> Bitte gib deinem Bild einen Namen und eine Beschreibung.</p>
     </UploadDiv>
   );
 };
