@@ -15,6 +15,9 @@ const Input = styled.input`
 `;
 Input.propTypes = {
   value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Input;

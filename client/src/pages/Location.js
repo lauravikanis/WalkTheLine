@@ -74,7 +74,7 @@ const Location = () => {
           </DetailCard>
 
           <ImageCard>
-            {locationByName.pic &&
+            {locationByName.pic[0] ? (
               locationByName.pic.map((locationPic) => (
                 <Image
                   key={locationPic.link}
@@ -83,7 +83,14 @@ const Location = () => {
                   src={locationPic.link}
                   alt={locationPic.name}
                 />
-              ))}
+              ))
+            ) : (
+              <p>
+                Ups! Es sieht so aus, als wenn es für diese Location noch keine
+                Bilder gibt. Du kannst aber gerne durch Klicken auf den orangen
+                Button neue Bilder hinzufügen.
+              </p>
+            )}
             <AddImage key="addImage" locationName={name} alt="addImage" />
           </ImageCard>
 
