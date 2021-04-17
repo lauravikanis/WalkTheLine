@@ -76,5 +76,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:2601/"
+  "proxy": "http://localhost:2601/",
+  "devDependencies": {
+    "@types/leaflet": "^1.7.0",
+    "@types/react-router-dom": "^5.1.7"
+  }
 }
