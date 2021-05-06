@@ -14,10 +14,11 @@ const ImageContainer = styled(Link)`
   }
 `;
 
-const Image: any = (src, alt, picName, locationName) => {
+const Image: any = ({ src, alt, picName, locationName }) => {
+  console.log(picName);
   return (
     <ImageContainer to={`/location/${locationName}/${picName}`}>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} {...picName} locationName={locationName} />
     </ImageContainer>
   );
 };

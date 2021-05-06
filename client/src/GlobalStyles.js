@@ -44,6 +44,8 @@ h1 {  font-size: 2rem;
 h2 {
   font-size: 1.5rem;
   color:${(props) => props.theme.headColor};
+  text-align: center;
+  
   }
 
 h3 {

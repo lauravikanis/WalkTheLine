@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components/macro";
-
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getLocationByName } from "../api/locations";
@@ -10,8 +8,8 @@ import AddImage from "../components/Image/ImageAdd";
 import FavoriteButton from "components/Button/FavoriteButton";
 import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
-import Image from "components/Image/Image";
 import LeafletMap from "components/Map/LeafletMap";
+import { Link } from "react-router-dom";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -26,6 +24,17 @@ const LocationDiv = styled.div`
   }
 `;
 
+const ImageLink = styled(Link)`
+  object-fit: scale-down;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+    margin: 5px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+`;
 const Location: any = () => {
   const { name }: any = useParams();
 
@@ -69,17 +78,15 @@ const Location: any = () => {
               </p>
             )}
           </DetailCard>
-
           <ImageCard>
             {locationByName.pic[0] ? (
-              locationByName.pic.map((locationPic) => (
-                <Image
+              locationByName.pic.map((locationPic: any) => (
+                <ImageLink
+                  to={`/location/${name}/${locationPic.name}`}
                   key={locationPic.link}
-                  locationName={name}
-                  picName={locationPic.name}
-                  src={locationPic.link}
-                  alt={locationPic.name}
-                />
+                >
+                  <img src={locationPic.link} alt={locationPic.name} />
+                </ImageLink>
               ))
             ) : (
               <p>
