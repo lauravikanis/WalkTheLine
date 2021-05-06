@@ -23,11 +23,11 @@ export const IconButton = styled.button`
 `;
 
 const ThemeTogglerButton: any = ({ onClick }: any) => {
-  const theme = useTheme();
+  const themepicker = Object.entries(useTheme())[0][1];
 
   return (
     <IconButton onClick={onClick}>
-      {theme === "light" ? <Toggler /> : <TogglerDark />}
+      {themepicker === "light" ? <Toggler /> : <TogglerDark />}
     </IconButton>
   );
 };

@@ -23,13 +23,15 @@ const AppHeader = styled.header`
 
 const Header = ({ toggleTheme }) => {
   const location = useLocation();
-  const theme = useTheme();
+  const themepicker = Object.entries(useTheme())[0][1];
 
   return (
     <>
       <AppHeader>
         <div> {location.pathname !== "/" && <BackButton />}</div>
-        <Link to="/">{theme === "light" ? <LogoDark /> : <LogoLight />} </Link>
+        <Link to="/">
+          {themepicker === "light" ? <LogoDark /> : <LogoLight />}
+        </Link>
         <ThemeTogglerButton onClick={toggleTheme} />
       </AppHeader>
     </>
