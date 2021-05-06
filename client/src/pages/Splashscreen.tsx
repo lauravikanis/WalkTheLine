@@ -12,11 +12,13 @@ const Splash = styled.div`
 `;
 
 const Splashscreen: any = () => {
-  const theme = useTheme();
+  const themepicker = Object.entries(useTheme())[0][1];
 
   return (
     <Splash>
-      <Link to="/home">{theme === "light" ? <LogoDark /> : <LogoLight />}</Link>
+      <Link to="/home">
+        {themepicker === "light" ? <LogoDark /> : <LogoLight />}
+      </Link>
     </Splash>
   );
 };
