@@ -1,10 +1,9 @@
 import React from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import styled, { useTheme } from "styled-components";
 import "leaflet/dist/leaflet.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-import PropTypes from "prop-types";
 import L from "leaflet";
 
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
@@ -19,12 +18,12 @@ const Map = styled(MapContainer)`
   margin-bottom: 1.5rem;
 `;
 
-const LeafletMap = ({
-  zoomdistance,
-  mapCenter,
-  markerPosition,
-  locationName,
-}) => {
+const LeafletMap = (
+  zoomdistance: any,
+  mapCenter: any,
+  markerPosition: any,
+  locationName: any
+) => {
   const theme = useTheme();
 
   const { location: currentLocation, error: currentError } = useCurrentLocation(
@@ -63,9 +62,3 @@ const LeafletMap = ({
   );
 };
 export default LeafletMap;
-LeafletMap.propTypes = {
-  zoomdistance: PropTypes.string,
-  locationName: PropTypes.string,
-  mapCenter: PropTypes.array,
-  markerPosition: PropTypes.array,
-};
