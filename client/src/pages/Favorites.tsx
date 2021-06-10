@@ -1,4 +1,4 @@
-import FavoriteButton from "components/Button/FavoriteButton";
+import Button from "components/Button/Button";
 import LocationList from "components/Locations/LocationList";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -47,7 +47,7 @@ const Favorite: any = () => {
           {storagefavorites.map((name: any) => (
             <li key={name}>
               <Link to={`/location/${name}`}>{name}</Link>
-              <FavoriteButton
+              <Button
                 onClick={() => toggleFavorite(name)}
                 isFavorite={favorites.includes(name)}
               />

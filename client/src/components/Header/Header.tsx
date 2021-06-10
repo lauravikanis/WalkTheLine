@@ -3,9 +3,8 @@ import styled, { useTheme } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as LogoLight } from "../../assets/logo_white.svg";
 import { ReactComponent as LogoDark } from "../../assets/logo.svg";
-import BackButton from "../Button/BackButton";
-import ThemeTogglerButton from "../Button/ThemeTogglerButton";
 import PropTypes from "prop-types";
+import Button from "../Button/Button";
 
 const AppHeader = styled.header`
   margin-top: 1rem;
@@ -28,11 +27,11 @@ const Header = ({ toggleTheme }) => {
   return (
     <>
       <AppHeader>
-        <div> {location.pathname !== "/" && <BackButton />}</div>
+        <div>{location.pathname !== "/" && <Button backbutton />}</div>
         <Link to="/">
           {themepicker === "light" ? <LogoDark /> : <LogoLight />}
         </Link>
-        <ThemeTogglerButton onClick={toggleTheme} />
+        <Button onClick={toggleTheme} theme />
       </AppHeader>
     </>
   );

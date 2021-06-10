@@ -5,11 +5,10 @@ import { getLocationByName } from "../api/locations";
 import useFavorites from "../hooks/useFavorites";
 
 import AddImage from "../components/Image/ImageAdd";
-import FavoriteButton from "components/Button/FavoriteButton";
 import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
-import LeafletMap from "components/Map/LeafletMap";
 import { Link } from "react-router-dom";
+import Button from "components/Button/Button";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -58,9 +57,10 @@ const Location: any = () => {
         <>
           <h2>
             {locationByName.name}
-            <FavoriteButton
+            <Button
               onClick={() => toggleFavorite(locationByName.name)}
               isFavorite={favorites.includes(locationByName.name)}
+              favorite
             />
           </h2>
           <p>{locationByName.about}</p>
@@ -98,12 +98,16 @@ const Location: any = () => {
             <AddImage key="addImage" locationName={name} alt="addImage" />
           </ImageCard>
 
+          {/*  TODO
+            {
+                         
           <LeafletMap
             zoomdistance="16"
             mapCenter={locationByName.position}
             markerPosition={locationByName.position}
             locationName={name}
-          />
+          /> 
+            }*/}
         </>
       )}
     </LocationDiv>

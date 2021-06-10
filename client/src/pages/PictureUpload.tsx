@@ -8,8 +8,8 @@ import Input from "../components/Input/Input";
 import { uploadImage } from "../api/image";
 import UploadDiv from "../components/Upload/UploadDiv";
 import ButtonWrapper from "../components/Upload/ButtonWrapper";
-import UploadButton from "../components/Button/UploadButton";
 import toast, { Toaster } from "react-hot-toast";
+import Button from "components/Button/Button";
 
 const PictureUpload = () => {
   const locationname = useParams();
@@ -91,11 +91,7 @@ const PictureUpload = () => {
         />
         <p> Bitte gib deinem Bild einen Namen und eine Beschreibung.</p>
         {previewSrc && <UploadPreview src={previewSrc} alt="" />}
-        <div>
-          {previewSrc && (
-            <UploadButton type="submit">Daten hochladen</UploadButton>
-          )}
-        </div>
+        <div>{previewSrc && <Button type="submit" upload />}</div>
       </form>
     </UploadDiv>
   );
