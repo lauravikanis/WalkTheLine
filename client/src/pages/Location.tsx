@@ -9,6 +9,7 @@ import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
 import { Link } from "react-router-dom";
 import Button from "components/Button/Button";
+import Card from "components/Card/Card";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -98,7 +99,7 @@ const Location: any = () => {
             <AddImage key="addImage" locationName={name} alt="addImage" />
           </ImageCard>
 
-          {/*  TODO
+          {/* TODO
             {
                          
           <LeafletMap

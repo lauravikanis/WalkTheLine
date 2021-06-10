@@ -48,6 +48,7 @@ const Favorite: any = () => {
             <li key={name}>
               <Link to={`/location/${name}`}>{name}</Link>
               <Button
+                favorite
                 onClick={() => toggleFavorite(name)}
                 isFavorite={favorites.includes(name)}
               />

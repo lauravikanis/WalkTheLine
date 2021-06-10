@@ -58,7 +58,7 @@ li {
   justify-content: ${(props) => (props.details ? "space-between" : "center")};
   font-size: 1.5rem;
   color: var(--secondary-color);
-  background: var(--primary-color);
+  background: ${(props) => props.theme.listColor};
   font-family: var(--titleFont);
   font-weight: bold;
   text-align: center;

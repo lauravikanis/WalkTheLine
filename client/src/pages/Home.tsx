@@ -27,22 +27,13 @@ const Home: any = () => {
     <HomeDiv>
       <h2>HOME</h2>
       <Link to="/choice">
-        <Card>
-          <h2>Los gehts!</h2>
-          <img src={tourPath} alt="touricon" />
-        </Card>
+        <Card name="Los gehts!" src={tourPath} alt="touricon" />
       </Link>
       <Link to="/search">
-        <Card>
-          <h2>SUCHE</h2>
-          <img src={searchPath} alt="searchicon" />
-        </Card>
+        <Card name="SUCHE" src={searchPath} alt="searchicon" />
       </Link>
       <Link to="/favorites">
-        <Card>
-          <h2>FAVORITEN</h2>
-          <img src={favoritePath} alt="favoriteicon" />
-        </Card>
+        <Card name="FAVORITEN" src={favoritePath} alt="favoriteicon" />
       </Link>
       <CoronaNote />
       <Link to="/disclaimer">

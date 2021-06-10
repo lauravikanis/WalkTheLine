@@ -1,16 +1,18 @@
 import styled from "styled-components/macro";
 
-const Card = styled.div`
+const Cardwrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
+  background: ${(props) => props.theme.cardBackground};
+
   border-radius: 15px;
   width: 100%;
   height: 100px;
   margin: 15px auto;
   padding: 0 2.5rem;
-  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
+  color: var(--secondary-color);
 
   h2 {
     color: var(--secondary-color);
@@ -23,10 +25,22 @@ const Card = styled.div`
   }
 
   p {
-    color: var(--secondary-color);
     text-align: center;
     display: inline-block;
   }
 `;
+
+const Card: any = ({ name, src, alt }: any) => {
+  return (
+    <Cardwrapper>
+      {name && (
+        <>
+          <h2>{name}</h2>
+          <img src={src} alt={alt} />
+        </>
+      )}
+    </Cardwrapper>
+  );
+};
 
 export default Card;

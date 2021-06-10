@@ -19,22 +19,13 @@ const Home = () => {
     <ChoiceDiv>
       <h2>CHOICE</h2>
       <Link to="/tour/electronic">
-        <Card>
-          <h2>ELECTRONICA</h2>
-          <img src={electronicaPath} alt="touricon" />
-        </Card>
+        <Card name="ELECTRONICA" src={electronicaPath} alt="tour" />
       </Link>
       <Link to="/tour/indie">
-        <Card>
-          <h2>(INDIE-) ROCK</h2>
-          <img src={indierockPath} alt="favoriteicon" />
-        </Card>
+        <Card name="(INDIE-) ROCK" src={indierockPath} alt="favorite" />
       </Link>
       <Link to="/tour/jazz">
-        <Card>
-          <h2>JAZZ</h2>
-          <img src={jazzPath} alt="searchicon" />
-        </Card>
+        <Card name="JAZZ" src={jazzPath} alt="search" />
       </Link>
     </ChoiceDiv>
   );
