@@ -14,7 +14,7 @@ const ImageContainer = styled(Link)`
   }
 `;
 
-const Image: any = ({ src, alt, picName, locationName }) => {
+const Image: React.ElementType = ({ src, alt, picName, locationName }: any) => {
   console.log(picName);
   return (
     <ImageContainer to={`/location/${locationName}/${picName}`}>

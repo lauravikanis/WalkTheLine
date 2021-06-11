@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
+import { Popup, TileLayer, Marker } from "react-leaflet";
 import styled, { useTheme } from "styled-components";
 import "leaflet/dist/leaflet.css";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -12,7 +12,7 @@ import LocationMarker from "./Userlocation";
 import { geolocationOptions } from "./geolocationOptions";
 import iconLight from "../../assets/icon_light.png";
 
-const Map = styled(MapContainer)`
+const Map: React.ElementType = styled(MapContainer)`
   height: 40vh;
   border-radius: 15px;
   margin-bottom: 1.5rem;
@@ -26,8 +26,9 @@ const LeafletMap = (
 ) => {
   const theme = useTheme();
 
-  const { location: currentLocation, error: currentError } =
-    useCurrentLocation(geolocationOptions);
+  const { location: currentLocation, error: currentError } = useCurrentLocation(
+    geolocationOptions
+  );
 
   const DefaultIcon = L.icon({
     iconUrl: iconLight,
