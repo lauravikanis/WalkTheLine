@@ -4,12 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.12.7",
-    "@storybook/addon-actions": "^6.1.15",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addon-links": "^6.1.15",
-    "@storybook/node-logger": "^6.1.15",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.2.8",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
@@ -24,7 +18,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-toast": "^1.0.2",
-    "react-leaflet": "^3.0.2",
+    "react-leaflet": "^2.0.2",
     "react-leaflet-enhanced-marker": "^1.0.12",
     "react-query": "^2.26.3",
     "react-router-dom": "^5.2.0",
@@ -51,9 +45,7 @@
     "build": "react-scripts build",
     "test:watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

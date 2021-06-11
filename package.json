@@ -35,7 +35,7 @@
   },
   "scripts": {
     "postinstall": "cd client && npm install",
-    "build": "cd client && npm run build && npm run build-storybook",
+    "build": "cd client && npm run build",
     "test:watch": "cd client && npm run test:watch",
     "test": "npm run lint && npm run prettier && cd client && npm test",
     "lint": "eslint . --ext .js",
@@ -43,7 +43,6 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "cd client && npm start",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\"",
-    "storybook": "cd client && npm run storybook",
     "server": "nodemon server.js",
     "start": "node server.js"
   },

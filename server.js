@@ -30,10 +30,6 @@ app.post("/api/upload", async (request, response) => {
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
-app.use(
-  "/storybook",
-  express.static(path.join(__dirname, "client/storybook-static"))
-);
 
 app.get("/api/location", async (req, res) => {
   const { name } = req.query;
