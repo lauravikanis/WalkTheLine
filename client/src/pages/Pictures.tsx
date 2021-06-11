@@ -18,10 +18,11 @@ const Pictures: any = () => {
   const locationName = useParams();
   const pictureName = locationName;
 
-  const { isLoading, error, data: locationByName } = useQuery(
-    locationName,
-    getLocationByName
-  );
+  const {
+    isLoading,
+    error,
+    data: locationByName,
+  } = useQuery(locationName, getLocationByName);
   if (isLoading) {
     return "Laden...";
   }

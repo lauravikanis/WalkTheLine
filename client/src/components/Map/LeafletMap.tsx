@@ -26,9 +26,8 @@ const LeafletMap = (
 ) => {
   const theme = useTheme();
 
-  const { location: currentLocation, error: currentError } = useCurrentLocation(
-    geolocationOptions
-  );
+  const { location: currentLocation, error: currentError } =
+    useCurrentLocation(geolocationOptions);
 
   const DefaultIcon = L.icon({
     iconUrl: iconLight,

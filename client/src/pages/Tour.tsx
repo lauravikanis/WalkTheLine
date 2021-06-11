@@ -22,10 +22,11 @@ const TourDiv = styled.div`
 
 const Tour: any = () => {
   let location = useLocation();
-  const { isLoading, error, data: TourDetails } = useQuery(
-    location.pathname,
-    getTourDetails
-  );
+  const {
+    isLoading,
+    error,
+    data: TourDetails,
+  } = useQuery(location.pathname, getTourDetails);
 
   if (isLoading) {
     return "Laden...";

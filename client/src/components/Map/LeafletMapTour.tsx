@@ -40,14 +40,14 @@ const LeafletMapTour: any = () => {
   let location = useLocation();
   const theme = useTheme();
 
-  const { location: currentLocation, error: currentError } = useCurrentLocation(
-    geolocationOptions
-  );
+  const { location: currentLocation, error: currentError } =
+    useCurrentLocation(geolocationOptions);
 
-  const { isLoading, error, data: TourDetails } = useQuery(
-    location.pathname,
-    getTourDetails
-  );
+  const {
+    isLoading,
+    error,
+    data: TourDetails,
+  } = useQuery(location.pathname, getTourDetails);
 
   if (isLoading) {
     return "Loading...";

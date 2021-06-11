@@ -39,10 +39,11 @@ const Location: any = () => {
 
   const { toggleFavorite, favorites }: any = useFavorites("favorites", []);
 
-  const { isLoading, error, data: locationByName }: any = useQuery(
-    name,
-    getLocationByName
-  );
+  const {
+    isLoading,
+    error,
+    data: locationByName,
+  }: any = useQuery(name, getLocationByName);
   if (isLoading) {
     return "Laden...";
   }
