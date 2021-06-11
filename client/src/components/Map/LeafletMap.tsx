@@ -1,4 +1,3 @@
-import React from "react";
 import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import styled, { useTheme } from "styled-components";
 import "leaflet/dist/leaflet.css";
@@ -12,20 +11,18 @@ import LocationMarker from "./Userlocation";
 import { geolocationOptions } from "./geolocationOptions";
 import iconLight from "../../assets/icon_light.png";
 
-const Map = styled(MapContainer)`
+const Map: any = styled(MapContainer)`
   height: 40vh;
   border-radius: 15px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 `;
 
-const LeafletMap = (
+const LeafletMap: any = (
   zoomdistance: any,
   mapCenter: any,
   markerPosition: any,
-  locationName: any
+  locationName: string
 ) => {
-  const theme = useTheme();
-
   const { location: currentLocation, error: currentError } =
     useCurrentLocation(geolocationOptions);
 
@@ -33,6 +30,7 @@ const LeafletMap = (
     iconUrl: iconLight,
     shadowUrl: iconShadow,
   });
+  const theme = useTheme();
   L.Marker.prototype.options.icon = DefaultIcon;
 
   return (

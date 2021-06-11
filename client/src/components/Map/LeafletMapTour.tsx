@@ -1,4 +1,3 @@
-import React from "react";
 import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import styled, { useTheme } from "styled-components";
 import "leaflet/dist/leaflet.css";
@@ -64,7 +63,7 @@ const LeafletMapTour: any = () => {
   L.Marker.prototype.options.icon = DefaultIcon;
 
   return (
-    <Map center={["50.9375", "6.9603"]} zoom={13} scrollWheelZoom={"center"}>
+    <Map center={[50.9375, 6.9603]} zoom={13} scrollWheelZoom={"center"}>
       {TourDetails.locationNames.map((locationName) => (
         <Marker key={locationName.name} position={locationName.position}>
           <Popup>

@@ -9,6 +9,7 @@ import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
 import { Link } from "react-router-dom";
 import Button from "components/Button/Button";
+import LeafletMap from "components/Map/LeafletMap";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -52,10 +53,21 @@ const Location: any = () => {
     return `Ein Fehler ist aufgetreten: ${error.message}`;
   }
 
+  const renderLeafletMap = () => {
+    return (
+      <LeafletMap
+        zoomdistance={"16"}
+        mapCenter={locationByName.position}
+        markerPosition={locationByName.position}
+        locationName={name}
+      />
+    );
+  };
   return (
     <LocationDiv>
       {locationByName && (
         <>
+          {console.log(locationByName.position)}
           <h2>
             {locationByName.name}
             <Button
@@ -98,17 +110,7 @@ const Location: any = () => {
             )}
             <AddImage key="addImage" locationName={name} alt="addImage" />
           </ImageCard>
-
-          {/* TODO
-            {
-                         
-          <LeafletMap
-            zoomdistance="16"
-            mapCenter={locationByName.position}
-            markerPosition={locationByName.position}
-            locationName={name}
-          /> 
-            }*/}
+          {/* {locationByName.position && renderLeafletMap()} */}
         </>
       )}
     </LocationDiv>
