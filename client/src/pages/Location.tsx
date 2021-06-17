@@ -1,14 +1,13 @@
-import styled from "styled-components/macro";
-import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import { getLocationByName } from "../api/locations";
-import useFavorites from "../hooks/useFavorites";
-
-import AddImage from "../components/Image/ImageAdd";
+import Button from "components/Button/Button";
 import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
-import { Link } from "react-router-dom";
-import Button from "components/Button/Button";
+import LeafletMap from "components/Map/LeafletMap";
+import { useQuery } from "react-query";
+import { Link, useParams } from "react-router-dom";
+import styled from "styled-components/macro";
+import { getLocationByName } from "../api/locations";
+import AddImage from "../components/Image/ImageAdd";
+import useFavorites from "../hooks/useFavorites";
 
 const LocationDiv = styled.div`
   display: flex;
@@ -44,8 +43,9 @@ const Location: any = () => {
     error,
     data: locationByName,
   }: any = useQuery(name, getLocationByName);
+
   if (isLoading) {
-    return "Laden...";
+    return <p>Laden...</p>;
   }
 
   if (error) {
@@ -99,16 +99,7 @@ const Location: any = () => {
             <AddImage key="addImage" locationName={name} alt="addImage" />
           </ImageCard>
 
-          {/* TODO
-            {
-                         
-          <LeafletMap
-            zoomdistance="16"
-            mapCenter={locationByName.position}
-            markerPosition={locationByName.position}
-            locationName={name}
-          /> 
-            }*/}
+          <LeafletMap locationName={name} />
         </>
       )}
     </LocationDiv>
