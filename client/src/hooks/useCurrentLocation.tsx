@@ -7,8 +7,11 @@ const useCurrentLocation: any = (options = {}) => {
   const [error, setError]: any = useState();
 
   // Success handler for geolocation's `getCurrentPosition` method
-  const handleSuccess = (pos) => {
-    const { latitude, longitude } = pos.coords;
+  const handleSuccess = (position) => {
+    // const { latitude, longitude } = position.coords;
+
+    const latitude: string = position.cords[0];
+    const longitude: string = position.cords[1];
 
     setLocation({
       latitude,

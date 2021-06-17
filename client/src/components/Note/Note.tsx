@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-const WarnNote: any = styled.div`
+export const WarnNote: any = styled.div`
   padding: 0;
   background: var(--favorite-color);
   border: none;

@@ -1,18 +1,16 @@
-import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
-import styled, { useTheme } from "styled-components";
+import L from "leaflet";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
 import "mapbox-gl/dist/mapbox-gl.css";
-
-import { useLocation } from "react-router-dom";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { useQuery } from "react-query";
+import { useLocation } from "react-router-dom";
+import styled, { useTheme } from "styled-components";
 import { getTourDetails } from "../../api/locations";
-
-import L from "leaflet";
 import iconLight from "../../assets/icon_light.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
-import LocationMarker from "./Userlocation";
 import { geolocationOptions } from "./geolocationOptions";
+import LocationMarker from "./Userlocation";
 
 const Map: any = styled(MapContainer)`
   height: 40vh;

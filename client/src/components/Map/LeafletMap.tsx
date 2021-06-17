@@ -1,15 +1,16 @@
-import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
-import styled, { useTheme } from "styled-components";
+import { getLocationByName } from "api/locations";
+import L from "leaflet";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
 import "mapbox-gl/dist/mapbox-gl.css";
-
-import L from "leaflet";
-
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import useCurrentLocation from "../../hooks/useCurrentLocation";
-import LocationMarker from "./Userlocation";
-import { geolocationOptions } from "./geolocationOptions";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import styled, { useTheme } from "styled-components";
 import iconLight from "../../assets/icon_light.png";
+import useCurrentLocation from "../../hooks/useCurrentLocation";
+import { geolocationOptions } from "./geolocationOptions";
+import LocationMarker from "./Userlocation";
 
 const Map: any = styled(MapContainer)`
   height: 40vh;
@@ -17,27 +18,49 @@ const Map: any = styled(MapContainer)`
   margin-bottom: 2.5rem;
 `;
 
-const LeafletMap: any = (
-  zoomdistance: any,
-  mapCenter: any,
-  markerPosition: any,
-  locationName: string
-) => {
+const LeafletMap: any = () => {
+  const theme = useTheme();
   const { location: currentLocation, error: currentError } =
     useCurrentLocation(geolocationOptions);
+
+  const { name }: any = useParams();
+
+  const {
+    isLoading,
+    error,
+    data: locationByname,
+  }: any = useQuery(name, getLocationByName);
+
+  if (isLoading) {
+    return "Laden...";
+  }
+
+  if (error) {
+    return `Ein Fehler ist aufgetreten: ${error.message}`;
+  }
 
   const DefaultIcon = L.icon({
     iconUrl: iconLight,
     shadowUrl: iconShadow,
   });
-  const theme = useTheme();
+
   L.Marker.prototype.options.icon = DefaultIcon;
 
+  console.log(locationByname);
+
   return (
-    <Map center={mapCenter} zoom={zoomdistance} scrollWheelZoom={"center"}>
-      <Marker position={markerPosition}>
-        <Popup>{locationName}</Popup>
+    <Map
+      center={locationByname.position}
+      zoom={"16"}
+      scrollWheelZoom={"center"}
+    >
+      <Marker position={locationByname.position}>
+        <Popup>
+          {locationByname.name} <br />
+          {locationByname.website}
+        </Popup>
       </Marker>
+
       {currentLocation && (
         <LocationMarker location={currentLocation} error={currentError} />
       )}
