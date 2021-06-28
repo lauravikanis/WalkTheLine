@@ -46,8 +46,6 @@ const LeafletMap: any = () => {
 
   L.Marker.prototype.options.icon = DefaultIcon;
 
-  console.log(locationByname);
-
   return (
     <Map
       center={locationByname.position}

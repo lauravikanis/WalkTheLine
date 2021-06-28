@@ -57,10 +57,10 @@ const Tour: any = () => {
             </div>
           </PlayCard>
           <LocationList>
-            {TourDetails.locationNames.map((locationName) => (
-              <li key={locationName.name}>
-                <Link to={`/location/${locationName.name}`}>
-                  {locationName.name}
+            {TourDetails.locationNames.map((tourLocation) => (
+              <li key={tourLocation.name}>
+                <Link to={`/location/${tourLocation.name}`}>
+                  {tourLocation.name}
                 </Link>
               </li>
             ))}
