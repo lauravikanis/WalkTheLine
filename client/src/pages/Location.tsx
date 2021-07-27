@@ -45,7 +45,7 @@ const Location: any = () => {
   }: any = useQuery(name, getLocationByName);
 
   if (isLoading) {
-    return <p>Inhalt wird geladen</p>;
+    return <p>Inhalt wird geladen...</p>;
   }
 
   if (error) {

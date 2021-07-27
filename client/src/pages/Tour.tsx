@@ -31,7 +31,7 @@ const Tour: any = () => {
   } = useQuery(locationName, getTourDetails);
 
   if (isLoading) {
-    return "Laden...";
+    return <p>Inhalt wird geladen...</p>;
   }
   if (error) {
     return `Ein Fehler ist aufgetreten: ${error}`;

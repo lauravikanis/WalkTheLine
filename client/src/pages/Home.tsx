@@ -26,11 +26,15 @@ const Home: any = () => {
   return (
     <HomeDiv>
       <h2>HOME</h2>
+      <p>
+        Schön das du hier bist! Wähle dein Liebelingsgenre, suche nach einer
+        bstimmten Location oder schau nach deinen Lieblingslocations.
+      </p>
       <Link to="/choice">
-        <Card name="Los gehts!" src={tourPath} alt="touricon" />
+        <Card name="GENREWAHL" src={tourPath} alt="touricon" />
       </Link>
       <Link to="/search">
-        <Card name="SUCHE" src={searchPath} alt="searchicon" />
+        <Card name="LOCATION SUCHE" src={searchPath} alt="searchicon" />
       </Link>
       <Link to="/favorites">
         <Card name="FAVORITEN" src={favoritePath} alt="favoriteicon" />
