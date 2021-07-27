@@ -31,7 +31,7 @@ const Home: any = () => {
         bstimmten Location oder schau nach deinen Lieblingslocations.
       </p>
       <Link to="/choice">
-        <Card name="GENREWAHL" src={tourPath} alt="touricon" />
+        <Card name="WÄHLE DEIN GENRE" src={tourPath} alt="touricon" />
       </Link>
       <Link to="/search">
         <Card name="LOCATION SUCHE" src={searchPath} alt="searchicon" />
