@@ -32,7 +32,7 @@ const LeafletMap: any = () => {
   }: any = useQuery(name, getLocationByName);
 
   if (isLoading) {
-    return "Laden...";
+    return <p>Karte wird geladen</p>;
   }
 
   if (error) {

@@ -15,16 +15,17 @@ const PicturesDiv = styled.div`
 `;
 
 const Pictures: any = () => {
-  const locationName = useParams();
-  const pictureName = locationName;
+  const name = useParams();
+  const pictureName = name;
 
   const {
     isLoading,
     error,
     data: locationByName,
-  } = useQuery(locationName, getLocationByName);
+  } = useQuery(name, getLocationByName);
+
   if (isLoading) {
-    return "Laden...";
+    return <p>Inhalt wird geladen</p>;
   }
 
   if (error) {

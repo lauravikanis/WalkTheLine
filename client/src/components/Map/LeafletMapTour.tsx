@@ -47,7 +47,7 @@ const LeafletMapTour: any = () => {
   } = useQuery(location.pathname, getTourDetails);
 
   if (isLoading) {
-    return "Loading...";
+    return <p>Karte wird geladen</p>;
   }
   if (error) {
     return `An error has occurred: ${error}`;
