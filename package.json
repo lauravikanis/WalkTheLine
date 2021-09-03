@@ -10,7 +10,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "gitmoji-cli": "^4.2.0",
-    "immer": "^8.0.1",
+    "immer": "^9.0.6",
     "init": "^0.1.2",
     "mongodb": "^3.6.3",
     "postinstall": "^0.7.0",
