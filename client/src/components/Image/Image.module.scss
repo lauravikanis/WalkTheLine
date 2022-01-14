@@ -1,0 +1,11 @@
+.imageContainer {
+  object-fit: scale-down;
+
+  &img {
+    width: 6rem;
+    height: 6rem;
+    margin: 5px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+}

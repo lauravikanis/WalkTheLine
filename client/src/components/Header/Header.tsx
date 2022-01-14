@@ -1,43 +1,28 @@
 import React from "react";
-import styled, { useTheme } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
-import { ReactComponent as LogoLight } from "../../assets/logo_white.svg";
+import { useTheme } from "styled-components";
 import { ReactComponent as LogoDark } from "../../assets/logo.svg";
-import PropTypes from "prop-types";
+import { ReactComponent as LogoLight } from "../../assets/logo_white.svg";
 import Button from "../Button/Button";
+import classes from "./Header.module.scss";
 
-const AppHeader = styled.header`
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 20% auto 20%;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 600px;
+interface HeaderProps {
+  toggleTheme: () => void;
+}
 
-  svg {
-    max-height: 55px;
-    padding: 0 1rem;
-  }
-`;
-
-const Header = ({ toggleTheme }) => {
+const Header = ({ toggleTheme }: HeaderProps) => {
   const location = useLocation();
   const themepicker = Object.entries(useTheme())[0][1];
 
   return (
-    <>
-      <AppHeader>
-        <div>{location.pathname !== "/" && <Button backbutton />}</div>
-        <Link to="/">
-          {themepicker === "light" ? <LogoDark /> : <LogoLight />}
-        </Link>
-        <Button onClick={toggleTheme} theme />
-      </AppHeader>
-    </>
+    <div className={classes.header}>
+      <div>{location.pathname !== "/" && <Button backbutton />}</div>
+      <Link to="/">
+        {themepicker === "light" ? <LogoDark /> : <LogoLight />}
+      </Link>
+      <Button onClick={toggleTheme} theme />
+    </div>
   );
-};
-Header.propTypes = {
-  toggleTheme: PropTypes.func,
 };
 
 export default Header;

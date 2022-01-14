@@ -1,24 +1,22 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
+import classes from "./Image.module.scss";
 
-const ImageContainer = styled(Link)`
-  object-fit: scale-down;
+interface ImageContainerProps {
+  src: string;
+  alt: string;
+  picName: string;
+  locationName: string;
+}
 
-  img {
-    width: 6rem;
-    height: 6rem;
-    margin: 5px;
-    border-radius: 15px;
-    object-fit: cover;
-  }
-`;
-
-const Image: any = ({ src, alt, picName, locationName }: any) => {
+const Image = ({ src, alt, picName, locationName }: ImageContainerProps) => {
   return (
-    <ImageContainer to={`/location/${locationName}/${picName}`}>
+    <Link
+      className={classes.imageContainer}
+      to={`/location/${locationName}/${picName}`}
+    >
       <img src={src} alt={alt} {...picName} locationName={locationName} />
-    </ImageContainer>
+    </Link>
   );
 };
 export default Image;

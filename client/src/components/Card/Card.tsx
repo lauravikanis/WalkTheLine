@@ -1,8 +1,15 @@
-import "./card.css";
+import classes from "./Card.module.scss";
 
-const Card: any = ({ name, src, alt }: any) => {
+interface Cardprops {
+  name: string;
+  src: string;
+  alt: string;
+  type?: string;
+}
+
+const Card = ({ name, src, alt }: Cardprops) => {
   return (
-    <div className="card_basic">
+    <div className={classes.card_basic}>
       {name && (
         <>
           <h2>{name}</h2>

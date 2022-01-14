@@ -6,7 +6,19 @@ import { ReactComponent as FavOff } from "../../assets/favorite_off.svg";
 import { ReactComponent as FavOn } from "../../assets/favorite_on.svg";
 import { ReactComponent as TogglerDark } from "../../assets/night-mode.svg";
 import { ReactComponent as Toggler } from "../../assets/sun.svg";
-import "./button.css";
+import classes from "./Button.module.scss";
+
+interface Props {
+  onClick: () => void;
+  isFavorite: string;
+  favorite: string;
+  theme: string;
+  upload: string;
+  type: ButtonType;
+  backbutton: string;
+}
+
+type ButtonType = "button" | "submit" | "reset" | undefined;
 
 const Button: React.ElementType = ({
   onClick,
@@ -16,13 +28,13 @@ const Button: React.ElementType = ({
   upload,
   type,
   backbutton,
-}: any) => {
+}: Props) => {
   const themepicker = Object.entries(useTheme())[0][1];
   const history = useHistory();
 
   const rendeFavoriteButton = () => {
     return (
-      <button onClick={onClick} className="button_favorite">
+      <button onClick={onClick} className={classes.favorite_button}>
         {isFavorite ? <FavOn /> : <FavOff />}
       </button>
     );
@@ -38,7 +50,7 @@ const Button: React.ElementType = ({
 
   const renderUploadButton = () => {
     return (
-      <button type={type} className="button_upload">
+      <button type={type} className={classes.button_upload}>
         Daten hochladen
       </button>
     );
@@ -46,7 +58,7 @@ const Button: React.ElementType = ({
 
   const renderBackButton = () => {
     return (
-      <button onClick={() => history.goBack()} className="button_back">
+      <button onClick={() => history.goBack()} className={classes.button_back}>
         <img src={Backarrow} alt="Go back" />
       </button>
     );
