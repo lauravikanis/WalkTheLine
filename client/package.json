@@ -7,18 +7,10 @@
     "build": "react-scripts build",
     "test:watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@babel/core": "^7.12.7",
-    "@storybook/addon-actions": "^6.1.15",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addon-links": "^6.1.15",
-    "@storybook/node-logger": "^6.1.15",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.2.8",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
