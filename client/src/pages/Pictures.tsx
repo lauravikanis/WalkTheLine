@@ -1,18 +1,8 @@
 import React from "react";
-import styled from "styled-components/macro";
-
-import { getLocationByName } from "../api/locations";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import PictureContainer from "components/Image/PictureContainer";
-
-const PicturesDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  max-width: 600px;
-  text-align: center;
-`;
+import { getLocationByName } from "../api/locations";
+import classes from "./Pictures.module.scss";
 
 const Pictures: any = () => {
   const name = useParams();
@@ -39,13 +29,13 @@ const Pictures: any = () => {
   );
 
   return (
-    <PicturesDiv>
+    <div className={classes.pictures}>
       <h2>{picDetails[0].name}</h2>
-      <PictureContainer>
+      <div className={classes.pictureContainer}>
         <img src={picDetails[0].link} alt={picDetails[0].name} />
-      </PictureContainer>
+      </div>
       <p> {picDetails[0].description}</p>
-    </PicturesDiv>
+    </div>
   );
 };
 

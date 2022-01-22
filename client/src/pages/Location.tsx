@@ -1,12 +1,12 @@
 import Button from "components/Button/Button";
 import DetailCard from "components/Card/DetailCard";
 import ImageCard from "components/Card/ImageCard";
+import LinkedImage from "components/Image/LinkedImage";
 import LeafletMap from "components/Map/LeafletMap";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { getLocationByName } from "../api/locations";
-import AddImage from "../components/Image/ImageAdd";
 import useFavorites from "../hooks/useFavorites";
 
 const LocationDiv = styled.div`
@@ -96,7 +96,12 @@ const Location: any = () => {
                 Button neue Bilder hinzufügen.
               </p>
             )}
-            <AddImage key="addImage" locationName={name} alt="addImage" />
+            <LinkedImage
+              key="addImage"
+              locationName={name}
+              picName={name}
+              alt="addImage"
+            />
           </ImageCard>
 
           <LeafletMap locationName={name} />

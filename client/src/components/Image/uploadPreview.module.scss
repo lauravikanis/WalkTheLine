@@ -1,0 +1,23 @@
+.display {
+  //   background: ${(props) => props.theme.bg};
+  height: 50vw;
+  width: 50vw;
+  margin: 1rem auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 800px) {
+    height: 50vh;
+    width: 50vh;
+  }
+  @media (min-width: 1000px) and (orientation: landscape) {
+    height: 50vh;
+    width: 50vh;
+  }
+}
+
+.previewImage {
+  max-height: 100%;
+  max-width: 100%;
+}
