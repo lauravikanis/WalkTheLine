@@ -1,13 +1,11 @@
-import React from "react";
-import styled from "styled-components/macro";
-import tourPath from "../assets/tour.svg";
-import searchPath from "../assets/search.svg";
-import favoritePath from "../assets/favorites.svg";
-import { Link } from "react-router-dom";
-import "leaflet/dist/leaflet.css";
-
-import CoronaNote from "../components/Note/Note";
 import Card from "components/Card/Card";
+import "leaflet/dist/leaflet.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components/macro";
+import favoritePath from "../assets/favorites.svg";
+import searchPath from "../assets/search.svg";
+import tourPath from "../assets/tour.svg";
 
 const HomeDiv = styled.div`
   display: flex;
@@ -39,7 +37,6 @@ const Home: any = () => {
       <Link to="/favorites">
         <Card name="FAVORITEN" src={favoritePath} alt="favoriteicon" />
       </Link>
-      <CoronaNote />
       <Link to="/disclaimer">
         <h5>Disclaimer</h5>
       </Link>
