@@ -4,30 +4,18 @@
   "version": "1.0.0",
   "description": "a starter Template",
   "main": "index.js",
-  "scripts": {
-    "postinstall": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "test:watch": "cd client && npm run test:watch",
-    "test": "npm run lint && npm run prettier && cd client && npm test",
-    "lint": "eslint . --ext .js",
-    "prettify": "prettier --write .",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "cd client && npm start",
-    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\"",
-    "server": "nodemon server.js",
-    "start": "node server.js"
-  },
   "dependencies": {
-    "@types/leaflet": "^1.7.11",
+    "@types/leaflet": "^1.7.0",
     "classnames": "^2.3.1",
     "cloudinary": "^1.23.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "gitmoji-cli": "^4.2.0",
     "immer": "^9.0.6",
     "init": "^0.1.2",
     "mongodb": "^4.3.0",
     "postinstall": "^0.7.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.2.0",
     "ssri": "^8.0.1"
   },
   "devDependencies": {
@@ -53,6 +41,19 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
     "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "postinstall": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "test:watch": "cd client && npm run test:watch",
+    "test": "npm run lint && npm run prettier && cd client && npm test",
+    "lint": "eslint . --ext .js",
+    "prettify": "prettier --write .",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\"",
+    "server": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
